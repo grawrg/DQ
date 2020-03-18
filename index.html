@@ -334,6 +334,17 @@ body{
 	padding: 1px;
 	cursor: pointer;
 }
+.DeveIns{
+	color: white;
+	background-color: black;
+	font-size: 19px;
+	text-align: center;
+	position: relative;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 1px;
+	width: 130px;
+}
 .CharZone{
 	position: absolute;
 	height: 96px;
@@ -630,12 +641,21 @@ body{
 	text-align: center;
 	width: 200px;
 	height: 50px;
-
+}
+.DevTr{
+	text-align: center;
+	width: 200px;
+	height: 50px;
+}
+.DevTd{
+	text-align: center;
+	width: 200px;
+	height: 50px;
 }
 		</style>
 	</head>
 	<body id="body" onKeyPress="onKeyChange()">
-		<div id="VerBox" class="VerBox">Ver. 1.20.3.17 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
+		<div id="VerBox" class="VerBox">Ver. 1.20.3.18 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
 		<div id="ZoneZone" class="ZoneZone">
 			<div id="MonsSpawnZoneA" class="MonsSpawnZone"></div>
 			<div id="MonsSpawnZoneB" class="MonsSpawnZone"></div>
@@ -1002,109 +1022,280 @@ body{
 		</div>
 	</body>
 	<script>
+var itemsAcive = [ 
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
+var itemsContent = [
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
+var itemsContentValue = [
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
 var monsLifeDat = [
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
 ]
 var monsActive = [
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0,
-0
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
 ]
 var saved_keydown = "";
 var currLane = 0;
@@ -1117,25 +1308,29 @@ var isDev = 0;
 var hitMod = 0;
 
 var devOnContent = '';
-devOnContent = devOnContent.concat('<table><tr><td>');
+devOnContent = devOnContent.concat('<table><tr class="DevTr"><td class="DevTd">');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderD" id="devModeBut" onClick="devMode()">Close Devlepoment</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="createItemTest()">Item Select</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 50, 1, 1)">Spawn Monster</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 30, 4)">SL/HP Monster</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devWaves()">Dev Waves</p>');
-devOnContent = devOnContent.concat('</td><td>');
+devOnContent = devOnContent.concat('</td><td class="DevTd">');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 1)">Monster Row 1</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 2)">Monster Row 2</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 3)">Monster Row 3</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 4)">Monster Row 4</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 5)">Monster Row 5</p>');
-devOnContent = devOnContent.concat('</td><td>');
+devOnContent = devOnContent.concat('</td><td class="DevTd">');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(1)">Dam + 1 / 10 DQ</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(2)">Knb + 1 / 10 DQ</p>');
-devOnContent = devOnContent.concat('</td><td>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(1)">Add 1 &nbspcoin</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(2)">Add 10 coin</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(3)">Add 100 coin</p>');
+devOnContent = devOnContent.concat('</td><td class="DevTd">');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="startWave(1)">Start a wave</p>');
+devOnContent = devOnContent.concat('<input type="text" placeholder="WAVE #" class="DeveIns testBorderG"></input>');
+devOnContent = devOnContent.concat('</td><td class="DevTd">');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="swapLane(MonsZone1, LifeBar1, LifeBarBack1, LifeBarFront1, 1)">Test Lane Swap</p>');
 devOnContent = devOnContent.concat('</td></tr></table>');
 var devOffContent = '<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>';
 
@@ -1144,9 +1339,9 @@ tutorThem(1, 0);
 function devMode(){
 	if(isDev == 0){
 		var KEY = document.getElementById("DevKeyIn").value;
-		if(KEY == "aspo"){
+		if(KEY == ""){
 			document.getElementById("DeveActs").style.height = 150;
-			document.getElementById("DeveActs").style.width	 = 720;
+			document.getElementById("DeveActs").style.width	 = 870;
 			document.getElementById("DeveActs").style.top = 41;
 			document.getElementById("DeveActs").innerHTML = devOnContent;
 			isDev = 1;
@@ -1328,7 +1523,23 @@ var waveButItems = [
 '<p class="WaveBut" onClick="startWave(4)">Start Wave</br><span class="waveNum"># 4</p>',
 '<p class="WaveBut" onClick="startWave(5)">Start Wave</br><span class="waveNum"># 5</p>',
 '<p class="WaveBut" onClick="startWave(6)">Start Wave</br><span class="waveNum"># 6</p>',
-'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>'
+'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>',
+'<p class="WaveBut" onClick="startWave(8)">Start Wave</br><span class="waveNum"># 8</p>',
+'<p class="WaveBut" onClick="startWave(9)">Start Wave</br><span class="waveNum"># 9</p>',
+'<p class="WaveBut" onClick="startWave(10)">Start Wave</br><span class="waveNum"># 10</p>',
+'<p class="WaveBut" onClick="startWave(11)">Start Wave</br><span class="waveNum"># 11</p>',
+'<p class="WaveBut" onClick="startWave(12)">Start Wave</br><span class="waveNum"># 12</p>',
+'<p class="WaveBut" onClick="startWave(13)">Start Wave</br><span class="waveNum"># 13</p>',
+'<p class="WaveBut" onClick="startWave(14)">Start Wave</br><span class="waveNum"># 14</p>',
+'<p class="WaveBut" onClick="startWave(15)">Start Wave</br><span class="waveNum"># 15</p>',
+'<p class="WaveBut" onClick="startWave(16)">Start Wave</br><span class="waveNum"># 16</p>',
+'<p class="WaveBut" onClick="startWave(17)">Start Wave</br><span class="waveNum"># 17</p>',
+'<p class="WaveBut" onClick="startWave(18)">Start Wave</br><span class="waveNum"># 18</p>',
+'<p class="WaveBut" onClick="startWave(19)">Start Wave</br><span class="waveNum"># 19</p>',
+'<p class="WaveBut" onClick="startWave(20)">Start Wave</br><span class="waveNum"># 20</p>',
+'<p class="WaveBut" onClick="startWave(21)">Start Wave</br><span class="waveNum"># 21</p>',
+'<p class="WaveBut" onClick="startWave(22)">Start Wave</br><span class="waveNum"># 22</p>',
+'<p class="WaveBut" onClick="startWave(23)">Start Wave</br><span class="waveNum"># 23</p>'
 ]
 var waveButDisabledItems = [
 'EMPTY-NA',
@@ -1338,7 +1549,23 @@ var waveButDisabledItems = [
 '<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 4</p>',
 '<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 5</p>',
 '<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 6</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>'
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 8</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 9</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 10</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 11</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 12</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 13</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 14</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 15</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 16</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 17</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 18</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 19</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 20</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 21</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 22</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 23</p>'
 ]
 
 function startWave(WAVE){
@@ -1393,28 +1620,28 @@ function runWave(Wave, Ss, Len, MxLen){
 		monType = 1;
 		monDist = getRandomInt(12, 20);
 		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(4, 6);
+		monHeal = getRandomInt(4, 7);
 		monLine = getRandomInt(1, 5);
 	}
 	if(Wave == 3){
 		monType = 1;
 		monDist = getRandomInt(12, 20);
 		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(7, 12);
+		monHeal = getRandomInt(7, 14);
 		monLine = getRandomInt(1, 5);
 	}
 	if(Wave == 4){
 		monType = 1;
 		monDist = getRandomInt(12, 20);
 		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(13, 16);
+		monHeal = getRandomInt(14, 20);
 		monLine = getRandomInt(1, 5);
 	}
 	if(Wave == 5){
 		monType = 1;
 		monDist = getRandomInt(12, 20);
 		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(13, 16);
+		monHeal = getRandomInt(20, 26);
 		monLine = getRandomInt(1, 5);
 	}
 	
@@ -2023,6 +2250,10 @@ function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLI
 		ELEMBF.style.height = 1;
 		return;
 	} else if(curPOS > 40){
+		willSwap = getRandomInt(1, 20);
+		if(willSwap == 10){
+			swapLane(RID, BID, BBID, BFID, IDID);
+		}
 		moveMonsterDo(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLIFE);
 	}
 	delete MOD;
@@ -2058,6 +2289,32 @@ function moveMonsterDo(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxl
 	delete Speed;
 	delete Maxlife;
 	return;
+}
+function swapLane(MonID, MonBid, MonBBid, MonBFid, MonIdid){
+	ELEM = document.getElementById(MonID);
+	ELEMB = document.getElementById(MonBid);
+	ELEMBB = document.getElementById(MonBBid);
+	ELEMBF = document.getElementById(MonBFid);
+	currTop = getPOS(ELEM.style.top);
+	console.log(currTop);
+	UpDown = getRandomInt(1, 2);
+	if(currTop == 11){
+		UpDown = 2;
+	}
+	if(currTop == 403){
+		UpDown = 1;
+	}
+	if(UpDown == 1){
+		ELEM.style.top = getPOS(ELEM.style.top) - 98;
+		ELEMB.style.top = getPOS(ELEMB.style.top) - 98;
+		ELEMBB.style.top = getPOS(ELEMBB.style.top) - 98;
+		ELEMBF.style.top = getPOS(ELEMBF.style.top) - 98;
+	} else if (UpDown == 2){
+		ELEM.style.top = getPOS(ELEM.style.top) + 98;
+		ELEMB.style.top = getPOS(ELEMB.style.top) + 98;
+		ELEMBB.style.top = getPOS(ELEMBB.style.top) + 98;
+		ELEMBF.style.top = getPOS(ELEMBF.style.top) + 98;
+	}
 }
 
 function moveChar(DIR){
