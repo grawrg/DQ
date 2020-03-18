@@ -610,6 +610,9 @@ body{
 .TutorBut:Active{
 	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
 }
+.TutorObjBlock{
+	background-color: #30458E;
+}
 .StartTutorBut{
 	background: linear-gradient(-180deg, #B8D4C8, #B8BFD4);
 	border: 2px inset #505050;
@@ -977,17 +980,17 @@ body{
 				<table class="ActTable">
 					<tr class="ActTr">
 						<td class="ActTd">
-							<div id="" class="">
+							<div id="DamgBut" class="">
 								<p class="PurchButs" onClick="purchaseUpgrade(1)">+1 Damage</br>-10 Coins</p>
 							</div>
 						</td>
 						<td class="ActTd">
-							<div id="" class="">
+							<div id="KnbkBut" class="">
 								<p class="PurchButs" onClick="purchaseUpgrade(2)">+1 Knockback</br>-10 Coins</p>
 							</div>
 						</td>
 						<td class="ActTd">
-							<div id="" class="">
+							<div id="HealBut" class="">
 								<p class="PurchButs" onClick="purchaseUpgrade(3)">+1 Health</br>-5 Coins</p>
 							</div>
 						</td>
@@ -1009,7 +1012,7 @@ body{
 					</tr>
 					<tr class="ActTr">
 						<td class="ActTd">
-							<div id="" class="">
+							<div id="TutrBut" class="">
 								<p class="StartTutorBut" onClick="tutorThem(1)">Start Tutorial</p>
 							</div>
 						</td>
@@ -1401,6 +1404,12 @@ function devWaves(){
 function tutorThem(SLIDE, TID){
 	if(SLIDE == 0){
 		removeObject(TID);
+		document.getElementById("TutrBut").style.visibility = "visible";
+		document.getElementById("WaveBut").style.visibility = "visible";
+		document.getElementById("HealBut").style.visibility = "visible";
+		document.getElementById("KnbkBut").style.visibility = "visible";
+		document.getElementById("DamgBut").style.visibility = "visible";
+		document.getElementById("DeveActs").style.visibility = "visible";
 	}
 	if(SLIDE == 1){
 		TIDA = getRandomInt(2345, 436275);
@@ -1415,6 +1424,13 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">Click next to learn to play.</span></br></br>';
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		document.getElementById("TutrBut").style.visibility = "hidden";
+		document.getElementById("WaveBut").style.visibility = "hidden";
+		document.getElementById("HealBut").style.visibility = "hidden";
+		document.getElementById("KnbkBut").style.visibility = "hidden";
+		document.getElementById("DamgBut").style.visibility = "hidden";
+		document.getElementById("DeveActs").style.visibility = "hidden";
 		
 		console.log(M);
 		M.style.height = 215;
@@ -1464,6 +1480,10 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
 		
+		document.getElementById("HealBut").style.visibility = "visible";
+		document.getElementById("KnbkBut").style.visibility = "visible";
+		document.getElementById("DamgBut").style.visibility = "visible";
+		
 		console.log(M);
 		M.style.height = 400;
 		M.style.width = 400;
@@ -1488,11 +1508,13 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#418A11;">Finish</span></button>');
 		
-		console.log(M);
+		document.getElementById("WaveBut").style.visibility = "visible";
+		
+		<!-- console.log(M);
 		M.style.height = 470;
 		M.style.width = 400;
 		M.style.top = 60;
-		M.style.left = 550;
+		M.style.left = 520;
 	}
 	return;
 }
@@ -2296,7 +2318,7 @@ function swapLane(MonID, MonBid, MonBBid, MonBFid, MonIdid){
 	ELEMBB = document.getElementById(MonBBid);
 	ELEMBF = document.getElementById(MonBFid);
 	currTop = getPOS(ELEM.style.top);
-	console.log(currTop);
+	<!-- console.log(currTop);
 	UpDown = getRandomInt(1, 2);
 	if(currTop == 11){
 		UpDown = 2;
@@ -2524,7 +2546,7 @@ function removeObject(OID){
 	var rndElem = document.getElementById(OID);
 	if(typeof(rndElem) != 'undefined' && rndElem != null){
 		rndElem.parentNode.removeChild(rndElem);
-		console.log("Removed", rndElem);
+		<!-- console.log("Removed", rndElem);
 	}
 	return;
 }
