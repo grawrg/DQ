@@ -1,0 +1,2349 @@
+<html>
+	<head>
+		<title>DQU2</title>
+		<style>
+.TcLtSalmon{background-color: #FFA07A; color: black;}
+.TcSalmon{background-color: #FA8072; color: black;}
+.TcDkSalmon{background-color: #E9967A; color: black;}
+.TcLtCoral{background-color: #F08080; color: black;}
+.TcIndianRed{background-color: #CD5C5C; color: black;}
+.TcCrimson{background-color: #DC143C; color: white;}
+.TcFirebrick{background-color: #B22222; color: white;}
+.TcRed{background-color: #FF0000; color: white;}
+.TcDkRed{background-color: #8B0000; color: white;}
+.TcCoral{background-color: #FF7F50; color: black;}
+.TcTomato{background-color: #FF6347; color: black;}
+.TcOrangeRed{background-color: #FF4500; color: white;}
+.TcGold{background-color: #FFD700; color: black;}
+.TcOrange{background-color: #FFA500; color: black;}
+.TcDkOrange{background-color: #FF8C00; color: white;}
+.TcLtYellow{background-color: #FFFFE0; color: black;}
+.TcLemonChiffon{background-color: #FFFACD; color: black;}
+.TcLtGold{background-color: #FAFAD2; color: black;}
+.TcPapayaWhip{background-color: #FFEFD5; color: black;}
+.TcMoccasin{background-color: #FFE4B5; color: black;}
+.TcPeachPuff{background-color: #FFDAB9; color: black;}
+.TcPaleGolden{background-color: #EEE8AA; color: black;}
+.TcKhaki{background-color: #F0E68C; color: black;}
+.TcDkKhaki{background-color: #BDB76B; color: black;}
+.TcYellow{background-color: #FFFF00; color: black;}
+.TcLawnGreen{background-color: #7CFC00; color: black;}
+.TcChartreuse{background-color: #7FFF00; color: black;}
+.TcLimeGreen{background-color: #32CD32; color: black;}
+.TcLime{background-color: #00FF00; color: black;}
+.TcForestGreen{background-color: #228B22; color: white;}
+.TcGreen{background-color: #008000; color: white;}
+.TcDkGreen{background-color: #006400; color: white;}
+.TcGreenYellow{background-color: #ADFF2F; color: black;}
+.TcYellowGreen{background-color: #9ACD32; color: black;}
+.TcSpringGreen{background-color: #00FF7F; color: black;}
+.TcMedSpringGreen{background-color: #00FA9A; color: black;}
+.TcLtGreen{background-color: #90EE90; color: black;}
+.TcPaleGreen{background-color: #98FB98; color: black;}
+.TcDkSeaGreen{background-color: #8FBC8F; color: black;}
+.TcMedSeaGreen{background-color: #3CB371; color: black;}
+.TcSeaGreen{background-color: #2E8B57; color: white;}
+.TcOlive{background-color: #808000; color: white;}
+.TcDkOlive{background-color: #556B2F; color: white;}
+.TcOliveDrab{background-color: #6B8E23; color: white;}
+.TcPowderBlue{background-color: #B0E0E6; color: black;}
+.TcLtBlue{background-color: #ADD8E6; color: black;}
+.TcLtSkyBlue{background-color: #87CEFA; color: black;}
+.TcSkyBlue{background-color: #87CEEB; color: black;}
+.TcDeepSkyBlue{background-color: #00BFFF; color: white;}
+.TcLtSteelBlue{background-color: #B0C4DE; color: black;}
+.TcDodgerBlue{background-color: #1E90FF; color: white;}
+.TcCornFlowerBlue{background-color: #6495ED; color: white;}
+.TcSteelBlue{background-color: #4682B4; color: white;}
+.TcRoyalBlue{background-color: #4169E1; color: white;}
+.TcBlue{background-color: #0000FF; color: white;}
+.TcMedBlue{background-color: #0000CD; color: white;}
+.TcDkBlue{background-color: #00008B; color: white;}
+.TcNavy{background-color: #000080; color: white;}
+.TcMidnightBlue{background-color: #191970; color: white;}
+.TcMedSlateBlue{background-color: #7B68EE; color: white;}
+.TcSlateBlue{background-color: #6A5ACD; color: white;}
+.TcDkSlateBlue{background-color: #483D8B; color: white;}
+.TcLavender{background-color: #E6E6FA; color: black;}
+.TcThistle{background-color: #D8BFD8; color: black;}
+.TcPlum{background-color: #DDA0DD; color: black;}
+.TcViolet{background-color: #EE82EE; color: black;}
+.TcOrchid{background-color: #DA70D6; color: black;}
+.TcFuschia{background-color: #FF00FF; color: white;}
+.TcMagenta{background-color: #FF00FF; color: white;}
+.TcMedOrchid{background-color: #BA55D3; color: white;}
+.TcMedPurple{background-color: #9370DB; color: white;}
+.TcBlueViolet{background-color: #8A2BE2; color: white;}
+.TcDkViolet{background-color: #9400D3; color: white;}
+.TcDkOrchid{background-color: #9932CC; color: white;}
+.TcDkMagenta{background-color: #8B008B; color: white;}
+.TcPurple{background-color: #800080; color: white;}
+.TcIndigo{background-color: #4B0082; color: white;}
+.TcGainsboro{background-color: #DCDCDC; color: black;}
+.TcLtGray{background-color: #D3D3D3; color: black;}
+.TcSilver{background-color: #C0C0C0; color: black;}
+.TcDkGray{background-color: #A9A9A9; color: black;}
+.TcGray{background-color: #808080; color: white;}
+.TcDimGray{background-color: #696969; color: white;}
+.TcLtSlateGray{background-color: #778899; color: white;}
+.TcSlateGray{background-color: #708090; color: white;}
+.TcDkSlateGray{background-color: #2F4F4F; color: white;}
+.TcBlack{background-color: #000000; color: white;}
+.TcCornsilk{background-color: #FFF8DC; color: black;}
+.TcBlanchedAlmond{background-color: #FFEBCD; color: black;}
+.TcBisqu{background-color: #FFE4C4; color: black;}
+.TcNavajoWhite{background-color: #FFDEAD; color: black;}
+.TcWheat{background-color: #F5DEB3; color: black;}
+.TcBurlyWood{background-color: #DEB887; color: black;}
+.TcTan{background-color: #D2B48C; color: black;}
+.TcRosyBrown{background-color: #BC8F8F; color: black;}
+.TcSandyBrown{background-color: #F4A460; color: black;}
+.TcGoldenRod{background-color: #DAA520; color: black;}
+.TcPeru{background-color: #CD853F; color: black;}
+.TcChocolate{background-color: #D2691E; color: white;}
+.TcSaddleBrown{background-color: #8B4513; color: white;}
+.TcSienna{background-color: #A0522D; color: white;}
+.TcBrown{background-color: #A52A2A; color: white;}
+.TcMaroon{background-color: #800000; color: white;}
+.TredL{background-color: #E22424; color: white;}
+.TredM{background-color: #BE2222; color: white;}
+.TredD{background-color: #A52121; color: white;}
+.TgreenL{background-color: #68BB3B; color: white;}
+.TgreenD{background-color: #2B9F00; color: white;}
+.TbrownL{background-color: #92633F; color: white;}
+.TbrownM{background-color: #865937; color: white;}
+.TbrownD{background-color: #6E4A2E; color: white;}
+.TbrownDD{background-color: #692E00; color: white;}
+.TyellowL{background-color: #FFF531; color: black;}
+.TyellowM{background-color: #D7AE2C; color: black;}
+.TyellowD{background-color: #D59C00; color: black;}
+.TpeachL{background-color: #F1C27D; color: black;}
+.TpeachM{background-color: #E0AC69; color: black;}
+.TpeachD{background-color: #FFA550; color: white;}
+.TdarkgreyD{background-color: #3D3D3D; color: white;}
+.TdarkgreyL{background-color: #656565; color: white; }
+.TgreyD{background-color: #AAAAAA; color: black;}
+.TgreyM{background-color: #C1C1C1; color: black;}
+.TgreyL{background-color: #D5D5D5; color: black;}
+.Tblack{background-color: black; color: white;}
+.Tnavy{background-color: Navy; color: white;}
+.Twhite{background-color: transparent; color: black;}
+.TcTruWhite{ background-color: White;color: black;}
+td{
+	width: 3px;
+	height: 3px;
+	border-style:none;
+}
+.tableTop{
+	border-style:none;
+	border: 0px;
+	display: inline-block;
+	padding: 0px;
+	margin: 0px;
+}
+body{
+	background-color: black;
+}
+.VerBox{
+	font-size: 9px;
+	position: absolute;
+	color: white;
+	top: 715px;
+	left 100px;
+	padding: 1px;
+}
+.testBorderR{
+	border: 1px solid red;
+}
+.testBorderRR{
+	border: 2px solid red;
+}
+.testBorderG{
+	border: 1px solid green;
+}
+.testBorderB{
+	border: 1px solid blue;
+}
+.testBorderD{
+	border: 1px solid gold;
+}
+.ZoneZone{
+	position: absolute;
+	height: 724px;
+	top: 0px;
+	left: 0px;
+}
+.PlayZone{
+	border: 3px solid #727F78;
+	border-radius: 6px 6px 0px 6px;
+	position: absolute;
+	width: 1050px;
+	height: 490px;
+	top: 8px;
+	left: 7px;
+	z-index: 0;
+}
+.MonsLineZone{
+	width: 1048px;
+	height: 96px;
+}
+.RoundLineZone{
+	margin-top: 36px;
+	margin-left: 1px;
+	margin-right: 1px;
+	width: 1045px;
+	height: 12px;
+}
+.StatZone{
+	background-color: #30458E;
+	border: 2px solid #727F78;
+	border-radius: 6px 6px 6px 0px;
+	position: absolute;
+	width: 105px;
+	height: 699px;
+	top: 8px;
+	left: 1067px;
+}
+.StatItem{
+	color: black;
+	border: 1px solid #727F78;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+	background-color: #30458E;
+	text-align: center;
+	margin-top: 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-top: 3px;
+}
+.StatHealthItem{
+	color: black;
+	border: 1px solid #727F78;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #D0E6DA, #930000);
+	background-color: #30458E;
+	text-align: center;
+	margin-top: 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-top: 3px;
+	
+}
+.StatAttackItem{
+	color: black;
+	border: 1px solid #727F78;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #D0E6DA, #096370);
+	background-color: #30458E;
+	text-align: center;
+	margin-top: 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-top: 3px;
+	
+}
+.StatCoinItem{
+	color: black;
+	border: 1px solid #727F78;
+	border-radius: 6px;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #D0E6DA, #703509);
+	background-color: #30458E;
+	text-align: center;
+	margin-top: 6px;
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-top: 3px;
+	
+}
+.statNum{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	font-size: 20px;
+	color: gold;
+	padding: 0px;
+	margin-left: 1px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	margin-right: 2px;
+}
+.ActnZone{
+	border: 2px solid #727F78;
+	background-color: #30458E;
+	border-width: 2 0 2 2;
+	border-radius: 6px 0px 0px 6px;
+	position: absolute;
+	width: 1059px;
+	height: 199px;
+	top: 508px;
+	left: 8px;
+}
+.DeveActs{
+	background: linear-gradient(-180deg, #81A29D, #0A9E84);
+	border-radius: 15px;
+	color: white;
+	font-size: 19px;
+	text-align: center;
+	position: absolute;
+	padding: 2px;
+	width: 170px;
+	height: 32px;
+	left: 2px;
+	top: 159px;
+}
+.DeveActs:Hover{
+	background: linear-gradient(-180deg, #0A9E84, #81A29D);
+	color: white;
+	font-size: 19px;
+	text-align: center;
+	position: absolute;
+	padding: 2px;
+	width: 170px;
+	height: 32px;
+	left: 2px;
+	top: 159px;
+}
+.DeveButs{
+	color: white;
+	background-color: black;
+	font-size: 19px;
+	text-align: center;
+	position: relative;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 1px;
+	width: 159px;
+}
+.DeveButs:Hover{
+	background-color: #464646;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 1px;
+	cursor: pointer;
+}
+.CharZone{
+	position: absolute;
+	height: 96px;
+	width: 72px;
+	top: 12px;
+	left: 12px;
+}
+.FireZone{
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	top: 12px;
+	left: 12px;
+}
+.ItemSetZone{
+	position: absolute;
+	height: 96px;
+	width: 72px;
+}
+.ItemZone{
+	border: 1px solid gold;
+	position: absolute;
+	height: 96px;
+	width: 72px;
+	left: 121px;
+}
+.MonsSpawnZone{
+	position: absolute;
+	height: 96px;
+	width: 72px;
+	top: 12px;
+	left: 12px;
+}
+.MonsZone{
+	position: absolute;
+	height: 96px;
+	width: 72px;
+	top: 12px;
+	left: 12px;
+}
+.LifeBar{
+	position: absolute;
+	background-color: red;
+}
+.LifeBarBack{
+	border: 1px solid grey;
+	position: absolute;
+	background-color: black;
+}
+.LifeBarFront{
+	font-family: Andale Mono, monospace;
+	text-align: center;
+	font-size: 9;
+	font-weight: bold;
+	color: gold;
+	border: 1px solid grey;
+	position: absolute;
+	background-color: none;
+}
+.ErrorPop{
+	text-shadow: -1px 1px 0 #000, 
+				 1px 1px 0 #000, 
+				 1px -1px 0 #000; 
+				 -1px -1px 0 #000;
+	padding-top: 40px;
+	font-family: Andale Mono, monospace;
+	text-align: center;
+	font-size: 28;
+	font-weight: bold;
+	color: #FAAB1D;
+	border-radius: 10px;
+	border: 3px solid grey;
+	position:absolute;
+	z-index: 1000;
+	width: 325px;
+	height: 150px;
+	background: linear-gradient(-45deg, #6F818D, #7F94A3, #87A0B2, #828D94);
+}
+.ErrorText{
+	text-shadow: 0px 0px 0 #000, 
+				 0px 0px 0 #000, 
+				 0px 0px 0 #000; 
+				 0px 0px 0 #000;
+	color: #B70B0B;
+	font-size: 20;
+}
+.ButsSpacer{
+	width: 159px;
+}
+.PurchButs{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	color: #507CA5;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-45deg, #D4AF37, #CFB53B, #C5B358, #E6BE8A);
+	font-size: 19px;
+	text-align: center;
+	position: relative;
+	border: 2px solid #086F0B;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 1px;
+	width: 159px;
+	cursor: pointer;
+	
+}
+.PurchButs:hover{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+	color: #35B300;
+}
+.PurchButs:active{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+}
+.WaveBut{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	color: #507CA5;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #B8D4C8, #B8BFD4);
+	border: 2px solid #505050;
+	border-radius: 5px;
+	font-size: 22px;
+	text-align: center;
+	position: relative;
+	width: 110px;
+	cursor: pointer;
+}
+.WaveBut:hover{
+	color: #35B300;
+	font-weight: bold;		 
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+}
+.WaveBut:hover .WaveNum{
+	color: #35B300;
+}
+.WaveNum{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	font-size: 20px;
+	color: gold;
+	padding: 0px;
+	margin-left: 1px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	margin-right: 2px;
+}
+.WaveBut:active{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+}
+.WaveButDisabled{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	color: #9C9C9C;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-180deg, #B8D4C8, #B8BFD4);
+	border: 2px solid #505050;
+	border-radius: 5px;
+	font-size: 22px;
+	text-align: center;
+	position: relative;
+	width: 110px;
+	cursor: wait;
+}
+.WaveNumDisabled{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	font-size: 20px;
+	color: 9C9C9C;
+	padding: 0px;
+	margin-left: 1px;
+	margin-top: 5px;
+	margin-bottom: 8px;
+	margin-right: 2px;
+}
+.DevKeyIn{
+	background: linear-gradient(-180deg, #81A29D, #0A9E84);
+	border: 1px solid green;
+	border-radius: 3px;
+	text-align:center;
+	font-size: 9px;
+	width: 35px;
+}
+.TutorPop{
+	text-shadow: -1px 1px 0 #000, 
+				 1px 1px 0 #000, 
+				 1px -1px 0 #000; 
+				 -1px -1px 0 #000;
+	padding-top: 20px;
+	font-family: Andale Mono, monospace;
+	text-align: center;
+	font-weight: bold;
+	color: #FAAB1D;
+	border-radius: 10px;
+	border: 3px solid grey;
+	position:absolute;
+	z-index: 1000;
+	width: 325px;
+	height: 150px;
+	background: linear-gradient(-45deg, #6F818D, #7F94A3, #87A0B2, #828D94);
+}
+.TutorPageTitle{
+	font-size: 38px;
+	color: #FAAB1D;
+}
+.TutorTextTitle{
+	text-shadow: -1px 1px 0 #FAAB1D, 
+				 1px 1px 0 #FAAB1D, 
+				 1px -1px 0 #FAAB1D; 
+				 -1px -1px 0 #FAAB1D;
+	font-size: 28px;
+	color: #418A11;
+}
+.TutorText{
+	text-shadow: 0px 0px 0 #000, 
+				 0px 0px 0 #000, 
+				 0px 0px 0 #000; 
+				 0px 0px 0 #000;
+	color: #1C58C0;
+	font-size: 22px;
+}
+.TutorBut{
+	text-shadow: 1px 1px 0 #000;
+	background: linear-gradient(-180deg, #B8D4C8, #B8BFD4);
+	font-family: Andale Mono, monospace;
+	border: 2px inset #505050;
+	border-radius: 5px;
+	font-size: 15px;
+	margin-right: 9px;
+	width: 65px;
+	cursor: pointer;
+}
+.TutorBut:Hover{
+	text-shadow: -1px -1px 0 #000;
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+}
+.TutorBut:Active{
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+}
+.StartTutorBut{
+	background: linear-gradient(-180deg, #B8D4C8, #B8BFD4);
+	border: 2px inset #505050;
+	font-family: Andale Mono, monospace;
+	border-radius: 5px;
+	width: 159px;
+	margin: 3px;
+	padding: 1px;
+	cursor: pointer;
+}
+.StartTutorBut:Hover{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+}
+.StartTutorBut:Active{
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+}
+.ActTable{
+
+}
+.ActTr{
+	text-align: center;
+	width: 200px;
+	height: 50px;
+}
+.ActTd{
+	text-align: center;
+	width: 200px;
+	height: 50px;
+
+}
+		</style>
+	</head>
+	<body id="body" onKeyPress="onKeyChange()">
+		<div id="VerBox" class="VerBox">Ver. 1.20.3.17 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
+		<div id="ZoneZone" class="ZoneZone">
+			<div id="MonsSpawnZoneA" class="MonsSpawnZone"></div>
+			<div id="MonsSpawnZoneB" class="MonsSpawnZone"></div>
+			<div id="MonsSpawnZoneC" class="MonsSpawnZone"></div>
+			<div id="MonsSpawnZoneD" class="MonsSpawnZone"></div>
+			<div id="MonsSpawnZoneE" class="MonsSpawnZone"></div>
+			<div id="MonsZone1" class="MonsZone testBorderD"></div>
+			<div id="MonsZone2" class="MonsZone testBorderD"></div>
+			<div id="MonsZone3" class="MonsZone testBorderD"></div>
+			<div id="MonsZone4" class="MonsZone testBorderD"></div>
+			<div id="MonsZone5" class="MonsZone testBorderD"></div>
+			<div id="MonsZone6" class="MonsZone testBorderD"></div>
+			<div id="MonsZone7" class="MonsZone testBorderD"></div>
+			<div id="MonsZone8" class="MonsZone testBorderD"></div>
+			<div id="MonsZone9" class="MonsZone testBorderD"></div>
+			<div id="MonsZone10" class="MonsZone testBorderD"></div>
+			<div id="MonsZone11" class="MonsZone testBorderD"></div>
+			<div id="MonsZone12" class="MonsZone testBorderD"></div>
+			<div id="MonsZone13" class="MonsZone testBorderD"></div>
+			<div id="MonsZone14" class="MonsZone testBorderD"></div>
+			<div id="MonsZone15" class="MonsZone testBorderD"></div>
+			<div id="MonsZone16" class="MonsZone testBorderD"></div>
+			<div id="MonsZone17" class="MonsZone testBorderD"></div>
+			<div id="MonsZone18" class="MonsZone testBorderD"></div>
+			<div id="MonsZone19" class="MonsZone testBorderD"></div>
+			<div id="MonsZone20" class="MonsZone testBorderD"></div>
+			<div id="MonsZone21" class="MonsZone testBorderD"></div>
+			<div id="MonsZone22" class="MonsZone testBorderD"></div>
+			<div id="MonsZone23" class="MonsZone testBorderD"></div>
+			<div id="MonsZone24" class="MonsZone testBorderD"></div>
+			<div id="MonsZone25" class="MonsZone testBorderD"></div>
+			<div id="MonsZone26" class="MonsZone testBorderD"></div>
+			<div id="MonsZone27" class="MonsZone testBorderD"></div>
+			<div id="MonsZone28" class="MonsZone testBorderD"></div>
+			<div id="MonsZone29" class="MonsZone testBorderD"></div>
+			<div id="MonsZone30" class="MonsZone testBorderD"></div>
+			<div id="MonsZone31" class="MonsZone testBorderD"></div>
+			<div id="MonsZone32" class="MonsZone testBorderD"></div>
+			<div id="MonsZone33" class="MonsZone testBorderD"></div>
+			<div id="MonsZone34" class="MonsZone testBorderD"></div>
+			<div id="MonsZone35" class="MonsZone testBorderD"></div>
+			<div id="MonsZone36" class="MonsZone testBorderD"></div>
+			<div id="MonsZone37" class="MonsZone testBorderD"></div>
+			<div id="MonsZone38" class="MonsZone testBorderD"></div>
+			<div id="MonsZone39" class="MonsZone testBorderD"></div>
+			<div id="MonsZone40" class="MonsZone testBorderD"></div>
+			<div id="MonsZone41" class="MonsZone testBorderD"></div>
+			<div id="MonsZone42" class="MonsZone testBorderD"></div>
+			<div id="MonsZone43" class="MonsZone testBorderD"></div>
+			<div id="MonsZone44" class="MonsZone testBorderD"></div>
+			<div id="MonsZone45" class="MonsZone testBorderD"></div>
+			<div id="MonsZone46" class="MonsZone testBorderD"></div>
+			<div id="MonsZone47" class="MonsZone testBorderD"></div>
+			<div id="MonsZone48" class="MonsZone testBorderD"></div>
+			<div id="MonsZone49" class="MonsZone testBorderD"></div>
+			<div id="MonsZone50" class="MonsZone testBorderD"></div>
+			<div id="LifeBarBack1" class="LifeBarBack"></div>
+			<div id="LifeBar1" class="LifeBar"></div>
+			<div id="LifeBarFront1" class="LifeBarFront"></div>
+			<div id="LifeBarBack2" class="LifeBarBack"></div>
+			<div id="LifeBar2" class="LifeBar"></div>
+			<div id="LifeBarFront2" class="LifeBarFront"></div>
+			<div id="LifeBarBack3" class="LifeBarBack"></div>
+			<div id="LifeBar3" class="LifeBar"></div>
+			<div id="LifeBarFront3" class="LifeBarFront"></div>
+			<div id="LifeBarBack4" class="LifeBarBack"></div>
+			<div id="LifeBar4" class="LifeBar"></div>
+			<div id="LifeBarFront4" class="LifeBarFront"></div>
+			<div id="LifeBarBack5" class="LifeBarBack"></div>
+			<div id="LifeBar5" class="LifeBar"></div>
+			<div id="LifeBarFront5" class="LifeBarFront"></div>
+			<div id="LifeBarBack6" class="LifeBarBack"></div>
+			<div id="LifeBar6" class="LifeBar"></div>
+			<div id="LifeBarFront6" class="LifeBarFront"></div>
+			<div id="LifeBarBack7" class="LifeBarBack"></div>
+			<div id="LifeBar7" class="LifeBar"></div>
+			<div id="LifeBarFront7" class="LifeBarFront"></div>
+			<div id="LifeBarBack8" class="LifeBarBack"></div>
+			<div id="LifeBar8" class="LifeBar"></div>
+			<div id="LifeBarFront8" class="LifeBarFront"></div>
+			<div id="LifeBarBack9" class="LifeBarBack"></div>
+			<div id="LifeBar9" class="LifeBar"></div>
+			<div id="LifeBarFront9" class="LifeBarFront"></div>
+			<div id="LifeBarBack10" class="LifeBarBack"></div>
+			<div id="LifeBar10" class="LifeBar"></div>
+			<div id="LifeBarFront10" class="LifeBarFront"></div>
+			<div id="LifeBarBack11" class="LifeBarBack"></div>
+			<div id="LifeBar11" class="LifeBar"></div>
+			<div id="LifeBarFront11" class="LifeBarFront"></div>
+			<div id="LifeBarBack12" class="LifeBarBack"></div>
+			<div id="LifeBar12" class="LifeBar"></div>
+			<div id="LifeBarFront12" class="LifeBarFront"></div>
+			<div id="LifeBarBack13" class="LifeBarBack"></div>
+			<div id="LifeBar13" class="LifeBar"></div>
+			<div id="LifeBarFront13" class="LifeBarFront"></div>
+			<div id="LifeBarBack14" class="LifeBarBack"></div>
+			<div id="LifeBar14" class="LifeBar"></div>
+			<div id="LifeBarFront14" class="LifeBarFront"></div>
+			<div id="LifeBarBack15" class="LifeBarBack"></div>
+			<div id="LifeBar15" class="LifeBar"></div>
+			<div id="LifeBarFront15" class="LifeBarFront"></div>
+			<div id="LifeBarBack16" class="LifeBarBack"></div>
+			<div id="LifeBar16" class="LifeBar"></div>
+			<div id="LifeBarFront16" class="LifeBarFront"></div>
+			<div id="LifeBarBack17" class="LifeBarBack"></div>
+			<div id="LifeBar17" class="LifeBar"></div>
+			<div id="LifeBarFront17" class="LifeBarFront"></div>
+			<div id="LifeBarBack18" class="LifeBarBack"></div>
+			<div id="LifeBar18" class="LifeBar"></div>
+			<div id="LifeBarFront18" class="LifeBarFront"></div>
+			<div id="LifeBarBack19" class="LifeBarBack"></div>
+			<div id="LifeBar19" class="LifeBar"></div>
+			<div id="LifeBarFront19" class="LifeBarFront"></div>
+			<div id="LifeBarBack20" class="LifeBarBack"></div>
+			<div id="LifeBar20" class="LifeBar"></div>
+			<div id="LifeBarFront20" class="LifeBarFront"></div>
+			<div id="LifeBarBack21" class="LifeBarBack"></div>
+			<div id="LifeBar21" class="LifeBar"></div>
+			<div id="LifeBarFront21" class="LifeBarFront"></div>
+			<div id="LifeBarBack22" class="LifeBarBack"></div>
+			<div id="LifeBar22" class="LifeBar"></div>
+			<div id="LifeBarFront22" class="LifeBarFront"></div>
+			<div id="LifeBarBack23" class="LifeBarBack"></div>
+			<div id="LifeBar23" class="LifeBar"></div>
+			<div id="LifeBarFront23" class="LifeBarFront"></div>
+			<div id="LifeBarBack24" class="LifeBarBack"></div>
+			<div id="LifeBar24" class="LifeBar"></div>
+			<div id="LifeBarFront24" class="LifeBarFront"></div>
+			<div id="LifeBarBack25" class="LifeBarBack"></div>
+			<div id="LifeBar25" class="LifeBar"></div>
+			<div id="LifeBarFront25" class="LifeBarFront"></div>
+			<div id="LifeBarBack26" class="LifeBarBack"></div>
+			<div id="LifeBar26" class="LifeBar"></div>
+			<div id="LifeBarFront26" class="LifeBarFront"></div>
+			<div id="LifeBarBack27" class="LifeBarBack"></div>
+			<div id="LifeBar27" class="LifeBar"></div>
+			<div id="LifeBarFront27" class="LifeBarFront"></div>
+			<div id="LifeBarBack28" class="LifeBarBack"></div>
+			<div id="LifeBar28" class="LifeBar"></div>
+			<div id="LifeBarFront28" class="LifeBarFront"></div>
+			<div id="LifeBarBack29" class="LifeBarBack"></div>
+			<div id="LifeBar29" class="LifeBar"></div>
+			<div id="LifeBarFront29" class="LifeBarFront"></div>
+			<div id="LifeBarBack30" class="LifeBarBack"></div>
+			<div id="LifeBar30" class="LifeBar"></div>
+			<div id="LifeBarFront30" class="LifeBarFront"></div>
+			<div id="LifeBarBack31" class="LifeBarBack"></div>
+			<div id="LifeBar31" class="LifeBar"></div>
+			<div id="LifeBarFront31" class="LifeBarFront"></div>
+			<div id="LifeBarBack32" class="LifeBarBack"></div>
+			<div id="LifeBar32" class="LifeBar"></div>
+			<div id="LifeBarFront32" class="LifeBarFront"></div>
+			<div id="LifeBarBack33" class="LifeBarBack"></div>
+			<div id="LifeBar33" class="LifeBar"></div>
+			<div id="LifeBarFront33" class="LifeBarFront"></div>
+			<div id="LifeBarBack34" class="LifeBarBack"></div>
+			<div id="LifeBar34" class="LifeBar"></div>
+			<div id="LifeBarFront34" class="LifeBarFront"></div>
+			<div id="LifeBarBack35" class="LifeBarBack"></div>
+			<div id="LifeBar35" class="LifeBar"></div>
+			<div id="LifeBarFront35" class="LifeBarFront"></div>
+			<div id="LifeBarBack36" class="LifeBarBack"></div>
+			<div id="LifeBar36" class="LifeBar"></div>
+			<div id="LifeBarFront36" class="LifeBarFront"></div>
+			<div id="LifeBarBack37" class="LifeBarBack"></div>
+			<div id="LifeBar37" class="LifeBar"></div>
+			<div id="LifeBarFront37" class="LifeBarFront"></div>
+			<div id="LifeBarBack38" class="LifeBarBack"></div>
+			<div id="LifeBar38" class="LifeBar"></div>
+			<div id="LifeBarFront38" class="LifeBarFront"></div>
+			<div id="LifeBarBack39" class="LifeBarBack"></div>
+			<div id="LifeBar39" class="LifeBar"></div>
+			<div id="LifeBarFront39" class="LifeBarFront"></div>
+			<div id="LifeBarBack40" class="LifeBarBack"></div>
+			<div id="LifeBar40" class="LifeBar"></div>
+			<div id="LifeBarFront40" class="LifeBarFront"></div>
+			<div id="LifeBarBack41" class="LifeBarBack"></div>
+			<div id="LifeBar41" class="LifeBar"></div>
+			<div id="LifeBarFront41" class="LifeBarFront"></div>
+			<div id="LifeBarBack42" class="LifeBarBack"></div>
+			<div id="LifeBar42" class="LifeBar"></div>
+			<div id="LifeBarFront42" class="LifeBarFront"></div>
+			<div id="LifeBarBack43" class="LifeBarBack"></div>
+			<div id="LifeBar43" class="LifeBar"></div>
+			<div id="LifeBarFront43" class="LifeBarFront"></div>
+			<div id="LifeBarBack44" class="LifeBarBack"></div>
+			<div id="LifeBar44" class="LifeBar"></div>
+			<div id="LifeBarFront44" class="LifeBarFront"></div>
+			<div id="LifeBarBack45" class="LifeBarBack"></div>
+			<div id="LifeBar45" class="LifeBar"></div>
+			<div id="LifeBarFront45" class="LifeBarFront"></div>
+			<div id="LifeBarBack46" class="LifeBarBack"></div>
+			<div id="LifeBar46" class="LifeBar"></div>
+			<div id="LifeBarFront46" class="LifeBarFront"></div>
+			<div id="LifeBarBack47" class="LifeBarBack"></div>
+			<div id="LifeBar47" class="LifeBar"></div>
+			<div id="LifeBarFront47" class="LifeBarFront"></div>
+			<div id="LifeBarBack48" class="LifeBarBack"></div>
+			<div id="LifeBar48" class="LifeBar"></div>
+			<div id="LifeBarFront48" class="LifeBarFront"></div>
+			<div id="LifeBarBack49" class="LifeBarBack"></div>
+			<div id="LifeBar49" class="LifeBar"></div>
+			<div id="LifeBarFront49" class="LifeBarFront"></div>
+			<div id="LifeBarBack50" class="LifeBarBack"></div>
+			<div id="LifeBar50" class="LifeBar"></div>
+			<div id="LifeBarFront50" class="LifeBarFront"></div>
+			<div id="PlayZone" class="PlayZone">
+				<div id="ItemZoneA1" class="ItemZone"></div>
+				<div id="ItemZoneA2" class="ItemZone"></div>
+				<div id="ItemZoneA3" class="ItemZone"></div>
+				<div id="ItemZoneA4" class="ItemZone"></div>
+				<div id="ItemZoneA5" class="ItemZone"></div>
+				<div id="ItemZoneB1" class="ItemZone"></div>
+				<div id="ItemZoneB2" class="ItemZone"></div>
+				<div id="ItemZoneB3" class="ItemZone"></div>
+				<div id="ItemZoneB4" class="ItemZone"></div>
+				<div id="ItemZoneB5" class="ItemZone"></div>
+				<div id="ItemZoneC1" class="ItemZone"></div>
+				<div id="ItemZoneC2" class="ItemZone"></div>
+				<div id="ItemZoneC3" class="ItemZone"></div>
+				<div id="ItemZoneC4" class="ItemZone"></div>
+				<div id="ItemZoneC5" class="ItemZone"></div>
+				<div id="ItemZoneD1" class="ItemZone"></div>
+				<div id="ItemZoneD2" class="ItemZone"></div>
+				<div id="ItemZoneD3" class="ItemZone"></div>
+				<div id="ItemZoneD4" class="ItemZone"></div>
+				<div id="ItemZoneD5" class="ItemZone"></div>
+				<div id="ItemZoneE1" class="ItemZone"></div>
+				<div id="ItemZoneE2" class="ItemZone"></div>
+				<div id="ItemZoneE3" class="ItemZone"></div>
+				<div id="ItemZoneE4" class="ItemZone"></div>
+				<div id="ItemZoneE5" class="ItemZone"></div>
+				<div id="ItemZoneF1" class="ItemZone"></div>
+				<div id="ItemZoneF2" class="ItemZone"></div>
+				<div id="ItemZoneF3" class="ItemZone"></div>
+				<div id="ItemZoneF4" class="ItemZone"></div>
+				<div id="ItemZoneF5" class="ItemZone"></div>
+				<div id="ItemZoneG1" class="ItemZone"></div>
+				<div id="ItemZoneG2" class="ItemZone"></div>
+				<div id="ItemZoneG3" class="ItemZone"></div>
+				<div id="ItemZoneG4" class="ItemZone"></div>
+				<div id="ItemZoneG5" class="ItemZone"></div>
+				<div id="ItemZoneH1" class="ItemZone"></div>
+				<div id="ItemZoneH2" class="ItemZone"></div>
+				<div id="ItemZoneH3" class="ItemZone"></div>
+				<div id="ItemZoneH4" class="ItemZone"></div>
+				<div id="ItemZoneH5" class="ItemZone"></div>
+				<div id="ItemZoneI1" class="ItemZone"></div>
+				<div id="ItemZoneI2" class="ItemZone"></div>
+				<div id="ItemZoneI3" class="ItemZone"></div>
+				<div id="ItemZoneI4" class="ItemZone"></div>
+				<div id="ItemZoneI5" class="ItemZone"></div>
+				<div id="ItemZoneJ1" class="ItemZone"></div>
+				<div id="ItemZoneJ2" class="ItemZone"></div>
+				<div id="ItemZoneJ3" class="ItemZone"></div>
+				<div id="ItemZoneJ4" class="ItemZone"></div>
+				<div id="ItemZoneJ5" class="ItemZone"></div>
+				<div id="ItemZoneK1" class="ItemZone"></div>
+				<div id="ItemZoneK2" class="ItemZone"></div>
+				<div id="ItemZoneK3" class="ItemZone"></div>
+				<div id="ItemZoneK4" class="ItemZone"></div>
+				<div id="ItemZoneK5" class="ItemZone"></div>
+				<div id="MonsLineZoneA" class="MonsLineZone">
+					<div id="RoundLineZoneA" class="RoundLineZone"></div>
+				</div>
+				<div id="MonsLineZoneB" class="MonsLineZone">
+					<div id="RoundLineZoneB" class="RoundLineZone"></div>
+				</div>
+				<div id="MonsLineZoneC" class="MonsLineZone">
+					<div id="RoundLineZoneC" class="RoundLineZone"></div>
+				</div>
+				<div id="MonsLineZoneD" class="MonsLineZone">
+					<div id="RoundLineZoneD" class="RoundLineZone"></div>
+				</div>
+				<div id="MonsLineZoneE" class="MonsLineZone">
+					<div id="RoundLineZoneE" class="RoundLineZone"></div>
+				</div>
+			</div>
+			<div id="CharZone" class="CharZone testBorderB"></div>
+			<div id="FireZone" class="FireZone testBorderB"></div>
+			<div id="ItemSetZone" class="ItemSetZone testBorderB"></div>
+			<div id="StatZone" class="StatZone testBorderR">
+				<div id ="StatItemA" class="StatCoinItem">
+					Desk Coins
+					<p id="CoinBox" class="statNum">0</p>
+				</div>
+				<div id ="StatItemF" class="StatAttackItem">
+					Damage
+					<p id="DamgBox" class="statNum">0</p>
+				</div>
+				<div id ="StatItemD" class="StatAttackItem">
+					Knockback
+					<p id="KnobBox" class="statNum">0</p>
+				</div>
+				
+				</br></br>
+				
+				<div id ="StatItemE" class="StatHealthItem">
+					Health
+					<p id="HealBox" class="statNum">0</p>
+				</div>
+				
+				</br></br></br></br></br></br></br></br></br></br></br>
+				
+				<div id ="StatItemB" class="StatItem">
+					Defeated
+					<p id="DefeBox" class="statNum">0</p>
+				</div>
+				<div id ="StatItemC" class="StatItem">
+					Shots Fired
+					<p id="ShotBox" class="statNum">0</p>
+				</div>
+				<div id ="StatItemG" class="StatItem">
+					Enemies Out
+					<p id="MoutBox" class="statNum">0</p>
+				</div>
+			</div>
+			<div id="ActnZone" class="ActnZone">
+				<table class="ActTable">
+					<tr class="ActTr">
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="PurchButs" onClick="purchaseUpgrade(1)">+1 Damage</br>-10 Coins</p>
+							</div>
+						</td>
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="PurchButs" onClick="purchaseUpgrade(2)">+1 Knockback</br>-10 Coins</p>
+							</div>
+						</td>
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="PurchButs" onClick="purchaseUpgrade(3)">+1 Health</br>-5 Coins</p>
+							</div>
+						</td>
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="ButsSpacer" onClick=""></p>
+							</div>
+						</td>
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="ButsSpacer" onClick=""></p>
+							</div>
+						</td>
+						<td class="ActTd">
+							<div id="WaveBut" class="">
+								<p class="WaveBut" onClick="startWave(1)">Start Wave</br><span class="waveNum"># 1</p>
+							</div>
+						</td>
+					</tr>
+					<tr class="ActTr">
+						<td class="ActTd">
+							<div id="" class="">
+								<p class="StartTutorBut" onClick="tutorThem(1)">Start Tutorial</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div id="DeveActs" class="DeveActs testBorderG">
+					<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+var monsLifeDat = [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+]
+var monsActive = [
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+]
+var saved_keydown = "";
+var currLane = 0;
+var isPlacingItem = 0;
+var placeCol = 1;
+var placeRow = 1;
+var roundsOut = 0;
+var monsOut = 0;
+var isDev = 0;
+var hitMod = 0;
+
+var devOnContent = '';
+devOnContent = devOnContent.concat('<table><tr><td>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderD" id="devModeBut" onClick="devMode()">Close Devlepoment</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="createItemTest()">Item Select</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 50, 1, 1)">Spawn Monster</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 30, 4)">SL/HP Monster</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devWaves()">Dev Waves</p>');
+devOnContent = devOnContent.concat('</td><td>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 1)">Monster Row 1</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 2)">Monster Row 2</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 3)">Monster Row 3</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 4)">Monster Row 4</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 5)">Monster Row 5</p>');
+devOnContent = devOnContent.concat('</td><td>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(1)">Dam + 1 / 10 DQ</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(2)">Knb + 1 / 10 DQ</p>');
+devOnContent = devOnContent.concat('</td><td>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(1)">Add 1 &nbspcoin</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(2)">Add 10 coin</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(3)">Add 100 coin</p>');
+devOnContent = devOnContent.concat('</td></tr></table>');
+var devOffContent = '<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>';
+
+loadGameZone();
+tutorThem(1, 0);
+function devMode(){
+	if(isDev == 0){
+		var KEY = document.getElementById("DevKeyIn").value;
+		if(KEY == "aspo"){
+			document.getElementById("DeveActs").style.height = 150;
+			document.getElementById("DeveActs").style.width	 = 720;
+			document.getElementById("DeveActs").style.top = 41;
+			document.getElementById("DeveActs").innerHTML = devOnContent;
+			isDev = 1;
+		} else {
+			errorPopup(4);
+		}
+	} else if(isDev == 1){
+		document.getElementById("DeveActs").style.height = 32;
+		document.getElementById("DeveActs").style.top = 159;
+		document.getElementById("DeveActs").style.width	 = 170;
+		document.getElementById("DeveActs").innerHTML = devOffContent;
+		isDev = 0;
+	}
+}
+function devActs(ACT){
+	if(ACT == 1){
+		statDeskCoins = statDeskCoins + 1;
+	}
+	if(ACT == 2){
+		statDeskCoins = statDeskCoins + 10;
+	}
+	if(ACT == 3){
+		statDeskCoins = statDeskCoins + 100;
+	}
+}
+function devWaves(){
+	setTimeout(function(){
+		cntDevWaves = cntDevWaves + 1;
+		lneDevWaves = getRandomInt(1, 5);
+		do{
+			lneDevWaves = getRandomInt(1, 5);
+		}while(lneDevWaves == dnpDevWaves);
+		lfeDevWaves = getRandomInt(1, 3);
+		dnpDevWaves = lneDevWaves;
+		spawnMonster(typDevWaves, dstDevWaves, spdDevWaves, lfeDevWaves, lneDevWaves);
+		dstDevWaves = dstDevWaves + 1;
+		if(dstDevWaves > 20){dstDevWaves = 12;}
+		spdDevWaves = spdDevWaves + 5;
+		if(spdDevWaves > 200){spdDevWaves = 150;}
+		<!-- console.log('Monster 1',cntDevWaves);
+		<!-- console.log('StepS :: ',dstDevWaves);
+		<!-- console.log('Speed :: ',spdDevWaves);
+		if(cntDevWaves >= 50){
+			cntDevWaves = 0;
+			lneDevWaves = 0;
+			spdDevWaves = 150;
+			dstDevWaves = 12;
+			typDevWaves = 0;
+		} else {
+			devWaves();
+		}
+	}, 750);
+}
+
+
+
+function tutorThem(SLIDE, TID){
+	if(SLIDE == 0){
+		removeObject(TID);
+	}
+	if(SLIDE == 1){
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">Click next to learn to play.</span></br></br>';
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		console.log(M);
+		M.style.height = 215;
+		M.style.width = 350;
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(SLIDE == 2){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Stats:</br></span><span class="TutorText">These are your stats</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Desk Coins -</span><span class="TutorText"></br>Used to purchase upgrades.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Damage -</span><span class="TutorText"></br>Damage you do to monsters.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Knockback -</span><span class="TutorText"></br>Knockback when monster is hit.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(3, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		console.log(M);
+		M.style.height = 400;
+		M.style.width = 400;
+		M.style.top = 10;
+		M.style.left = 650;
+	}
+	if(SLIDE == 3){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Upgrades:</br></span><span class="TutorText">Making youself stronger</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Damgage</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Knockback</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Health</span><span class="TutorText"></br>Spend 10 Coins for +1 Health</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		console.log(M);
+		M.style.height = 400;
+		M.style.width = 400;
+		M.style.top = 60;
+		M.style.left = 65;
+	}
+	if(SLIDE == 4){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Gameplay:</br></span><span class="TutorText">How to actually play</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>To move up a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#418A11;">Finish</span></button>');
+		
+		console.log(M);
+		M.style.height = 470;
+		M.style.width = 400;
+		M.style.top = 60;
+		M.style.left = 550;
+	}
+	return;
+}
+
+var cntDevWaves = 0;
+var lneDevWaves = 0;
+var spdDevWaves = 150;
+var dstDevWaves = 12;
+var lfeDevWaves = 0;
+var typDevWaves = 0;
+var dnpDevWaves = 0;
+
+var statHealth = 10;
+var statKnockback = 0;
+var statDamage = 1;
+var statSpawned = 0;
+var statDefeated = 0; 
+var statShots = 0;
+var statDeskCoins = 0;
+
+buildStats();
+
+var waveButItems = [ 
+'EMPTY-NA',
+'<p class="WaveBut" onClick="startWave(1)">Start Wave</br><span class="waveNum"># 1</p>',
+'<p class="WaveBut" onClick="startWave(2)">Start Wave</br><span class="waveNum"># 2</p>',
+'<p class="WaveBut" onClick="startWave(3)">Start Wave</br><span class="waveNum"># 3</p>',
+'<p class="WaveBut" onClick="startWave(4)">Start Wave</br><span class="waveNum"># 4</p>',
+'<p class="WaveBut" onClick="startWave(5)">Start Wave</br><span class="waveNum"># 5</p>',
+'<p class="WaveBut" onClick="startWave(6)">Start Wave</br><span class="waveNum"># 6</p>',
+'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>'
+]
+var waveButDisabledItems = [
+'EMPTY-NA',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 1</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 2</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 3</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 4</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 5</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 6</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>'
+]
+
+function startWave(WAVE){
+	if(WAVE == 1){
+		var SS = 800;
+		var MXLEN = 19;
+		var LEN = 0;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[1];
+	}
+	if(WAVE == 2){
+		var SS = 800;
+		var MXLEN = 24;
+		var LEN = 0;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[2];
+	}
+	if(WAVE == 3){
+		var SS = 800;
+		var MXLEN = 29;
+		var LEN = 0;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[3];
+	}
+	if(WAVE == 4){
+		var SS = 800;
+		var MXLEN = 34;
+		var LEN = 0;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[4];
+	}
+	if(WAVE == 5){
+		var SS = 800;
+		var MXLEN = 39;
+		var LEN = 0;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[5];
+	}
+	runWave(WAVE, SS, LEN, MXLEN);
+}
+function runWave(Wave, Ss, Len, MxLen){
+	Len = Len + 1;
+	var monType = 0;
+	var monDist = 0;
+	var monSped = 0;
+	var monHeal = 0;
+	var monLine = 0;
+	
+	if(Wave == 1){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(1, 2);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 2){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(4, 6);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 3){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(7, 12);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 4){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(13, 16);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 5){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(13, 16);
+		monLine = getRandomInt(1, 5);
+	}
+	
+	spawnMonster(monType, monDist, monSped, monHeal, monLine);
+	if(Len <= MxLen){
+		setTimeout(function(){runWave(Wave, Ss, Len, MxLen)}, Ss);
+	} else {
+		setTimeout(function(){resetMons(Wave);}, 1000);
+	}
+	return;
+}
+function resetMons(WV){
+	var IsDone = 0;
+	var IsCnt = 0;
+	do{
+		IsDone = IsDone + monsLifeDat[IsCnt];
+		IsCnt = IsCnt + 1;
+	}while(IsCnt <= 49);
+	if(IsDone > 0){ 
+		setTimeout(function(){resetMons(WV);}, 1000);
+	} else {
+		var cnt = 0;
+		do{
+			<!-- console.log("Corrected ", cnt);
+			monsActive[cnt] = 0;
+			monsLifeDat[cnt] = 0;
+			cnt = cnt + 1;
+		}while(cnt <= 49);
+		if(WV == 1){document.getElementById("WaveBut").innerHTML = waveButItems[2];}
+		if(WV == 2){document.getElementById("WaveBut").innerHTML = waveButItems[3];}
+		if(WV == 3){document.getElementById("WaveBut").innerHTML = waveButItems[4];}
+		if(WV == 4){document.getElementById("WaveBut").innerHTML = waveButItems[5];}
+		if(WV == 5){document.getElementById("WaveBut").innerHTML = waveButItems[6];}
+	}
+}
+
+function buildStats(){
+	document.getElementById("CoinBox").innerHTML = statDeskCoins;
+	document.getElementById("ShotBox").innerHTML = statShots;
+	document.getElementById("DefeBox").innerHTML = statDefeated;
+	document.getElementById("MoutBox").innerHTML = statSpawned;
+	document.getElementById("DamgBox").innerHTML = statDamage;
+	document.getElementById("HealBox").innerHTML = statHealth;
+	document.getElementById("KnobBox").innerHTML = statKnockback;
+	setTimeout(function(){statsTimer();}, 10);
+}
+function statsTimer(){
+	setTimeout(function(){buildStats();}, 10);
+}
+function errorPopup(ERR){
+	var ERRID = '';
+	var IDA = 0;
+	var IDB = 0;
+	var IDC = 0;
+	var M = '';
+	
+	IDA = getRandomInt(2345, 436275);
+	IDB = getRandomInt(23445, 4362775);
+	IDC = getRandomInt(234, 4362);
+	
+	ERRID = ''.concat(IDA,'-',IDB,'-',IDC);
+	console.log(ERRID);
+	if(ERR == 1){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Not Enough Coins</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 2){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Critical Issue:<p class="ErrorText"> Too Many Monsters</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 3){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Round in Progress</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 4){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Invalid Dev Key</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	setTimeout(function(){removeObject(ERRID)}, 1000);
+}
+function purchaseUpgrade(toUP){
+	if(toUP == 1){
+		if((statDeskCoins - 10) >= 0){
+			statDamage = statDamage + 1;
+			statDeskCoins = statDeskCoins - 10;
+		} else {
+			errorPopup(1);
+		}
+	}
+	if(toUP == 2){
+		if((statDeskCoins - 10) >= 0){
+			statKnockback = statKnockback + 1;
+			statDeskCoins = statDeskCoins - 10;
+		} else {
+			errorPopup(1);
+		}
+	}
+	if(toUP == 3){
+		if((statDeskCoins - 5) >= 0){
+			statHealth = statHealth + 1;
+			statDeskCoins = statDeskCoins - 5;
+		} else {
+			errorPopup(1);
+		}
+	}
+}
+
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * ((max + 1) - min)) + min;
+}
+function createItemTest(){
+	if(isPlacingItem == 0){
+		isPlacingItem = 1;
+		document.getElementById("ItemSetZone").style.visibility = 'visible';
+		document.getElementById("ItemZoneA1").style.visibility = 'visible';
+		document.getElementById("ItemZoneA2").style.visibility = 'visible';
+		document.getElementById("ItemZoneA3").style.visibility = 'visible';
+		document.getElementById("ItemZoneA4").style.visibility = 'visible';
+		document.getElementById("ItemZoneA5").style.visibility = 'visible';
+		document.getElementById("ItemZoneB1").style.visibility = 'visible';
+		document.getElementById("ItemZoneB2").style.visibility = 'visible';
+		document.getElementById("ItemZoneB3").style.visibility = 'visible';
+		document.getElementById("ItemZoneB4").style.visibility = 'visible';
+		document.getElementById("ItemZoneB5").style.visibility = 'visible';
+		document.getElementById("ItemZoneC1").style.visibility = 'visible';
+		document.getElementById("ItemZoneC2").style.visibility = 'visible';
+		document.getElementById("ItemZoneC3").style.visibility = 'visible';
+		document.getElementById("ItemZoneC4").style.visibility = 'visible';
+		document.getElementById("ItemZoneC5").style.visibility = 'visible';
+		document.getElementById("ItemZoneD1").style.visibility = 'visible';
+		document.getElementById("ItemZoneD2").style.visibility = 'visible';
+		document.getElementById("ItemZoneD3").style.visibility = 'visible';
+		document.getElementById("ItemZoneD4").style.visibility = 'visible';
+		document.getElementById("ItemZoneD5").style.visibility = 'visible';
+		document.getElementById("ItemZoneE1").style.visibility = 'visible';
+		document.getElementById("ItemZoneE2").style.visibility = 'visible';
+		document.getElementById("ItemZoneE3").style.visibility = 'visible';
+		document.getElementById("ItemZoneE4").style.visibility = 'visible';
+		document.getElementById("ItemZoneE5").style.visibility = 'visible';
+		document.getElementById("ItemZoneF1").style.visibility = 'visible';
+		document.getElementById("ItemZoneF2").style.visibility = 'visible';
+		document.getElementById("ItemZoneF3").style.visibility = 'visible';
+		document.getElementById("ItemZoneF4").style.visibility = 'visible';
+		document.getElementById("ItemZoneF5").style.visibility = 'visible';
+		document.getElementById("ItemZoneG1").style.visibility = 'visible';
+		document.getElementById("ItemZoneG2").style.visibility = 'visible';
+		document.getElementById("ItemZoneG3").style.visibility = 'visible';
+		document.getElementById("ItemZoneG4").style.visibility = 'visible';
+		document.getElementById("ItemZoneG5").style.visibility = 'visible';
+		document.getElementById("ItemZoneH1").style.visibility = 'visible';
+		document.getElementById("ItemZoneH2").style.visibility = 'visible';
+		document.getElementById("ItemZoneH3").style.visibility = 'visible';
+		document.getElementById("ItemZoneH4").style.visibility = 'visible';
+		document.getElementById("ItemZoneH5").style.visibility = 'visible';
+		document.getElementById("ItemZoneI1").style.visibility = 'visible';
+		document.getElementById("ItemZoneI2").style.visibility = 'visible';
+		document.getElementById("ItemZoneI3").style.visibility = 'visible';
+		document.getElementById("ItemZoneI4").style.visibility = 'visible';
+		document.getElementById("ItemZoneI5").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ1").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ2").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ3").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ4").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ5").style.visibility = 'visible';
+		document.getElementById("ItemZoneK1").style.visibility = 'visible';
+		document.getElementById("ItemZoneK2").style.visibility = 'visible';
+		document.getElementById("ItemZoneK3").style.visibility = 'visible';
+		document.getElementById("ItemZoneK4").style.visibility = 'visible';
+		document.getElementById("ItemZoneK5").style.visibility = 'visible';
+		<!-- console.log("did it");
+} else if(isPlacingItem == 1){
+		isPlacingItem = 0;
+		document.getElementById("ItemSetZone").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK5").style.visibility = 'hidden';
+	}
+		return;
+}
+function loadGameZone(){
+	<!-- Set Character default POS --> R1: 11 || R2: 109  R3: 207 || R4: 305 || R5: 403
+	document.getElementById("ItemSetZone").style.visibility = 'hidden';
+	document.getElementById("ItemZoneA1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneA2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneA3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneA4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneA5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneB1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneB2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneB3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneB4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneB5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneC1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneC2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneC3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneC4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneC5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneD1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneD2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneD3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneD4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneD5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneE1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneE2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneE3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneE4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneE5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneF1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneF2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneF3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneF4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneF5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneG1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneG2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneG3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneG4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneG5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneH1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneH2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneH3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneH4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneH5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneI1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneI2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneI3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneI4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneI5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneJ1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneJ2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneJ3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneJ4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneJ5").style.visibility = 'hidden';
+	document.getElementById("ItemZoneK1").style.visibility = 'hidden';
+	document.getElementById("ItemZoneK2").style.visibility = 'hidden';
+	document.getElementById("ItemZoneK3").style.visibility = 'hidden';
+	document.getElementById("ItemZoneK4").style.visibility = 'hidden';
+	document.getElementById("ItemZoneK5").style.visibility = 'hidden';
+	document.getElementById("CharZone").style.top = 403;
+	document.getElementById("CharZone").style.left = 12;
+	document.getElementById("FireZone").style.top = 440;
+	document.getElementById("FireZone").style.left = 86;
+	document.getElementById("MonsSpawnZoneA").style.top = 11;
+	document.getElementById("MonsSpawnZoneA").style.left = 987;
+	document.getElementById("MonsSpawnZoneB").style.top = 109;
+	document.getElementById("MonsSpawnZoneB").style.left = 987;
+	document.getElementById("MonsSpawnZoneC").style.top = 207;
+	document.getElementById("MonsSpawnZoneC").style.left = 987;
+	document.getElementById("MonsSpawnZoneD").style.top = 305;
+	document.getElementById("MonsSpawnZoneD").style.left = 987;
+	document.getElementById("MonsSpawnZoneE").style.top = 403;
+	document.getElementById("MonsSpawnZoneE").style.left = 987;
+	document.getElementById("ItemSetZone").style.top = 11;
+	document.getElementById("ItemSetZone").style.left = 131;
+	document.getElementById("ItemZoneA1").style.top = 0;
+	document.getElementById("ItemZoneA1").style.left = 121;
+	document.getElementById("ItemZoneA2").style.top = 98;
+	document.getElementById("ItemZoneA2").style.left = 121;
+	document.getElementById("ItemZoneA3").style.top = 196;
+	document.getElementById("ItemZoneA3").style.left = 121;
+	document.getElementById("ItemZoneA4").style.top = 294;
+	document.getElementById("ItemZoneA4").style.left = 121;
+	document.getElementById("ItemZoneA5").style.top = 392;
+	document.getElementById("ItemZoneA5").style.left = 121;
+	document.getElementById("ItemZoneB1").style.top = 0;
+	document.getElementById("ItemZoneB1").style.left = 195;
+	document.getElementById("ItemZoneB2").style.top = 98;
+	document.getElementById("ItemZoneB2").style.left = 195;
+	document.getElementById("ItemZoneB3").style.top = 196;
+	document.getElementById("ItemZoneB3").style.left = 195;
+	document.getElementById("ItemZoneB4").style.top = 294;
+	document.getElementById("ItemZoneB4").style.left = 195;
+	document.getElementById("ItemZoneB5").style.top = 392;
+	document.getElementById("ItemZoneB5").style.left = 195;
+	document.getElementById("ItemZoneC1").style.top = 0;
+	document.getElementById("ItemZoneC1").style.left = 269;
+	document.getElementById("ItemZoneC2").style.top = 98;
+	document.getElementById("ItemZoneC2").style.left = 269;
+	document.getElementById("ItemZoneC3").style.top = 196;
+	document.getElementById("ItemZoneC3").style.left = 269;
+	document.getElementById("ItemZoneC4").style.top = 294;
+	document.getElementById("ItemZoneC4").style.left = 269;
+	document.getElementById("ItemZoneC5").style.top = 392;
+	document.getElementById("ItemZoneC5").style.left = 269;
+	document.getElementById("ItemZoneD1").style.top = 0;
+	document.getElementById("ItemZoneD1").style.left = 343;
+	document.getElementById("ItemZoneD2").style.top = 98;
+	document.getElementById("ItemZoneD2").style.left = 343;
+	document.getElementById("ItemZoneD3").style.top = 196;
+	document.getElementById("ItemZoneD3").style.left = 343;
+	document.getElementById("ItemZoneD4").style.top = 294;
+	document.getElementById("ItemZoneD4").style.left = 343;
+	document.getElementById("ItemZoneD5").style.top = 392;
+	document.getElementById("ItemZoneD5").style.left = 343;
+	document.getElementById("ItemZoneE1").style.top = 0;
+	document.getElementById("ItemZoneE1").style.left = 417;
+	document.getElementById("ItemZoneE2").style.top = 98;
+	document.getElementById("ItemZoneE2").style.left = 417;
+	document.getElementById("ItemZoneE3").style.top = 196;
+	document.getElementById("ItemZoneE3").style.left = 417;
+	document.getElementById("ItemZoneE4").style.top = 294;
+	document.getElementById("ItemZoneE4").style.left = 417;
+	document.getElementById("ItemZoneE5").style.top = 392;
+	document.getElementById("ItemZoneE5").style.left = 417;
+	document.getElementById("ItemZoneF1").style.top = 0;
+	document.getElementById("ItemZoneF1").style.left = 491;
+	document.getElementById("ItemZoneF2").style.top = 98;
+	document.getElementById("ItemZoneF2").style.left = 491;
+	document.getElementById("ItemZoneF3").style.top = 196;
+	document.getElementById("ItemZoneF3").style.left = 491;
+	document.getElementById("ItemZoneF4").style.top = 294;
+	document.getElementById("ItemZoneF4").style.left = 491;
+	document.getElementById("ItemZoneF5").style.top = 392;
+	document.getElementById("ItemZoneF5").style.left = 491;
+	document.getElementById("ItemZoneG1").style.top = 0;
+	document.getElementById("ItemZoneG1").style.left = 565;
+	document.getElementById("ItemZoneG2").style.top = 98;
+	document.getElementById("ItemZoneG2").style.left = 565;
+	document.getElementById("ItemZoneG3").style.top = 196;
+	document.getElementById("ItemZoneG3").style.left = 565;
+	document.getElementById("ItemZoneG4").style.top = 294;
+	document.getElementById("ItemZoneG4").style.left = 565;
+	document.getElementById("ItemZoneG5").style.top = 392;
+	document.getElementById("ItemZoneG5").style.left = 565;
+	document.getElementById("ItemZoneH1").style.top = 0;
+	document.getElementById("ItemZoneH1").style.left = 639;
+	document.getElementById("ItemZoneH2").style.top = 98;
+	document.getElementById("ItemZoneH2").style.left = 639;
+	document.getElementById("ItemZoneH3").style.top = 196;
+	document.getElementById("ItemZoneH3").style.left = 639;
+	document.getElementById("ItemZoneH4").style.top = 294;
+	document.getElementById("ItemZoneH4").style.left = 639;
+	document.getElementById("ItemZoneH5").style.top = 392;
+	document.getElementById("ItemZoneH5").style.left = 639;
+	document.getElementById("ItemZoneI1").style.top = 0;
+	document.getElementById("ItemZoneI1").style.left = 713;
+	document.getElementById("ItemZoneI2").style.top = 98;
+	document.getElementById("ItemZoneI2").style.left = 713;
+	document.getElementById("ItemZoneI3").style.top = 196;
+	document.getElementById("ItemZoneI3").style.left = 713;
+	document.getElementById("ItemZoneI4").style.top = 294;
+	document.getElementById("ItemZoneI4").style.left = 713;
+	document.getElementById("ItemZoneI5").style.top = 392;
+	document.getElementById("ItemZoneI5").style.left = 713;
+	document.getElementById("ItemZoneJ1").style.top = 0;
+	document.getElementById("ItemZoneJ1").style.left = 787;
+	document.getElementById("ItemZoneJ2").style.top = 98;
+	document.getElementById("ItemZoneJ2").style.left = 787;
+	document.getElementById("ItemZoneJ3").style.top = 196;
+	document.getElementById("ItemZoneJ3").style.left = 787;
+	document.getElementById("ItemZoneJ4").style.top = 294;
+	document.getElementById("ItemZoneJ4").style.left = 787;
+	document.getElementById("ItemZoneJ5").style.top = 392;
+	document.getElementById("ItemZoneJ5").style.left = 787;
+	document.getElementById("ItemZoneK1").style.top = 0;
+	document.getElementById("ItemZoneK1").style.left = 861;
+	document.getElementById("ItemZoneK2").style.top = 98;
+	document.getElementById("ItemZoneK2").style.left = 861;
+	document.getElementById("ItemZoneK3").style.top = 196;
+	document.getElementById("ItemZoneK3").style.left = 861;
+	document.getElementById("ItemZoneK4").style.top = 294;
+	document.getElementById("ItemZoneK4").style.left = 861;
+	document.getElementById("ItemZoneK5").style.top = 392;
+	document.getElementById("ItemZoneK5").style.left = 861;
+	var cnt = 0;
+	do{
+		cnt = cnt + 1;
+		document.getElementById("MonsZone".concat(cnt)).innerHTML = '';
+		document.getElementById("MonsZone".concat(cnt)).style.top = 0;
+		document.getElementById("MonsZone".concat(cnt)).style.left = 0;
+		document.getElementById("MonsZone".concat(cnt)).style.width = 1;
+		document.getElementById("MonsZone".concat(cnt)).style.height = 1;
+	}while(cnt <= 49);
+}
+function getPOS(ToGet){
+	var MaxL = ToGet.length - 1;
+	var newPnt = '';
+	var cnt = 0;
+	do{
+		newPnt = newPnt.concat(ToGet[cnt]);
+		//console.log(newPnt)
+		cnt = cnt + 1;
+	}while(cnt < MaxL - 1);
+	newPnt = parseInt(newPnt);
+	return newPnt;
+}
+function spawnMonster(type, dist, speed, life, row){
+	monsOut = monsOut + 1;
+	statSpawned = statSpawned + 1
+	frame = 0;
+	currentDiv = document.getElementById("PlayZone");
+	manipID = 0;
+	cnt = 0;
+	do{	
+		if(monsActive[cnt] == 1){
+			if(cnt == 49){
+				errorPopup(2);
+				return;
+			}
+		} else if(monsActive[cnt] == 0){
+			monsActive[cnt] = 1;
+			manipID = cnt;
+			cnt = 100;
+		}
+		cnt = cnt + 1;
+	}while(cnt <= 49);
+	trueID = manipID;
+	manipBarID = 'LifeBar'.concat(manipID + 1);
+	<!-- console.log(manipBarID);
+	manipBarBackID = 'LifeBarBack'.concat(manipID + 1);
+	manipBarFrontID = 'LifeBarFront'.concat(manipID + 1);
+	
+	monsLifeDat[trueID] = life;
+	maxlife = monsLifeDat[trueID];
+	
+	manipID = "MonsZone".concat(trueID+1);
+	
+	ELEM = document.getElementById(manipID);
+	ELEMBar = document.getElementById(manipBarID);
+	ELEMBarBack = document.getElementById(manipBarBackID);
+	ELEMBarFront = document.getElementById(manipBarFrontID);
+	ELEMPosT = 0;
+	ELEMPosL = 0;
+	if(row == 1){
+		ELEMPosT = getPOS(document.getElementById("MonsSpawnZoneE").style.top);
+		ELEM.style.top = ELEMPosT;
+	}
+	if(row == 2){
+		ELEMPosT = getPOS(document.getElementById("MonsSpawnZoneD").style.top);
+		ELEM.style.top = ELEMPosT;
+	}
+	if(row == 3){
+		ELEMPosT = getPOS(document.getElementById("MonsSpawnZoneC").style.top);
+		ELEM.style.top = ELEMPosT;
+	}
+	if(row == 4){
+		ELEMPosT = getPOS(document.getElementById("MonsSpawnZoneB").style.top);
+		ELEM.style.top = ELEMPosT;
+	}
+	if(row == 5){
+		ELEMPosT = getPOS(document.getElementById("MonsSpawnZoneA").style.top);
+		ELEM.style.top = ELEMPosT;
+	}
+	ELEMPosL = getPOS(document.getElementById("MonsSpawnZoneA").style.left);
+	ELEM.style.left = ELEMPosL;
+	
+	ELEMBar.style.top =  ELEMPosT + 87;
+	ELEMBarBack.style.top =  ELEMPosT + 86;
+	ELEMBarFront.style.top =  ELEMPosT + 87;
+	
+	ELEMBar.style.left =  ELEMPosL + 3;
+	ELEMBarBack.style.left =  ELEMPosL;
+	ELEMBarFront.style.left =  ELEMPosL;
+	
+	ELEMBar.style.width = 72;
+	ELEMBarBack.style.width = 72;
+	ELEMBarFront.style.width = 72;
+	
+	ELEMBar.style.height = 9;
+	ELEMBarBack.style.height = 9;
+	ELEMBarFront.style.height = 9;
+	
+	ELEM.style.width = 72;
+	ELEM.style.height = 96;
+	moveMonster(manipID, manipBarID, manipBarBackID, manipBarFrontID, trueID, type, frame, dist, speed, maxlife);
+	delete manipID;
+	delete manipBarID;
+	delete manipBarBackID;
+	delete manipBarFrontID;
+	delete trueID;
+	delete type;
+	delete frame;
+	delete dist;
+	delete speed;
+	delete maxlife;
+	delete currentDiv;
+	delete cnt;
+	delete ELEM;
+	delete ELEMBar;
+	delete ELEMBarBack;
+	delete ELEMBarFront;
+	delete ELEMPosL;
+	delete ELEMPosT;
+	delete life;
+	delete row;
+	return;
+}
+function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLIFE){
+	ELEM = document.getElementById(RID);
+	ELEMB = document.getElementById(BID);
+	ELEMBB = document.getElementById(BBID);
+	ELEMBF = document.getElementById(BFID);
+	curPOS = ELEM.style.left;
+	CURLIFE = monsLifeDat[IDID];
+	MOD = 0;
+	
+	curPOS = getPOS(curPOS);
+	ELEM.style.left = curPOS - DIST;
+	ELEMB.style.left = curPOS - DIST + 1;
+	ELEMBB.style.left = curPOS - DIST;
+	ELEMBF.style.left = curPOS - DIST;
+	MOD = CURLIFE / MAXLIFE;
+	<!-- console.log(MOD, CURLIFE, MAXLIFE);
+	MOD = 72 * MOD;
+	<!-- console.log(MOD, CURLIFE, MAXLIFE);
+	ELEMB.style.width = MOD;
+	<!-- console.log(MOD, CURLIFE, MAXLIFE);
+	ELEMBF.innerHTML = "".concat(CURLIFE, " / ", MAXLIFE);
+	<!-- console.log(MOD, CURLIFE, MAXLIFE);
+	if(curPOS - DIST < 45 && curPOS > 10){
+		statHealth = statHealth - 1;
+		if(statHealth <= 0){location.reload();}
+		monsLifeDat[IDID] = 0;
+		ELEM.innerHTML = '';
+		ELEM.style.left = 0;
+		ELEM.style.top = 0;
+		ELEM.style.width = 1;
+		ELEM.style.height = 1;
+		ELEMB.innerHTML = '';
+		ELEMB.style.left = 0;
+		ELEMB.style.top = 0;
+		ELEMB.style.width = 1;
+		ELEMB.style.height = 1;
+		ELEMBB.innerHTML = '';
+		ELEMBB.style.left = 0;
+		ELEMBB.style.top = 0;
+		ELEMBB.style.width = 1;
+		ELEMBB.style.height = 1;
+		ELEMBF.innerHTML = '';
+		ELEMBF.style.left = 0;
+		ELEMBF.style.top = 0;
+		ELEMBF.style.width = 1;
+		ELEMBF.style.height = 1;
+		return;
+	} else if(curPOS > 40){
+		moveMonsterDo(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLIFE);
+	}
+	delete MOD;
+	delete curPOS;
+	delete ELEM;
+	delete RID;
+	delete ELEMB;
+	delete BID;
+	delete ELEMBB;
+	delete BBID;
+	delete ELEMBF;
+	delete BFID;
+	delete CURLIFE;
+	delete IDID;
+	delete TYPE;
+	delete FRAME;
+	delete DIST;
+	delete SPEED;
+	delete MAXLIFE;
+	return;
+}
+function moveMonsterDo(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxlife){
+	setTimeout(function(){moveMonster(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxlife);}, Speed);
+	delete ID;
+	delete Bid;
+	delete BBid;
+	delete BFid;
+	delete CURLIFE;
+	delete Idid;
+	delete Type;
+	delete Frame;
+	delete Dist;
+	delete Speed;
+	delete Maxlife;
+	return;
+}
+
+function moveChar(DIR){
+	if(currLane == 0){
+		if(DIR == "U"){
+			currLane = 1;
+		}
+		if(DIR == "D"){
+			currLane = 0;
+		}
+	} else if(currLane == 1){
+		if(DIR == "U"){
+			currLane = 2;
+		}
+		if(DIR == "D"){
+			currLane = 0;
+		}
+	} else if(currLane == 2){
+		if(DIR == "U"){
+			currLane = 3;
+		}
+		if(DIR == "D"){
+			currLane = 1;
+		}
+	} else if(currLane == 3){
+		if(DIR == "U"){
+			currLane = 4;
+		}
+		if(DIR == "D"){
+			currLane = 2;
+		}
+	} else if(currLane == 4){
+		if(DIR == "U"){
+			currLane = 4;
+		}
+		if(DIR == "D"){
+			currLane = 3;
+		}
+	}
+	setCharLane();
+	setFireLane();
+	document.getElementById("body").onkeypress = saved_keydown;
+	return;
+}
+function setCharLane(){
+	if(currLane == 0){
+		document.getElementById("CharZone").style.top = 403;
+	}
+	if(currLane == 1){
+		document.getElementById("CharZone").style.top = 305;
+	}
+	if(currLane == 2){
+		document.getElementById("CharZone").style.top = 207;
+	}
+	if(currLane == 3){
+		document.getElementById("CharZone").style.top = 109;
+	}
+	if(currLane == 4){
+		document.getElementById("CharZone").style.top = 11;
+	}
+	return;
+}
+function setFireLane(){
+	if(currLane == 0){
+		document.getElementById("FireZone").style.top = 440;
+	}
+	if(currLane == 1){
+		document.getElementById("FireZone").style.top = 342;
+	}
+	if(currLane == 2){
+		document.getElementById("FireZone").style.top = 244;
+	}
+	if(currLane == 3){
+		document.getElementById("FireZone").style.top = 146;
+	}
+	if(currLane == 4){
+		document.getElementById("FireZone").style.top = 48;
+	}
+	return;
+
+}
+
+function doFireRound(){
+	statShots = statShots + 1;
+	roundsOut = roundsOut + 1;
+	var currentDiv = document.getElementById("PlayZone");
+	var M = document.createElement('div');
+	var manipID = 'RoundFired'.concat(roundsOut);
+	var manipCS = 'FireZone testBorderB';
+	M.setAttribute("id", manipID);
+	M.setAttribute("class", manipCS);
+	document.getElementById("ZoneZone").insertBefore(M, currentDiv);
+	M.style.top = document.getElementById("FireZone").style.top;
+	M.style.left = document.getElementById("FireZone").style.left
+	onKeyChangeDelay(100);
+	moveRoundDo(manipID);
+}
+function moveRound(RID){
+	var rndElem = document.getElementById(RID);
+	if(typeof(rndElem) != 'undefined' && rndElem != null){
+		var curPOS = getPOS(rndElem.style.left);
+		rndElem.style.left = curPOS + 12;
+		if(curPOS + 12 > 1050){
+			rndElem.innerHTML = '';
+			rndElem.style.left = 0;
+			rndElem.style.top = 0;
+			rndElem.style.width = 1;
+			rndElem.style.height = 1;
+			removeObject(RID);
+			return;
+		}
+		var monLife = 0;
+		var monElem = '';
+		var rndElemTop = getPOS(rndElem.style.top);
+		var monElemTop = 0;
+		var rndElemLeft = getPOS(rndElem.style.left);
+		var monElemLeft = 0;
+		var cnt = 0;
+		do{
+			cnt = cnt + 1;
+			monElem = document.getElementById('MonsZone'.concat(cnt));
+			monElemBar = document.getElementById('LifeBar'.concat(cnt));
+			monElemBarBack = document.getElementById('LifeBarBack'.concat(cnt));
+			monElemBarFront = document.getElementById('LifeBarFront'.concat(cnt));
+			<!-- console.log('LifeBarFront'.concat(cnt));
+			
+			monElemTop = getPOS(monElem.style.top);
+			monElemLeft = getPOS(monElem.style.left);
+			
+			monElemBarTop = getPOS(monElemBar.style.top);
+			monElemBarLeft = getPOS(monElemBar.style.left);
+			
+			monElemBarBackTop = getPOS(monElemBarBack.style.top);
+			monElemBarBackLeft = getPOS(monElemBarBack.style.left);
+			<!-- console.log(monElemBarFront);
+			monElemBarFrontTop = getPOS(monElemBarFront.style.top);
+			monElemBarFrontLeft = getPOS(monElemBarFront.style.left);
+			
+			
+			
+			monLife = monsLifeDat[cnt - 1];
+			if((rndElemTop - 37) == monElemTop){
+				<!-- console.log("Top match");
+				if(rndElemLeft >= monElemLeft && rndElemLeft <= (monElemLeft + 70)){
+					<!-- console.log("HIT");
+					<!-- console.log(rndElemTop, monElemTop, rndElemLeft, monElemLeft);
+					rndElem.innerHTML = '';
+					rndElem.style.left = 0;
+					rndElem.style.top = 0;
+					rndElem.style.width = 1;
+					rndElem.style.height = 1;
+					monLife = monLife - statDamage;
+					<!-- console.log(monLife);
+					
+					monElem.style.left = monElemLeft + statKnockback;
+					monElemBar.style.left = monElemBarLeft + statKnockback;
+					monElemBarBack.style.left = monElemBarBackLeft + statKnockback;
+					monElemBarFront.style.left = monElemBarFrontLeft + statKnockback;
+					
+					if(monLife <= 0){
+						monElem.innerHTML = '';
+						monElem.style.left = 0;
+						monElem.style.top = 0;
+						monElem.style.width = 1;
+						monElem.style.height = 1;
+						monElemBar.innerHTML = '';
+						monElemBar.style.left = 0;
+						monElemBar.style.top = 0;
+						monElemBar.style.width = 1;
+						monElemBar.style.height = 1;
+						monElemBarBack.innerHTML = '';
+						monElemBarBack.style.left = 0;
+						monElemBarBack.style.top = 0;
+						monElemBarBack.style.width = 1;
+						monElemBarBack.style.height = 1;
+						monElemBarFront.innerHTML = '';
+						monElemBarFront.style.left = 0;
+						monElemBarFront.style.top = 0;
+						monElemBarFront.style.width = 1;
+						monElemBarFront.style.height = 1;
+						monLife = 0;
+						statDefeated = statDefeated + 1;
+						statSpawned = statSpawned - 1;
+						statDeskCoins = statDeskCoins + 3;
+					}
+					monsLifeDat[cnt - 1] = monLife;
+					<!-- console.log("IS ERROR :", cnt - 1);
+					removeObject(RID);
+				}
+			}
+		}while(cnt <= 49);
+		moveRoundDo(RID);
+		delete monLife;
+		delete monElem;
+		delete rndElemTop;
+		delete monElemTop;
+		delete rndElemLeft;
+		delete monElemLeft;
+		delete cnt;
+	}
+	return;
+}
+function moveRoundDo(ID){
+	setTimeout(function(){moveRound(ID);}, 50);
+}
+function removeObject(OID){
+	var rndElem = document.getElementById(OID);
+	if(typeof(rndElem) != 'undefined' && rndElem != null){
+		rndElem.parentNode.removeChild(rndElem);
+		console.log("Removed", rndElem);
+	}
+	return;
+}
+function moveSetItemZone(DIR){
+	var TOP = getPOS(document.getElementById("ItemSetZone").style.top);
+	var LEFT = getPOS(document.getElementById("ItemSetZone").style.left);
+	if(DIR == "U"){
+		if(TOP < 50){
+		
+		} else {
+			TOP = TOP - 98;
+			placeCol = placeCol - 1;
+		}
+	}
+	if(DIR == "D"){
+		if(TOP > 400){
+		
+		} else {
+			TOP = TOP + 98;
+			placeCol = placeCol + 1;
+		}
+	}
+	if(DIR == "L"){
+		if(LEFT < 140){
+		
+		} else {
+			LEFT = LEFT - 74;
+			placeRow = placeRow - 1;
+		}
+	}
+	if(DIR == "R"){
+		if(LEFT > 850){
+		
+		} else {
+			LEFT = LEFT + 74;
+			placeRow = placeRow + 1;
+		}
+	}
+	console.log(placeCol, " ", placeRow);
+	document.getElementById("ItemSetZone").style.left = LEFT;
+	document.getElementById("ItemSetZone").style.top = TOP;
+	document.getElementById("body").onkeypress = saved_keydown;
+}
+function onKeyChangeDelay(TIME){
+	setTimeout(function(){document.getElementById("body").onkeypress = saved_keydown;}, TIME);
+}
+function onKeyChange(){
+	saved_keydown = document.getElementById("body").onkeypress;
+	document.getElementById("body").onkeypress = null;
+	var test = event.keyCode;
+	if(isPlacingItem == 0){
+		if(test == 119){
+			moveChar("U");
+		} else if(test == 115){
+			moveChar("D");
+		} else if(test == 102){
+			doFireRound();
+		} else {
+			document.getElementById("body").onkeypress = saved_keydown;
+		}
+	}
+	if(isPlacingItem == 1){
+		if(test == 119){
+			moveSetItemZone("U");
+		} else if(test == 115){
+			moveSetItemZone("D");
+		} else if(test == 100){
+			moveSetItemZone("R");
+		} else if(test == 97){
+			moveSetItemZone("L");
+		} else {
+			document.getElementById("body").onkeypress = saved_keydown;
+		}
+	}
+	console.log('KEY Was ',test);
+	return;
+}
+	</script>
+</html>
