@@ -633,7 +633,10 @@ body{
 	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
 }
 .ActTable{
-
+	border: 3px inset #2B4AA2;
+	border-radius: 10px;
+	margin: 3px;
+	background-color:#306490;
 }
 .ActTr{
 	text-align: center;
@@ -1314,15 +1317,15 @@ var devOnContent = '';
 devOnContent = devOnContent.concat('<table><tr class="DevTr"><td class="DevTd">');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderD" id="devModeBut" onClick="devMode()">Close Devlepoment</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="createItemTest()">Item Select</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 50, 1, 1)">Spawn Monster</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 30, 4)">SL/HP Monster</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 50, 1, 1, 1)">Spawn Monster</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 30, 4, 1)">SL/HP Monster</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devWaves()">Dev Waves</p>');
 devOnContent = devOnContent.concat('</td><td class="DevTd">');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 1)">Monster Row 1</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 2)">Monster Row 2</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 3)">Monster Row 3</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 4)">Monster Row 4</p>');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 5)">Monster Row 5</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 1, 1)">Monster Row 1</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 2, 1)">Monster Row 2</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 3, 1)">Monster Row 3</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 4, 1)">Monster Row 4</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="spawnMonster(0, 12, 150, 1, 5, 1)">Monster Row 5</p>');
 devOnContent = devOnContent.concat('</td><td class="DevTd">');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(1)">Dam + 1 / 10 DQ</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="purchaseUpgrade(2)">Knb + 1 / 10 DQ</p>');
@@ -1330,593 +1333,15 @@ devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="dev
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(2)">Add 10 coin</p>');
 devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(3)">Add 100 coin</p>');
 devOnContent = devOnContent.concat('</td><td class="DevTd">');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="startWave(1)">Start a wave</p>');
-devOnContent = devOnContent.concat('<input type="text" placeholder="WAVE #" class="DeveIns testBorderG"></input>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(4)">Start a wave</p>');
+devOnContent = devOnContent.concat('<input type="text" id="DeveWaveIn" placeholder="WAVE #" class="DeveIns testBorderG"></input>');
 devOnContent = devOnContent.concat('</td><td class="DevTd">');
-devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="swapLane(MonsZone1, LifeBar1, LifeBarBack1, LifeBarFront1, 1)">Test Lane Swap</p>');
+devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="devActs(5)">Test Lane Swap</p>');
 devOnContent = devOnContent.concat('</td></tr></table>');
 var devOffContent = '<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>';
 
 loadGameZone();
 tutorThem(1, 0);
-function devMode(){
-	if(isDev == 0){
-		var KEY = document.getElementById("DevKeyIn").value;
-		if(KEY == "aspo"){
-			document.getElementById("DeveActs").style.height = 150;
-			document.getElementById("DeveActs").style.width	 = 870;
-			document.getElementById("DeveActs").style.top = 41;
-			document.getElementById("DeveActs").innerHTML = devOnContent;
-			isDev = 1;
-		} else {
-			errorPopup(4);
-		}
-	} else if(isDev == 1){
-		document.getElementById("DeveActs").style.height = 32;
-		document.getElementById("DeveActs").style.top = 159;
-		document.getElementById("DeveActs").style.width	 = 170;
-		document.getElementById("DeveActs").innerHTML = devOffContent;
-		isDev = 0;
-	}
-}
-function devActs(ACT){
-	if(ACT == 1){
-		statDeskCoins = statDeskCoins + 1;
-	}
-	if(ACT == 2){
-		statDeskCoins = statDeskCoins + 10;
-	}
-	if(ACT == 3){
-		statDeskCoins = statDeskCoins + 100;
-	}
-}
-function devWaves(){
-	setTimeout(function(){
-		cntDevWaves = cntDevWaves + 1;
-		lneDevWaves = getRandomInt(1, 5);
-		do{
-			lneDevWaves = getRandomInt(1, 5);
-		}while(lneDevWaves == dnpDevWaves);
-		lfeDevWaves = getRandomInt(1, 3);
-		dnpDevWaves = lneDevWaves;
-		spawnMonster(typDevWaves, dstDevWaves, spdDevWaves, lfeDevWaves, lneDevWaves);
-		dstDevWaves = dstDevWaves + 1;
-		if(dstDevWaves > 20){dstDevWaves = 12;}
-		spdDevWaves = spdDevWaves + 5;
-		if(spdDevWaves > 200){spdDevWaves = 150;}
-		<!-- console.log('Monster 1',cntDevWaves);
-		<!-- console.log('StepS :: ',dstDevWaves);
-		<!-- console.log('Speed :: ',spdDevWaves);
-		if(cntDevWaves >= 50){
-			cntDevWaves = 0;
-			lneDevWaves = 0;
-			spdDevWaves = 150;
-			dstDevWaves = 12;
-			typDevWaves = 0;
-		} else {
-			devWaves();
-		}
-	}, 750);
-}
-
-
-
-function tutorThem(SLIDE, TID){
-	if(SLIDE == 0){
-		removeObject(TID);
-		document.getElementById("TutrBut").style.visibility = "visible";
-		document.getElementById("WaveBut").style.visibility = "visible";
-		document.getElementById("HealBut").style.visibility = "visible";
-		document.getElementById("KnbkBut").style.visibility = "visible";
-		document.getElementById("DamgBut").style.visibility = "visible";
-		document.getElementById("DeveActs").style.visibility = "visible";
-	}
-	if(SLIDE == 1){
-		TIDA = getRandomInt(2345, 436275);
-		TIDB = getRandomInt(23445, 4362775);
-		TIDC = getRandomInt(234, 4362);
-		TutorID = ''.concat(TIDA - TIDB - TIDC);
-		console.log(TutorID);
-		M = document.createElement('div');
-		M.setAttribute("id", TutorID);
-		M.setAttribute("class", "TutorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">Click next to learn to play.</span></br></br>';
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
-		
-		document.getElementById("TutrBut").style.visibility = "hidden";
-		document.getElementById("WaveBut").style.visibility = "hidden";
-		document.getElementById("HealBut").style.visibility = "hidden";
-		document.getElementById("KnbkBut").style.visibility = "hidden";
-		document.getElementById("DamgBut").style.visibility = "hidden";
-		document.getElementById("DeveActs").style.visibility = "hidden";
-		
-		console.log(M);
-		M.style.height = 215;
-		M.style.width = 350;
-		M.style.top = 180;
-		M.style.left = 350;
-	}
-	if(SLIDE == 2){
-		removeObject(TID);
-		TIDA = getRandomInt(2345, 436275);
-		TIDB = getRandomInt(23445, 4362775);
-		TIDC = getRandomInt(234, 4362);
-		TutorID = ''.concat(TIDA - TIDB - TIDC);
-		console.log(TutorID);
-		M = document.createElement('div');
-		M.setAttribute("id", TutorID);
-		M.setAttribute("class", "TutorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = '<span class="TutorPageTitle">Stats:</br></span><span class="TutorText">These are your stats</br></br></span>';
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Desk Coins -</span><span class="TutorText"></br>Used to purchase upgrades.</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Damage -</span><span class="TutorText"></br>Damage you do to monsters.</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Knockback -</span><span class="TutorText"></br>Knockback when monster is hit.</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(3, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
-		
-		console.log(M);
-		M.style.height = 400;
-		M.style.width = 400;
-		M.style.top = 10;
-		M.style.left = 650;
-	}
-	if(SLIDE == 3){
-		removeObject(TID);
-		TIDA = getRandomInt(2345, 436275);
-		TIDB = getRandomInt(23445, 4362775);
-		TIDC = getRandomInt(234, 4362);
-		TutorID = ''.concat(TIDA - TIDB - TIDC);
-		console.log(TutorID);
-		M = document.createElement('div');
-		M.setAttribute("id", TutorID);
-		M.setAttribute("class", "TutorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = '<span class="TutorPageTitle">Upgrades:</br></span><span class="TutorText">Making youself stronger</br></br></span>';
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Damgage</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Knockback</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Health</span><span class="TutorText"></br>Spend 10 Coins for +1 Health</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
-		
-		document.getElementById("HealBut").style.visibility = "visible";
-		document.getElementById("KnbkBut").style.visibility = "visible";
-		document.getElementById("DamgBut").style.visibility = "visible";
-		
-		console.log(M);
-		M.style.height = 400;
-		M.style.width = 400;
-		M.style.top = 60;
-		M.style.left = 65;
-	}
-	if(SLIDE == 4){
-		removeObject(TID);
-		TIDA = getRandomInt(2345, 436275);
-		TIDB = getRandomInt(23445, 4362775);
-		TIDC = getRandomInt(234, 4362);
-		TutorID = ''.concat(TIDA - TIDB - TIDC);
-		console.log(TutorID);
-		M = document.createElement('div');
-		M.setAttribute("id", TutorID);
-		M.setAttribute("class", "TutorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = '<span class="TutorPageTitle">Gameplay:</br></span><span class="TutorText">How to actually play</br></br></span>';
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>To move up a row</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#418A11;">Finish</span></button>');
-		
-		document.getElementById("WaveBut").style.visibility = "visible";
-		
-		<!-- console.log(M);
-		M.style.height = 470;
-		M.style.width = 400;
-		M.style.top = 60;
-		M.style.left = 520;
-	}
-	return;
-}
-
-var cntDevWaves = 0;
-var lneDevWaves = 0;
-var spdDevWaves = 150;
-var dstDevWaves = 12;
-var lfeDevWaves = 0;
-var typDevWaves = 0;
-var dnpDevWaves = 0;
-
-var statHealth = 10;
-var statKnockback = 0;
-var statDamage = 1;
-var statSpawned = 0;
-var statDefeated = 0; 
-var statShots = 0;
-var statDeskCoins = 0;
-
-buildStats();
-
-var waveButItems = [ 
-'EMPTY-NA',
-'<p class="WaveBut" onClick="startWave(1)">Start Wave</br><span class="waveNum"># 1</p>',
-'<p class="WaveBut" onClick="startWave(2)">Start Wave</br><span class="waveNum"># 2</p>',
-'<p class="WaveBut" onClick="startWave(3)">Start Wave</br><span class="waveNum"># 3</p>',
-'<p class="WaveBut" onClick="startWave(4)">Start Wave</br><span class="waveNum"># 4</p>',
-'<p class="WaveBut" onClick="startWave(5)">Start Wave</br><span class="waveNum"># 5</p>',
-'<p class="WaveBut" onClick="startWave(6)">Start Wave</br><span class="waveNum"># 6</p>',
-'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>',
-'<p class="WaveBut" onClick="startWave(8)">Start Wave</br><span class="waveNum"># 8</p>',
-'<p class="WaveBut" onClick="startWave(9)">Start Wave</br><span class="waveNum"># 9</p>',
-'<p class="WaveBut" onClick="startWave(10)">Start Wave</br><span class="waveNum"># 10</p>',
-'<p class="WaveBut" onClick="startWave(11)">Start Wave</br><span class="waveNum"># 11</p>',
-'<p class="WaveBut" onClick="startWave(12)">Start Wave</br><span class="waveNum"># 12</p>',
-'<p class="WaveBut" onClick="startWave(13)">Start Wave</br><span class="waveNum"># 13</p>',
-'<p class="WaveBut" onClick="startWave(14)">Start Wave</br><span class="waveNum"># 14</p>',
-'<p class="WaveBut" onClick="startWave(15)">Start Wave</br><span class="waveNum"># 15</p>',
-'<p class="WaveBut" onClick="startWave(16)">Start Wave</br><span class="waveNum"># 16</p>',
-'<p class="WaveBut" onClick="startWave(17)">Start Wave</br><span class="waveNum"># 17</p>',
-'<p class="WaveBut" onClick="startWave(18)">Start Wave</br><span class="waveNum"># 18</p>',
-'<p class="WaveBut" onClick="startWave(19)">Start Wave</br><span class="waveNum"># 19</p>',
-'<p class="WaveBut" onClick="startWave(20)">Start Wave</br><span class="waveNum"># 20</p>',
-'<p class="WaveBut" onClick="startWave(21)">Start Wave</br><span class="waveNum"># 21</p>',
-'<p class="WaveBut" onClick="startWave(22)">Start Wave</br><span class="waveNum"># 22</p>',
-'<p class="WaveBut" onClick="startWave(23)">Start Wave</br><span class="waveNum"># 23</p>'
-]
-var waveButDisabledItems = [
-'EMPTY-NA',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 1</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 2</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 3</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 4</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 5</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 6</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 8</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 9</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 10</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 11</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 12</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 13</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 14</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 15</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 16</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 17</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 18</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 19</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 20</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 21</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 22</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 23</p>'
-]
-
-function startWave(WAVE){
-	if(WAVE == 1){
-		var SS = 800;
-		var MXLEN = 19;
-		var LEN = 0;
-		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[1];
-	}
-	if(WAVE == 2){
-		var SS = 800;
-		var MXLEN = 24;
-		var LEN = 0;
-		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[2];
-	}
-	if(WAVE == 3){
-		var SS = 800;
-		var MXLEN = 29;
-		var LEN = 0;
-		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[3];
-	}
-	if(WAVE == 4){
-		var SS = 800;
-		var MXLEN = 34;
-		var LEN = 0;
-		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[4];
-	}
-	if(WAVE == 5){
-		var SS = 800;
-		var MXLEN = 39;
-		var LEN = 0;
-		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[5];
-	}
-	runWave(WAVE, SS, LEN, MXLEN);
-}
-function runWave(Wave, Ss, Len, MxLen){
-	Len = Len + 1;
-	var monType = 0;
-	var monDist = 0;
-	var monSped = 0;
-	var monHeal = 0;
-	var monLine = 0;
-	
-	if(Wave == 1){
-		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(1, 2);
-		monLine = getRandomInt(1, 5);
-	}
-	if(Wave == 2){
-		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(4, 7);
-		monLine = getRandomInt(1, 5);
-	}
-	if(Wave == 3){
-		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(7, 14);
-		monLine = getRandomInt(1, 5);
-	}
-	if(Wave == 4){
-		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(14, 20);
-		monLine = getRandomInt(1, 5);
-	}
-	if(Wave == 5){
-		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
-		monHeal = getRandomInt(20, 26);
-		monLine = getRandomInt(1, 5);
-	}
-	
-	spawnMonster(monType, monDist, monSped, monHeal, monLine);
-	if(Len <= MxLen){
-		setTimeout(function(){runWave(Wave, Ss, Len, MxLen)}, Ss);
-	} else {
-		setTimeout(function(){resetMons(Wave);}, 1000);
-	}
-	return;
-}
-function resetMons(WV){
-	var IsDone = 0;
-	var IsCnt = 0;
-	do{
-		IsDone = IsDone + monsLifeDat[IsCnt];
-		IsCnt = IsCnt + 1;
-	}while(IsCnt <= 49);
-	if(IsDone > 0){ 
-		setTimeout(function(){resetMons(WV);}, 1000);
-	} else {
-		var cnt = 0;
-		do{
-			<!-- console.log("Corrected ", cnt);
-			monsActive[cnt] = 0;
-			monsLifeDat[cnt] = 0;
-			cnt = cnt + 1;
-		}while(cnt <= 49);
-		if(WV == 1){document.getElementById("WaveBut").innerHTML = waveButItems[2];}
-		if(WV == 2){document.getElementById("WaveBut").innerHTML = waveButItems[3];}
-		if(WV == 3){document.getElementById("WaveBut").innerHTML = waveButItems[4];}
-		if(WV == 4){document.getElementById("WaveBut").innerHTML = waveButItems[5];}
-		if(WV == 5){document.getElementById("WaveBut").innerHTML = waveButItems[6];}
-	}
-}
-
-function buildStats(){
-	document.getElementById("CoinBox").innerHTML = statDeskCoins;
-	document.getElementById("ShotBox").innerHTML = statShots;
-	document.getElementById("DefeBox").innerHTML = statDefeated;
-	document.getElementById("MoutBox").innerHTML = statSpawned;
-	document.getElementById("DamgBox").innerHTML = statDamage;
-	document.getElementById("HealBox").innerHTML = statHealth;
-	document.getElementById("KnobBox").innerHTML = statKnockback;
-	setTimeout(function(){statsTimer();}, 10);
-}
-function statsTimer(){
-	setTimeout(function(){buildStats();}, 10);
-}
-function errorPopup(ERR){
-	var ERRID = '';
-	var IDA = 0;
-	var IDB = 0;
-	var IDC = 0;
-	var M = '';
-	
-	IDA = getRandomInt(2345, 436275);
-	IDB = getRandomInt(23445, 4362775);
-	IDC = getRandomInt(234, 4362);
-	
-	ERRID = ''.concat(IDA,'-',IDB,'-',IDC);
-	console.log(ERRID);
-	if(ERR == 1){
-		M = document.createElement('div');
-		M.setAttribute("id", ERRID);
-		M.setAttribute("class", "ErrorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = 'Issue:<p class="ErrorText"> Not Enough Coins</p>'
-		M.style.top = 180;
-		M.style.left = 350;
-	}
-	if(ERR == 2){
-		M = document.createElement('div');
-		M.setAttribute("id", ERRID);
-		M.setAttribute("class", "ErrorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = 'Critical Issue:<p class="ErrorText"> Too Many Monsters</p>'
-		M.style.top = 180;
-		M.style.left = 350;
-	}
-	if(ERR == 3){
-		M = document.createElement('div');
-		M.setAttribute("id", ERRID);
-		M.setAttribute("class", "ErrorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = 'Issue:<p class="ErrorText"> Round in Progress</p>'
-		M.style.top = 180;
-		M.style.left = 350;
-	}
-	if(ERR == 4){
-		M = document.createElement('div');
-		M.setAttribute("id", ERRID);
-		M.setAttribute("class", "ErrorPop");
-		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = 'Issue:<p class="ErrorText"> Invalid Dev Key</p>'
-		M.style.top = 180;
-		M.style.left = 350;
-	}
-	setTimeout(function(){removeObject(ERRID)}, 1000);
-}
-function purchaseUpgrade(toUP){
-	if(toUP == 1){
-		if((statDeskCoins - 10) >= 0){
-			statDamage = statDamage + 1;
-			statDeskCoins = statDeskCoins - 10;
-		} else {
-			errorPopup(1);
-		}
-	}
-	if(toUP == 2){
-		if((statDeskCoins - 10) >= 0){
-			statKnockback = statKnockback + 1;
-			statDeskCoins = statDeskCoins - 10;
-		} else {
-			errorPopup(1);
-		}
-	}
-	if(toUP == 3){
-		if((statDeskCoins - 5) >= 0){
-			statHealth = statHealth + 1;
-			statDeskCoins = statDeskCoins - 5;
-		} else {
-			errorPopup(1);
-		}
-	}
-}
-
-function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * ((max + 1) - min)) + min;
-}
-function createItemTest(){
-	if(isPlacingItem == 0){
-		isPlacingItem = 1;
-		document.getElementById("ItemSetZone").style.visibility = 'visible';
-		document.getElementById("ItemZoneA1").style.visibility = 'visible';
-		document.getElementById("ItemZoneA2").style.visibility = 'visible';
-		document.getElementById("ItemZoneA3").style.visibility = 'visible';
-		document.getElementById("ItemZoneA4").style.visibility = 'visible';
-		document.getElementById("ItemZoneA5").style.visibility = 'visible';
-		document.getElementById("ItemZoneB1").style.visibility = 'visible';
-		document.getElementById("ItemZoneB2").style.visibility = 'visible';
-		document.getElementById("ItemZoneB3").style.visibility = 'visible';
-		document.getElementById("ItemZoneB4").style.visibility = 'visible';
-		document.getElementById("ItemZoneB5").style.visibility = 'visible';
-		document.getElementById("ItemZoneC1").style.visibility = 'visible';
-		document.getElementById("ItemZoneC2").style.visibility = 'visible';
-		document.getElementById("ItemZoneC3").style.visibility = 'visible';
-		document.getElementById("ItemZoneC4").style.visibility = 'visible';
-		document.getElementById("ItemZoneC5").style.visibility = 'visible';
-		document.getElementById("ItemZoneD1").style.visibility = 'visible';
-		document.getElementById("ItemZoneD2").style.visibility = 'visible';
-		document.getElementById("ItemZoneD3").style.visibility = 'visible';
-		document.getElementById("ItemZoneD4").style.visibility = 'visible';
-		document.getElementById("ItemZoneD5").style.visibility = 'visible';
-		document.getElementById("ItemZoneE1").style.visibility = 'visible';
-		document.getElementById("ItemZoneE2").style.visibility = 'visible';
-		document.getElementById("ItemZoneE3").style.visibility = 'visible';
-		document.getElementById("ItemZoneE4").style.visibility = 'visible';
-		document.getElementById("ItemZoneE5").style.visibility = 'visible';
-		document.getElementById("ItemZoneF1").style.visibility = 'visible';
-		document.getElementById("ItemZoneF2").style.visibility = 'visible';
-		document.getElementById("ItemZoneF3").style.visibility = 'visible';
-		document.getElementById("ItemZoneF4").style.visibility = 'visible';
-		document.getElementById("ItemZoneF5").style.visibility = 'visible';
-		document.getElementById("ItemZoneG1").style.visibility = 'visible';
-		document.getElementById("ItemZoneG2").style.visibility = 'visible';
-		document.getElementById("ItemZoneG3").style.visibility = 'visible';
-		document.getElementById("ItemZoneG4").style.visibility = 'visible';
-		document.getElementById("ItemZoneG5").style.visibility = 'visible';
-		document.getElementById("ItemZoneH1").style.visibility = 'visible';
-		document.getElementById("ItemZoneH2").style.visibility = 'visible';
-		document.getElementById("ItemZoneH3").style.visibility = 'visible';
-		document.getElementById("ItemZoneH4").style.visibility = 'visible';
-		document.getElementById("ItemZoneH5").style.visibility = 'visible';
-		document.getElementById("ItemZoneI1").style.visibility = 'visible';
-		document.getElementById("ItemZoneI2").style.visibility = 'visible';
-		document.getElementById("ItemZoneI3").style.visibility = 'visible';
-		document.getElementById("ItemZoneI4").style.visibility = 'visible';
-		document.getElementById("ItemZoneI5").style.visibility = 'visible';
-		document.getElementById("ItemZoneJ1").style.visibility = 'visible';
-		document.getElementById("ItemZoneJ2").style.visibility = 'visible';
-		document.getElementById("ItemZoneJ3").style.visibility = 'visible';
-		document.getElementById("ItemZoneJ4").style.visibility = 'visible';
-		document.getElementById("ItemZoneJ5").style.visibility = 'visible';
-		document.getElementById("ItemZoneK1").style.visibility = 'visible';
-		document.getElementById("ItemZoneK2").style.visibility = 'visible';
-		document.getElementById("ItemZoneK3").style.visibility = 'visible';
-		document.getElementById("ItemZoneK4").style.visibility = 'visible';
-		document.getElementById("ItemZoneK5").style.visibility = 'visible';
-		<!-- console.log("did it");
-} else if(isPlacingItem == 1){
-		isPlacingItem = 0;
-		document.getElementById("ItemSetZone").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK5").style.visibility = 'hidden';
-	}
-		return;
-}
 function loadGameZone(){
 	<!-- Set Character default POS --> R1: 11 || R2: 109  R3: 207 || R4: 305 || R5: 403
 	document.getElementById("ItemSetZone").style.visibility = 'hidden';
@@ -2111,6 +1536,86 @@ function loadGameZone(){
 		document.getElementById("MonsZone".concat(cnt)).style.height = 1;
 	}while(cnt <= 49);
 }
+
+function devMode(){
+	if(isDev == 0){
+		var KEY = document.getElementById("DevKeyIn").value;
+		if(KEY == "aspo"){
+			document.getElementById("DeveActs").style.height = 150;
+			document.getElementById("DeveActs").style.width	 = 870;
+			document.getElementById("DeveActs").style.top = 41;
+			document.getElementById("DeveActs").innerHTML = devOnContent;
+			isDev = 1;
+		} else {
+			errorPopup(4);
+		}
+	} else if(isDev == 1){
+		document.getElementById("DeveActs").style.height = 32;
+		document.getElementById("DeveActs").style.top = 159;
+		document.getElementById("DeveActs").style.width	 = 170;
+		document.getElementById("DeveActs").innerHTML = devOffContent;
+		isDev = 0;
+	}
+}
+function devActs(ACT){
+	if(ACT == 1){
+		statDeskCoins = statDeskCoins + 1;
+	}
+	if(ACT == 2){
+		statDeskCoins = statDeskCoins + 10;
+	}
+	if(ACT == 3){
+		statDeskCoins = statDeskCoins + 100;
+	}
+	if(ACT == 4){
+		WTS = document.getElementById("DeveWaveIn").value;
+		if(isNumber(WTS) == true && parseInt(WTS) < 6){
+			startWave(WTS);
+		} else {
+			errorPopup(5);
+		}
+	}
+	if(ACT == 5){
+		if(typeof(document.getElementById("MonsZone1")) != 'undefined' && document.getElementById("MonsZone1") != null){
+			if(getPOS(document.getElementById("MonsZone1").style.left) > 20){
+				swapLane("MonsZone1", "LifeBar1", "LifeBarBack1", "LifeBarFront1", 1);
+			} else {
+				errorPopup(6);
+			}
+		} else {
+			errorPopup(6);
+		}
+	}
+}
+function devWaves(){
+	setTimeout(function(){
+		cntDevWaves = cntDevWaves + 1;
+		lneDevWaves = getRandomInt(1, 5);
+		do{
+			lneDevWaves = getRandomInt(1, 5);
+		}while(lneDevWaves == dnpDevWaves);
+		lfeDevWaves = getRandomInt(1, 3);
+		dnpDevWaves = lneDevWaves;
+		spawnMonster(typDevWaves, dstDevWaves, spdDevWaves, lfeDevWaves, lneDevWaves, 1);
+		dstDevWaves = dstDevWaves + 1;
+		if(dstDevWaves > 20){dstDevWaves = 12;}
+		spdDevWaves = spdDevWaves + 5;
+		if(spdDevWaves > 200){spdDevWaves = 150;}
+		<!-- console.log('Monster 1',cntDevWaves);
+		<!-- console.log('StepS :: ',dstDevWaves);
+		<!-- console.log('Speed :: ',spdDevWaves);
+		if(cntDevWaves >= 50){
+			cntDevWaves = 0;
+			lneDevWaves = 0;
+			spdDevWaves = 150;
+			dstDevWaves = 12;
+			typDevWaves = 0;
+		} else {
+			devWaves();
+		}
+	}, 750);
+}
+
 function getPOS(ToGet){
 	var MaxL = ToGet.length - 1;
 	var newPnt = '';
@@ -2123,7 +1628,581 @@ function getPOS(ToGet){
 	newPnt = parseInt(newPnt);
 	return newPnt;
 }
-function spawnMonster(type, dist, speed, life, row){
+function isNumber(INT){
+	yes = 0;
+	len = INT.length;
+	cnt = 0;
+	do{
+		if(parseInt(INT[cnt])){
+			yes = yes;
+		} else {
+			yes = yes + 1;
+		}
+		cnt = cnt + 1;
+	}while(cnt < len);
+	if(yes > 0){
+		return false;
+	} else {
+		return true;
+	}
+}
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * ((max + 1) - min)) + min;
+}
+
+function tutorThem(SLIDE, TID){
+	if(SLIDE == 0){
+		removeObject(TID);
+		document.getElementById("TutrBut").style.visibility = "visible";
+		document.getElementById("WaveBut").style.visibility = "visible";
+		document.getElementById("HealBut").style.visibility = "visible";
+		document.getElementById("KnbkBut").style.visibility = "visible";
+		document.getElementById("DamgBut").style.visibility = "visible";
+		document.getElementById("DeveActs").style.visibility = "visible";
+		document.getElementById("StatItemA").style.visibility = "visible";
+		document.getElementById("StatItemB").style.visibility = "visible";
+		document.getElementById("StatItemC").style.visibility = "visible";
+		document.getElementById("StatItemD").style.visibility = "visible";
+		document.getElementById("StatItemE").style.visibility = "visible";
+		document.getElementById("StatItemF").style.visibility = "visible";
+		document.getElementById("StatItemG").style.visibility = "visible";
+	}
+	if(SLIDE == 1){
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">Click next to learn to play.</span></br></br>';
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		document.getElementById("TutrBut").style.visibility = "hidden";
+		document.getElementById("WaveBut").style.visibility = "hidden";
+		document.getElementById("HealBut").style.visibility = "hidden";
+		document.getElementById("KnbkBut").style.visibility = "hidden";
+		document.getElementById("DamgBut").style.visibility = "hidden";
+		document.getElementById("DeveActs").style.visibility = "hidden";
+		document.getElementById("StatItemA").style.visibility = "hidden";
+		document.getElementById("StatItemB").style.visibility = "hidden";
+		document.getElementById("StatItemC").style.visibility = "hidden";
+		document.getElementById("StatItemD").style.visibility = "hidden";
+		document.getElementById("StatItemE").style.visibility = "hidden";
+		document.getElementById("StatItemF").style.visibility = "hidden";
+		document.getElementById("StatItemG").style.visibility = "hidden";
+		
+		console.log(M);
+		M.style.height = 215;
+		M.style.width = 350;
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(SLIDE == 2){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Stats:</br></span><span class="TutorText">These are your stats</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Desk Coins -</span><span class="TutorText"></br>Used to purchase upgrades.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Damage -</span><span class="TutorText"></br>Damage you do to monsters.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Knockback -</span><span class="TutorText"></br>Knockback when monster is hit.</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(3, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		console.log(M);
+		M.style.height = 400;
+		M.style.width = 400;
+		M.style.top = 10;
+		M.style.left = 650;
+	}
+	if(SLIDE == 3){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Upgrades:</br></span><span class="TutorText">Making youself stronger</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Damgage</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Knockback</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Health</span><span class="TutorText"></br>Spend 10 Coins for +1 Health</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		
+		document.getElementById("HealBut").style.visibility = "visible";
+		document.getElementById("KnbkBut").style.visibility = "visible";
+		document.getElementById("DamgBut").style.visibility = "visible";
+		
+		console.log(M);
+		M.style.height = 400;
+		M.style.width = 400;
+		M.style.top = 60;
+		M.style.left = 65;
+	}
+	if(SLIDE == 4){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Gameplay:</br></span><span class="TutorText">How to actually play</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>To move up a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#418A11;">Finish</span></button>');
+		
+		document.getElementById("WaveBut").style.visibility = "visible";
+		
+		<!-- console.log(M);
+		M.style.height = 470;
+		M.style.width = 400;
+		M.style.top = 60;
+		M.style.left = 520;
+	}
+	return;
+}
+
+var cntDevWaves = 0;
+var lneDevWaves = 0;
+var spdDevWaves = 150;
+var dstDevWaves = 12;
+var lfeDevWaves = 0;
+var typDevWaves = 0;
+var dnpDevWaves = 0;
+
+var statHealth = 10;
+var statKnockback = 0;
+var statDamage = 1;
+var statSpawned = 0;
+var statDefeated = 0; 
+var statShots = 0;
+var statDeskCoins = 0;
+
+buildStats();
+
+var waveButItems = [ 
+'EMPTY-NA',
+'<p class="WaveBut" onClick="startWave(1)">Start Wave</br><span class="waveNum"># 1</p>',
+'<p class="WaveBut" onClick="startWave(2)">Start Wave</br><span class="waveNum"># 2</p>',
+'<p class="WaveBut" onClick="startWave(3)">Start Wave</br><span class="waveNum"># 3</p>',
+'<p class="WaveBut" onClick="startWave(4)">Start Wave</br><span class="waveNum"># 4</p>',
+'<p class="WaveBut" onClick="startWave(5)">Start Wave</br><span class="waveNum"># 5</p>',
+'<p class="WaveBut" onClick="startWave(6)">Start Wave</br><span class="waveNum"># 6</p>',
+'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>',
+'<p class="WaveBut" onClick="startWave(8)">Start Wave</br><span class="waveNum"># 8</p>',
+'<p class="WaveBut" onClick="startWave(9)">Start Wave</br><span class="waveNum"># 9</p>',
+'<p class="WaveBut" onClick="startWave(10)">Start Wave</br><span class="waveNum"># 10</p>',
+'<p class="WaveBut" onClick="startWave(11)">Start Wave</br><span class="waveNum"># 11</p>',
+'<p class="WaveBut" onClick="startWave(12)">Start Wave</br><span class="waveNum"># 12</p>',
+'<p class="WaveBut" onClick="startWave(13)">Start Wave</br><span class="waveNum"># 13</p>',
+'<p class="WaveBut" onClick="startWave(14)">Start Wave</br><span class="waveNum"># 14</p>',
+'<p class="WaveBut" onClick="startWave(15)">Start Wave</br><span class="waveNum"># 15</p>',
+'<p class="WaveBut" onClick="startWave(16)">Start Wave</br><span class="waveNum"># 16</p>',
+'<p class="WaveBut" onClick="startWave(17)">Start Wave</br><span class="waveNum"># 17</p>',
+'<p class="WaveBut" onClick="startWave(18)">Start Wave</br><span class="waveNum"># 18</p>',
+'<p class="WaveBut" onClick="startWave(19)">Start Wave</br><span class="waveNum"># 19</p>',
+'<p class="WaveBut" onClick="startWave(20)">Start Wave</br><span class="waveNum"># 20</p>',
+'<p class="WaveBut" onClick="startWave(21)">Start Wave</br><span class="waveNum"># 21</p>',
+'<p class="WaveBut" onClick="startWave(22)">Start Wave</br><span class="waveNum"># 22</p>',
+'<p class="WaveBut" onClick="startWave(23)">Start Wave</br><span class="waveNum"># 23</p>'
+]
+var waveButDisabledItems = [
+'EMPTY-NA',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 1</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 2</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 3</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 4</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 5</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 6</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 8</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 9</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 10</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 11</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 12</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 13</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 14</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 15</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 16</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 17</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 18</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 19</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 20</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 21</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 22</p>',
+'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 23</p>'
+]
+
+function startWave(WAVE){
+	if(WAVE == 1){
+		var SS = 800;
+		var MXLEN = 19;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[1];
+	}
+	if(WAVE == 2){
+		var SS = 800;
+		var MXLEN = 24;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[2];
+	}
+	if(WAVE == 3){
+		var SS = 800;
+		var MXLEN = 29;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[3];
+	}
+	if(WAVE == 4){
+		var SS = 800;
+		var MXLEN = 34;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[4];
+	}
+	if(WAVE == 5){
+		var SS = 800;
+		var MXLEN = 39;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[5];
+	}
+	runWave(WAVE, SS, LEN, MXLEN, SR);
+}
+function runWave(Wave, Ss, Len, MxLen, Sr){
+	Len = Len + 1;
+	var monType = 0;
+	var monDist = 0;
+	var monSped = 0;
+	var monHeal = 0;
+	var monLine = 0;
+	var monSwap = Sr;
+	
+	if(Wave == 1){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(1, 2);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 2){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(4, 7);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 3){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(7, 14);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 4){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(14, 20);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 5){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 200);
+		monHeal = getRandomInt(20, 26);
+		monLine = getRandomInt(1, 5);
+	}
+	
+	spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+	if(Len <= MxLen){
+		setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+	} else {
+		setTimeout(function(){resetMons(Wave);}, 1000);
+	}
+	return;
+}
+function resetMons(WV){
+	var IsDone = 0;
+	var IsCnt = 0;
+	do{
+		IsDone = IsDone + monsLifeDat[IsCnt];
+		IsCnt = IsCnt + 1;
+	}while(IsCnt <= 49);
+	if(IsDone > 0){ 
+		setTimeout(function(){resetMons(WV);}, 1000);
+	} else {
+		var cnt = 0;
+		do{
+			<!-- console.log("Corrected ", cnt);
+			monsActive[cnt] = 0;
+			monsLifeDat[cnt] = 0;
+			cnt = cnt + 1;
+		}while(cnt <= 49);
+		if(WV == 1){document.getElementById("WaveBut").innerHTML = waveButItems[2];}
+		if(WV == 2){document.getElementById("WaveBut").innerHTML = waveButItems[3];}
+		if(WV == 3){document.getElementById("WaveBut").innerHTML = waveButItems[4];}
+		if(WV == 4){document.getElementById("WaveBut").innerHTML = waveButItems[5];}
+		if(WV == 5){document.getElementById("WaveBut").innerHTML = waveButItems[6];}
+	}
+}
+
+function buildStats(){
+	document.getElementById("CoinBox").innerHTML = statDeskCoins;
+	document.getElementById("ShotBox").innerHTML = statShots;
+	document.getElementById("DefeBox").innerHTML = statDefeated;
+	document.getElementById("MoutBox").innerHTML = statSpawned;
+	document.getElementById("DamgBox").innerHTML = statDamage;
+	document.getElementById("HealBox").innerHTML = statHealth;
+	document.getElementById("KnobBox").innerHTML = statKnockback;
+	setTimeout(function(){statsTimer();}, 10);
+}
+function statsTimer(){
+	setTimeout(function(){buildStats();}, 10);
+}
+function errorPopup(ERR){
+	var ERRID = '';
+	var IDA = 0;
+	var IDB = 0;
+	var IDC = 0;
+	var M = '';
+	
+	IDA = getRandomInt(2345, 436275);
+	IDB = getRandomInt(23445, 4362775);
+	IDC = getRandomInt(234, 4362);
+	
+	ERRID = ''.concat(IDA,'-',IDB,'-',IDC);
+	console.log(ERRID);
+	if(ERR == 1){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Not Enough Coins</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 2){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Critical Issue:<p class="ErrorText"> Too Many Monsters</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 3){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Round in Progress</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 4){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Invalid Dev Key</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 5){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Invalid Wave #</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 6){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Monster 1 NA</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	setTimeout(function(){removeObject(ERRID)}, 1000);
+}
+function purchaseUpgrade(toUP){
+	if(toUP == 1){
+		if((statDeskCoins - 10) >= 0){
+			statDamage = statDamage + 1;
+			statDeskCoins = statDeskCoins - 10;
+		} else {
+			errorPopup(1);
+		}
+	}
+	if(toUP == 2){
+		if((statDeskCoins - 10) >= 0){
+			statKnockback = statKnockback + 1;
+			statDeskCoins = statDeskCoins - 10;
+		} else {
+			errorPopup(1);
+		}
+	}
+	if(toUP == 3){
+		if((statDeskCoins - 5) >= 0){
+			statHealth = statHealth + 1;
+			statDeskCoins = statDeskCoins - 5;
+		} else {
+			errorPopup(1);
+		}
+	}
+}
+
+function createItemTest(){
+	if(isPlacingItem == 0){
+		isPlacingItem = 1;
+		document.getElementById("ItemSetZone").style.visibility = 'visible';
+		document.getElementById("ItemZoneA1").style.visibility = 'visible';
+		document.getElementById("ItemZoneA2").style.visibility = 'visible';
+		document.getElementById("ItemZoneA3").style.visibility = 'visible';
+		document.getElementById("ItemZoneA4").style.visibility = 'visible';
+		document.getElementById("ItemZoneA5").style.visibility = 'visible';
+		document.getElementById("ItemZoneB1").style.visibility = 'visible';
+		document.getElementById("ItemZoneB2").style.visibility = 'visible';
+		document.getElementById("ItemZoneB3").style.visibility = 'visible';
+		document.getElementById("ItemZoneB4").style.visibility = 'visible';
+		document.getElementById("ItemZoneB5").style.visibility = 'visible';
+		document.getElementById("ItemZoneC1").style.visibility = 'visible';
+		document.getElementById("ItemZoneC2").style.visibility = 'visible';
+		document.getElementById("ItemZoneC3").style.visibility = 'visible';
+		document.getElementById("ItemZoneC4").style.visibility = 'visible';
+		document.getElementById("ItemZoneC5").style.visibility = 'visible';
+		document.getElementById("ItemZoneD1").style.visibility = 'visible';
+		document.getElementById("ItemZoneD2").style.visibility = 'visible';
+		document.getElementById("ItemZoneD3").style.visibility = 'visible';
+		document.getElementById("ItemZoneD4").style.visibility = 'visible';
+		document.getElementById("ItemZoneD5").style.visibility = 'visible';
+		document.getElementById("ItemZoneE1").style.visibility = 'visible';
+		document.getElementById("ItemZoneE2").style.visibility = 'visible';
+		document.getElementById("ItemZoneE3").style.visibility = 'visible';
+		document.getElementById("ItemZoneE4").style.visibility = 'visible';
+		document.getElementById("ItemZoneE5").style.visibility = 'visible';
+		document.getElementById("ItemZoneF1").style.visibility = 'visible';
+		document.getElementById("ItemZoneF2").style.visibility = 'visible';
+		document.getElementById("ItemZoneF3").style.visibility = 'visible';
+		document.getElementById("ItemZoneF4").style.visibility = 'visible';
+		document.getElementById("ItemZoneF5").style.visibility = 'visible';
+		document.getElementById("ItemZoneG1").style.visibility = 'visible';
+		document.getElementById("ItemZoneG2").style.visibility = 'visible';
+		document.getElementById("ItemZoneG3").style.visibility = 'visible';
+		document.getElementById("ItemZoneG4").style.visibility = 'visible';
+		document.getElementById("ItemZoneG5").style.visibility = 'visible';
+		document.getElementById("ItemZoneH1").style.visibility = 'visible';
+		document.getElementById("ItemZoneH2").style.visibility = 'visible';
+		document.getElementById("ItemZoneH3").style.visibility = 'visible';
+		document.getElementById("ItemZoneH4").style.visibility = 'visible';
+		document.getElementById("ItemZoneH5").style.visibility = 'visible';
+		document.getElementById("ItemZoneI1").style.visibility = 'visible';
+		document.getElementById("ItemZoneI2").style.visibility = 'visible';
+		document.getElementById("ItemZoneI3").style.visibility = 'visible';
+		document.getElementById("ItemZoneI4").style.visibility = 'visible';
+		document.getElementById("ItemZoneI5").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ1").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ2").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ3").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ4").style.visibility = 'visible';
+		document.getElementById("ItemZoneJ5").style.visibility = 'visible';
+		document.getElementById("ItemZoneK1").style.visibility = 'visible';
+		document.getElementById("ItemZoneK2").style.visibility = 'visible';
+		document.getElementById("ItemZoneK3").style.visibility = 'visible';
+		document.getElementById("ItemZoneK4").style.visibility = 'visible';
+		document.getElementById("ItemZoneK5").style.visibility = 'visible';
+		<!-- console.log("did it");
+} else if(isPlacingItem == 1){
+		isPlacingItem = 0;
+		document.getElementById("ItemSetZone").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneA5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneB5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneC5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneD5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneE5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneF5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneG5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneH5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneI5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneJ5").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK1").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK2").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK3").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK4").style.visibility = 'hidden';
+		document.getElementById("ItemZoneK5").style.visibility = 'hidden';
+	}
+		return;
+}
+
+function spawnMonster(type, dist, speed, life, row, swaprate){
 	monsOut = monsOut + 1;
 	statSpawned = statSpawned + 1
 	frame = 0;
@@ -2201,7 +2280,7 @@ function spawnMonster(type, dist, speed, life, row){
 	
 	ELEM.style.width = 72;
 	ELEM.style.height = 96;
-	moveMonster(manipID, manipBarID, manipBarBackID, manipBarFrontID, trueID, type, frame, dist, speed, maxlife);
+	moveMonster(manipID, manipBarID, manipBarBackID, manipBarFrontID, trueID, type, frame, dist, speed, swaprate, maxlife);
 	delete manipID;
 	delete manipBarID;
 	delete manipBarBackID;
@@ -2211,6 +2290,7 @@ function spawnMonster(type, dist, speed, life, row){
 	delete frame;
 	delete dist;
 	delete speed;
+	delete swaprate;
 	delete maxlife;
 	delete currentDiv;
 	delete cnt;
@@ -2224,7 +2304,7 @@ function spawnMonster(type, dist, speed, life, row){
 	delete row;
 	return;
 }
-function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLIFE){
+function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, SWRATE, MAXLIFE){
 	ELEM = document.getElementById(RID);
 	ELEMB = document.getElementById(BID);
 	ELEMBB = document.getElementById(BBID);
@@ -2272,11 +2352,17 @@ function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLI
 		ELEMBF.style.height = 1;
 		return;
 	} else if(curPOS > 40){
-		willSwap = getRandomInt(1, 20);
-		if(willSwap == 10){
+		willSwap = 0;
+		swapNum = 0;
+		console.log(SWRATE);
+		if(SWRATE == 1){
+			willSwap = getRandomInt(1, 20);
+			swapNum = 10;
+		}
+		if(willSwap == swapNum){
 			swapLane(RID, BID, BBID, BFID, IDID);
 		}
-		moveMonsterDo(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLIFE);
+		moveMonsterDo(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, SWRATE, MAXLIFE);
 	}
 	delete MOD;
 	delete curPOS;
@@ -2294,11 +2380,12 @@ function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, MAXLI
 	delete FRAME;
 	delete DIST;
 	delete SPEED;
+	delete SWRATE;
 	delete MAXLIFE;
 	return;
 }
-function moveMonsterDo(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxlife){
-	setTimeout(function(){moveMonster(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxlife);}, Speed);
+function moveMonsterDo(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Swrate, Maxlife){
+	setTimeout(function(){moveMonster(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Swrate, Maxlife);}, Speed);
 	delete ID;
 	delete Bid;
 	delete BBid;
@@ -2309,6 +2396,7 @@ function moveMonsterDo(ID, Bid, BBid, BFid, Idid, Type, Frame, Dist, Speed, Maxl
 	delete Frame;
 	delete Dist;
 	delete Speed;
+	delete Swrate;
 	delete Maxlife;
 	return;
 }
@@ -2337,6 +2425,17 @@ function swapLane(MonID, MonBid, MonBBid, MonBFid, MonIdid){
 		ELEMBB.style.top = getPOS(ELEMBB.style.top) + 98;
 		ELEMBF.style.top = getPOS(ELEMBF.style.top) + 98;
 	}
+	delete ELEM;
+	delete ELEMB;
+	delete ELEMBB;
+	delete ELEMBF;
+	delete currTop;
+	delete UpDown;
+	delete MonID;
+	delete MonBid;
+	delete MonBBid;
+	delete MonBFid;
+	delete MonIdid;
 }
 
 function moveChar(DIR){
