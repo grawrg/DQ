@@ -2013,10 +2013,12 @@ function tutorThem(SLIDE, TID){
 		M.setAttribute("class", "TutorPop");
 		document.body.insertBefore(M, document.getElementById("ZoneZone"));
 		M.innerHTML = '<span class="TutorPageTitle">Defense:</br></span><span class="TutorText">How to build defenses</br></br></span>';
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>To move up a row</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Red Button</span><span class="TutorText"></br>To open and close the menu</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>Move selection Up 1 row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "A"</span><span class="TutorText"></br>Move selection Left 1 row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>Move selection Down 1 row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "D"</span><span class="TutorText"></br>Move selection Right 1 row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Build Object</span><span class="TutorText"></br>Using build buttons</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="selectItemPurchase(0);tutorThem(1, ',TutorID,');"><span style="color:#418A11;">Back</span></button>');
 		
 		document.getElementById("ItemBut").style.visibility = "visible";
@@ -2024,9 +2026,9 @@ function tutorThem(SLIDE, TID){
 		selectItemPurchase(0);
 		
 		<!-- console.log(M);
-		M.style.height = 470;
+		M.style.height = 640;
 		M.style.width = 400;
-		M.style.top = 120;
+		M.style.top = 100;
 		M.style.left = 740;
 	}
 	return;
