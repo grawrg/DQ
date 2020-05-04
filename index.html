@@ -183,6 +183,11 @@ body{
 	left: 7px;
 	z-index: 0;
 }
+.PlayBorder{
+	position: absolute;
+	background-color: black;
+	z-index: 10000;
+}
 .MonsLineZone{
 	width: 1048px;
 	height: 96px;
@@ -725,6 +730,10 @@ body{
 	</head>
 	<body id="body" onKeyPress="onKeyChange()">
 		<div id="VerBox" class="VerBox">Ver. 1.20.05.03 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
+		<div id="BordL" class="PlayBorder"></div>
+		<div id="BordR" class="PlayBorder"></div>
+		<div id="BordT" class="PlayBorder"></div>
+		<div id="BordB" class="PlayBorder"></div>
 		<div id="ZoneZone" class="ZoneZone">
 			<div id="ItemCreationList" class="ItemCreationList"></div>
 			<div id="MonsSpawnZoneA" class="MonsSpawnZone"></div>
@@ -1585,6 +1594,25 @@ function loadGameZone(){
 	document.getElementById("CharZone").style.left = 12;
 	document.getElementById("CharZone").style.backgroundSize = "100% 100%";
 	document.getElementById("CharZone").style.backgroundImage = "url('DQU2/CHAR.png')";
+	document.getElementById("PlayZone").style.backgroundSize = "100% 100%";
+	document.getElementById("PlayZone").style.backgroundImage = "url('DQU2/BG.png')";
+	document.getElementById("BordL").style.width = "8px";
+	document.getElementById("BordR").style.width = "0px";
+	document.getElementById("BordT").style.width = "700px";
+	document.getElementById("BordB").style.width = "0px";
+	document.getElementById("BordL").style.height = "700px";
+	document.getElementById("BordR").style.height = "0px";
+	document.getElementById("BordT").style.height = "8px";
+	document.getElementById("BordB").style.height = "0px";
+	document.getElementById("BordL").style.top = "0px";
+	document.getElementById("BordR").style.top = "0px";
+	document.getElementById("BordT").style.top = "0px";
+	document.getElementById("BordB").style.top = "0px";
+	document.getElementById("BordL").style.left = "0px";
+	document.getElementById("BordR").style.left = "0px";
+	document.getElementById("BordT").style.left = "0px";
+	document.getElementById("BordB").style.left = "0px";
+	document.getElementById("PlayZone").style.zIndex = "-1";
 	document.getElementById("FireZone").style.top = 440;
 	document.getElementById("FireZone").style.left = 86;
 	document.getElementById("MonsSpawnZoneA").style.top = 11;
