@@ -371,6 +371,37 @@ body{
 	width: 72px;
 	left: 121px;
 }
+.ItemValueZone{
+	position: absolute; 
+	bottom: 0; 
+	width: 100%; 
+	color: red; 
+	font-weight: bold;
+	text-align: center; 
+	padding: 0px; 
+	margin: 0px; 
+	background-color: black;
+	border-radius: 15px;
+}
+.ItemCreationList{
+	text-shadow: -1px 1px 0 #000, 
+				 1px 1px 0 #000, 
+				 1px -1px 0 #000; 
+				 -1px -1px 0 #000;
+	padding-top: 10px;
+	font-family: Andale Mono, monospace;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+	color: #FAAB1D;
+	border-radius: 10px;
+	border: 3px solid grey;
+	position:absolute;
+	z-index: 1000;
+	width: 0px;
+	height: 0px;
+	background: linear-gradient(-45deg, #6F818D, #7F94A3, #87A0B2, #828D94);
+}
 .MonsSpawnZone{
 	position: absolute;
 	height: 96px;
@@ -450,8 +481,7 @@ body{
 	margin: 3px;
 	padding: 1px;
 	width: 159px;
-	cursor: pointer;
-	
+	cursor: pointer;	
 }
 .PurchButs:hover{
 	box-shadow: -2px 2px 0 #727F78, 
@@ -461,6 +491,38 @@ body{
 	color: #35B300;
 }
 .PurchButs:active{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+	background: linear-gradient(-180deg, #D0E6DA, #A2B5AB);
+}
+.PurchButsRed{
+	text-shadow: -1px 1px 0 #34026A, 
+				 1px 1px 0 #34026A, 
+				 1px -1px 0 #34026A; 
+				 -1px -1px 0 #34026A;
+	color: #507CA5;
+	font-family: Andale Mono, monospace;
+	background: linear-gradient(-45deg, #F50000, #DC0000, #DC0000, #F50000);
+	font-size: 19px;
+	text-align: center;
+	position: relative;
+	border: 2px solid #086F0B;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 1px;
+	width: 159px;
+	cursor: pointer;	
+}
+.PurchButsRed:hover{
+	box-shadow: -2px 2px 0 #727F78, 
+              2px 2px 0 #727F78, 
+              2px -2px 0 #727F78; 
+              -2px -2px 0 #727F78;
+	color: #35B300;
+}
+.PurchButsRed:active{
 	box-shadow: -2px 2px 0 #727F78, 
               2px 2px 0 #727F78, 
               2px -2px 0 #727F78; 
@@ -597,7 +659,8 @@ body{
 	border-radius: 5px;
 	font-size: 15px;
 	margin-right: 9px;
-	width: 65px;
+	margin-top: 4px;
+	width: 95px;
 	cursor: pointer;
 }
 .TutorBut:Hover{
@@ -661,63 +724,64 @@ body{
 		</style>
 	</head>
 	<body id="body" onKeyPress="onKeyChange()">
-		<div id="VerBox" class="VerBox">Ver. 1.20.3.18 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
+		<div id="VerBox" class="VerBox">Ver. 1.20.05.03 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
 		<div id="ZoneZone" class="ZoneZone">
+			<div id="ItemCreationList" class="ItemCreationList"></div>
 			<div id="MonsSpawnZoneA" class="MonsSpawnZone"></div>
 			<div id="MonsSpawnZoneB" class="MonsSpawnZone"></div>
 			<div id="MonsSpawnZoneC" class="MonsSpawnZone"></div>
 			<div id="MonsSpawnZoneD" class="MonsSpawnZone"></div>
 			<div id="MonsSpawnZoneE" class="MonsSpawnZone"></div>
-			<div id="MonsZone1" class="MonsZone testBorderD"></div>
-			<div id="MonsZone2" class="MonsZone testBorderD"></div>
-			<div id="MonsZone3" class="MonsZone testBorderD"></div>
-			<div id="MonsZone4" class="MonsZone testBorderD"></div>
-			<div id="MonsZone5" class="MonsZone testBorderD"></div>
-			<div id="MonsZone6" class="MonsZone testBorderD"></div>
-			<div id="MonsZone7" class="MonsZone testBorderD"></div>
-			<div id="MonsZone8" class="MonsZone testBorderD"></div>
-			<div id="MonsZone9" class="MonsZone testBorderD"></div>
-			<div id="MonsZone10" class="MonsZone testBorderD"></div>
-			<div id="MonsZone11" class="MonsZone testBorderD"></div>
-			<div id="MonsZone12" class="MonsZone testBorderD"></div>
-			<div id="MonsZone13" class="MonsZone testBorderD"></div>
-			<div id="MonsZone14" class="MonsZone testBorderD"></div>
-			<div id="MonsZone15" class="MonsZone testBorderD"></div>
-			<div id="MonsZone16" class="MonsZone testBorderD"></div>
-			<div id="MonsZone17" class="MonsZone testBorderD"></div>
-			<div id="MonsZone18" class="MonsZone testBorderD"></div>
-			<div id="MonsZone19" class="MonsZone testBorderD"></div>
-			<div id="MonsZone20" class="MonsZone testBorderD"></div>
-			<div id="MonsZone21" class="MonsZone testBorderD"></div>
-			<div id="MonsZone22" class="MonsZone testBorderD"></div>
-			<div id="MonsZone23" class="MonsZone testBorderD"></div>
-			<div id="MonsZone24" class="MonsZone testBorderD"></div>
-			<div id="MonsZone25" class="MonsZone testBorderD"></div>
-			<div id="MonsZone26" class="MonsZone testBorderD"></div>
-			<div id="MonsZone27" class="MonsZone testBorderD"></div>
-			<div id="MonsZone28" class="MonsZone testBorderD"></div>
-			<div id="MonsZone29" class="MonsZone testBorderD"></div>
-			<div id="MonsZone30" class="MonsZone testBorderD"></div>
-			<div id="MonsZone31" class="MonsZone testBorderD"></div>
-			<div id="MonsZone32" class="MonsZone testBorderD"></div>
-			<div id="MonsZone33" class="MonsZone testBorderD"></div>
-			<div id="MonsZone34" class="MonsZone testBorderD"></div>
-			<div id="MonsZone35" class="MonsZone testBorderD"></div>
-			<div id="MonsZone36" class="MonsZone testBorderD"></div>
-			<div id="MonsZone37" class="MonsZone testBorderD"></div>
-			<div id="MonsZone38" class="MonsZone testBorderD"></div>
-			<div id="MonsZone39" class="MonsZone testBorderD"></div>
-			<div id="MonsZone40" class="MonsZone testBorderD"></div>
-			<div id="MonsZone41" class="MonsZone testBorderD"></div>
-			<div id="MonsZone42" class="MonsZone testBorderD"></div>
-			<div id="MonsZone43" class="MonsZone testBorderD"></div>
-			<div id="MonsZone44" class="MonsZone testBorderD"></div>
-			<div id="MonsZone45" class="MonsZone testBorderD"></div>
-			<div id="MonsZone46" class="MonsZone testBorderD"></div>
-			<div id="MonsZone47" class="MonsZone testBorderD"></div>
-			<div id="MonsZone48" class="MonsZone testBorderD"></div>
-			<div id="MonsZone49" class="MonsZone testBorderD"></div>
-			<div id="MonsZone50" class="MonsZone testBorderD"></div>
+			<div id="MonsZone1" class="MonsZone"></div>
+			<div id="MonsZone2" class="MonsZone"></div>
+			<div id="MonsZone3" class="MonsZone"></div>
+			<div id="MonsZone4" class="MonsZone"></div>
+			<div id="MonsZone5" class="MonsZone"></div>
+			<div id="MonsZone6" class="MonsZone"></div>
+			<div id="MonsZone7" class="MonsZone"></div>
+			<div id="MonsZone8" class="MonsZone"></div>
+			<div id="MonsZone9" class="MonsZone"></div>
+			<div id="MonsZone10" class="MonsZone"></div>
+			<div id="MonsZone11" class="MonsZone"></div>
+			<div id="MonsZone12" class="MonsZone"></div>
+			<div id="MonsZone13" class="MonsZone"></div>
+			<div id="MonsZone14" class="MonsZone"></div>
+			<div id="MonsZone15" class="MonsZone"></div>
+			<div id="MonsZone16" class="MonsZone"></div>
+			<div id="MonsZone17" class="MonsZone"></div>
+			<div id="MonsZone18" class="MonsZone"></div>
+			<div id="MonsZone19" class="MonsZone"></div>
+			<div id="MonsZone20" class="MonsZone"></div>
+			<div id="MonsZone21" class="MonsZone"></div>
+			<div id="MonsZone22" class="MonsZone"></div>
+			<div id="MonsZone23" class="MonsZone"></div>
+			<div id="MonsZone24" class="MonsZone"></div>
+			<div id="MonsZone25" class="MonsZone"></div>
+			<div id="MonsZone26" class="MonsZone"></div>
+			<div id="MonsZone27" class="MonsZone"></div>
+			<div id="MonsZone28" class="MonsZone"></div>
+			<div id="MonsZone29" class="MonsZone"></div>
+			<div id="MonsZone30" class="MonsZone"></div>
+			<div id="MonsZone31" class="MonsZone"></div>
+			<div id="MonsZone32" class="MonsZone"></div>
+			<div id="MonsZone33" class="MonsZone"></div>
+			<div id="MonsZone34" class="MonsZone"></div>
+			<div id="MonsZone35" class="MonsZone"></div>
+			<div id="MonsZone36" class="MonsZone"></div>
+			<div id="MonsZone37" class="MonsZone"></div>
+			<div id="MonsZone38" class="MonsZone"></div>
+			<div id="MonsZone39" class="MonsZone"></div>
+			<div id="MonsZone40" class="MonsZone"></div>
+			<div id="MonsZone41" class="MonsZone"></div>
+			<div id="MonsZone42" class="MonsZone"></div>
+			<div id="MonsZone43" class="MonsZone"></div>
+			<div id="MonsZone44" class="MonsZone"></div>
+			<div id="MonsZone45" class="MonsZone"></div>
+			<div id="MonsZone46" class="MonsZone"></div>
+			<div id="MonsZone47" class="MonsZone"></div>
+			<div id="MonsZone48" class="MonsZone"></div>
+			<div id="MonsZone49" class="MonsZone"></div>
+			<div id="MonsZone50" class="MonsZone"></div>
 			<div id="LifeBarBack1" class="LifeBarBack"></div>
 			<div id="LifeBar1" class="LifeBar"></div>
 			<div id="LifeBarFront1" class="LifeBarFront"></div>
@@ -940,10 +1004,10 @@ body{
 					<div id="RoundLineZoneE" class="RoundLineZone"></div>
 				</div>
 			</div>
-			<div id="CharZone" class="CharZone testBorderB"></div>
-			<div id="FireZone" class="FireZone testBorderB"></div>
+			<div id="CharZone" class="CharZone "></div>
+			<div id="FireZone" class="FireZone"></div>
 			<div id="ItemSetZone" class="ItemSetZone testBorderB"></div>
-			<div id="StatZone" class="StatZone testBorderR">
+			<div id="StatZone" class="StatZone">
 				<div id ="StatItemA" class="StatCoinItem">
 					Desk Coins
 					<p id="CoinBox" class="statNum">0</p>
@@ -998,8 +1062,8 @@ body{
 							</div>
 						</td>
 						<td class="ActTd">
-							<div id="" class="">
-								<p class="ButsSpacer" onClick=""></p>
+							<div id="ItemBut" class="">
+								<p class="PurchButsRed" id="ItemButText" onClick="selectItemPurchase(0)">Build Defences</p>
 							</div>
 						</td>
 						<td class="ActTd">
@@ -1028,7 +1092,7 @@ body{
 		</div>
 	</body>
 	<script>
-var itemsAcive = [ 
+var itemActive = [ 
 	0,
 	0,
 	0,
@@ -1085,7 +1149,7 @@ var itemsAcive = [
 	0,
 	0
 ]
-var itemsContent = [
+var itemContent = [ 
 	0,
 	0,
 	0,
@@ -1142,7 +1206,7 @@ var itemsContent = [
 	0,
 	0
 ]
-var itemsContentValue = [
+var itemContentValueA = [ 
 	0,
 	0,
 	0,
@@ -1199,6 +1263,121 @@ var itemsContentValue = [
 	0,
 	0
 ]
+var itemContentValueB = [ 
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
+var itemContentValueC = [ 
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+]
+
 var monsLifeDat = [
 	0,
 	0,
@@ -1303,6 +1482,8 @@ var monsActive = [
 	0,
 	0
 ]
+
+
 var saved_keydown = "";
 var currLane = 0;
 var isPlacingItem = 0;
@@ -1402,6 +1583,8 @@ function loadGameZone(){
 	document.getElementById("ItemZoneK5").style.visibility = 'hidden';
 	document.getElementById("CharZone").style.top = 403;
 	document.getElementById("CharZone").style.left = 12;
+	document.getElementById("CharZone").style.backgroundSize = "100% 100%";
+	document.getElementById("CharZone").style.backgroundImage = "url('DQU2/CHAR.png')";
 	document.getElementById("FireZone").style.top = 440;
 	document.getElementById("FireZone").style.left = 86;
 	document.getElementById("MonsSpawnZoneA").style.top = 11;
@@ -1660,6 +1843,7 @@ function tutorThem(SLIDE, TID){
 		document.getElementById("HealBut").style.visibility = "visible";
 		document.getElementById("KnbkBut").style.visibility = "visible";
 		document.getElementById("DamgBut").style.visibility = "visible";
+		document.getElementById("ItemBut").style.visibility = "visible";
 		document.getElementById("DeveActs").style.visibility = "visible";
 		document.getElementById("StatItemA").style.visibility = "visible";
 		document.getElementById("StatItemB").style.visibility = "visible";
@@ -1670,6 +1854,7 @@ function tutorThem(SLIDE, TID){
 		document.getElementById("StatItemG").style.visibility = "visible";
 	}
 	if(SLIDE == 1){
+		removeObject(TID);
 		TIDA = getRandomInt(2345, 436275);
 		TIDB = getRandomInt(23445, 4362775);
 		TIDC = getRandomInt(234, 4362);
@@ -1679,8 +1864,11 @@ function tutorThem(SLIDE, TID){
 		M.setAttribute("id", TutorID);
 		M.setAttribute("class", "TutorPop");
 		document.body.insertBefore(M, document.getElementById("ZoneZone"));
-		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">Click next to learn to play.</span></br></br>';
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
+		M.innerHTML = '<span class="TutorPageTitle">Tutorial:</br></span></br><span class="TutorTextTitle">Welcome to DQU2</br></span></br><span class="TutorText">What do you need to know?</span></br></br>';
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Controls</span></button></br>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(2, ',TutorID,')"><span style="color:#418A11;">Stats</span></button></br>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(3, ',TutorID,')"><span style="color:#418A11;">Upgrades</span></button></br>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(5, ',TutorID,')"><span style="color:#418A11;">Defences</span></button></br>');
 		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
 		
 		document.getElementById("TutrBut").style.visibility = "hidden";
@@ -1688,6 +1876,7 @@ function tutorThem(SLIDE, TID){
 		document.getElementById("HealBut").style.visibility = "hidden";
 		document.getElementById("KnbkBut").style.visibility = "hidden";
 		document.getElementById("DamgBut").style.visibility = "hidden";
+		document.getElementById("ItemBut").style.visibility = "hidden";
 		document.getElementById("DeveActs").style.visibility = "hidden";
 		document.getElementById("StatItemA").style.visibility = "hidden";
 		document.getElementById("StatItemB").style.visibility = "hidden";
@@ -1698,9 +1887,9 @@ function tutorThem(SLIDE, TID){
 		document.getElementById("StatItemG").style.visibility = "hidden";
 		
 		console.log(M);
-		M.style.height = 215;
+		M.style.height = 310;
 		M.style.width = 350;
-		M.style.top = 180;
+		M.style.top = 140;
 		M.style.left = 350;
 	}
 	if(SLIDE == 2){
@@ -1718,8 +1907,12 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Desk Coins -</span><span class="TutorText"></br>Used to purchase upgrades.</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Damage -</span><span class="TutorText"></br>Damage you do to monsters.</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">- Knockback -</span><span class="TutorText"></br>Knockback when monster is hit.</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(3, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(1, ',TutorID,')"><span style="color:#418A11;">Back</span></button>');
+		
+		document.getElementById("StatItemA").style.visibility = "visible";
+		document.getElementById("StatItemD").style.visibility = "visible";
+		document.getElementById("StatItemE").style.visibility = "visible";
+		document.getElementById("StatItemF").style.visibility = "visible";
 		
 		console.log(M);
 		M.style.height = 400;
@@ -1742,8 +1935,7 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Damgage</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Knockback</span><span class="TutorText"></br>Spend 10 Coins for +1 Damage</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">+1 Health</span><span class="TutorText"></br>Spend 10 Coins for +1 Health</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(4, ',TutorID,')"><span style="color:#418A11;">Next</span></button>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#8A1111;">Close</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(1, ',TutorID,')"><span style="color:#418A11;">Back</span></button>');
 		
 		document.getElementById("HealBut").style.visibility = "visible";
 		document.getElementById("KnbkBut").style.visibility = "visible";
@@ -1771,7 +1963,7 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(0, ',TutorID,')"><span style="color:#418A11;">Finish</span></button>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorThem(1, ',TutorID,')"><span style="color:#418A11;">Back</span></button>');
 		
 		document.getElementById("WaveBut").style.visibility = "visible";
 		
@@ -1780,6 +1972,34 @@ function tutorThem(SLIDE, TID){
 		M.style.width = 400;
 		M.style.top = 60;
 		M.style.left = 520;
+	}
+	if(SLIDE == 5){
+		removeObject(TID);
+		TIDA = getRandomInt(2345, 436275);
+		TIDB = getRandomInt(23445, 4362775);
+		TIDC = getRandomInt(234, 4362);
+		TutorID = ''.concat(TIDA - TIDB - TIDC);
+		console.log(TutorID);
+		M = document.createElement('div');
+		M.setAttribute("id", TutorID);
+		M.setAttribute("class", "TutorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = '<span class="TutorPageTitle">Defense:</br></span><span class="TutorText">How to build defenses</br></br></span>';
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "W"</span><span class="TutorText"></br>To move up a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>To move down a row</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "F"</span><span class="TutorText"></br>To fire at monsters</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Use "Start Wave"</span><span class="TutorText"></br>To start next wave</br></br></span>');
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="selectItemPurchase(0);tutorThem(1, ',TutorID,');"><span style="color:#418A11;">Back</span></button>');
+		
+		document.getElementById("ItemBut").style.visibility = "visible";
+		
+		selectItemPurchase(0);
+		
+		<!-- console.log(M);
+		M.style.height = 470;
+		M.style.width = 400;
+		M.style.top = 120;
+		M.style.left = 740;
 	}
 	return;
 }
@@ -1891,6 +2111,7 @@ function startWave(WAVE){
 		var SR = 1;
 		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[5];
 	}
+	document.getElementById("ItemBut").style.visibility = 'hidden';
 	runWave(WAVE, SS, LEN, MXLEN, SR);
 }
 function runWave(Wave, Ss, Len, MxLen, Sr){
@@ -1947,6 +2168,7 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 	return;
 }
 function resetMons(WV){
+	document.getElementById("ItemBut").style.visibility = 'visible';
 	var IsDone = 0;
 	var IsCnt = 0;
 	do{
@@ -2080,9 +2302,414 @@ function purchaseUpgrade(toUP){
 	}
 }
 
+function moveSetItemZone(DIR){
+	var TOP = getPOS(document.getElementById("ItemSetZone").style.top);
+	var LEFT = getPOS(document.getElementById("ItemSetZone").style.left);
+	if(DIR == "U"){
+		if(TOP < 50){
+		
+		} else {
+			TOP = TOP - 98;
+			placeCol = placeCol - 1;
+		}
+	}
+	if(DIR == "D"){
+		if(TOP > 400){
+		
+		} else {
+			TOP = TOP + 98;
+			placeCol = placeCol + 1;
+		}
+	}
+	if(DIR == "L"){
+		if(LEFT < 140){
+		
+		} else {
+			LEFT = LEFT - 74;
+			placeRow = placeRow - 1;
+		}
+	}
+	if(DIR == "R"){
+		if(LEFT > 850){
+		
+		} else {
+			LEFT = LEFT + 74;
+			placeRow = placeRow + 1;
+		}
+	}
+	console.log(placeCol, " ", placeRow);
+	console.log(getItemLocation(placeRow, placeCol));
+	document.getElementById("ItemSetZone").style.left = LEFT;
+	document.getElementById("ItemSetZone").style.top = TOP;
+	document.getElementById("body").onkeypress = saved_keydown;
+}
+function getItemLocation(valB, valA){
+	if(valA == 1 && valB == 1){
+		return 0;
+	}
+	<!-- 0  	1 - 1 
+	if(valA == 1 && valB == 2){
+		return 1;
+	}
+	<!-- 1  	1 - 2 
+	if(valA == 1 && valB == 3){
+		return 2;
+	}
+	<!-- 2  	1 - 3 
+	if(valA == 1 && valB == 4){
+		return 3;
+	}
+	<!-- 3  	1 - 4 
+	if(valA == 1 && valB == 5){
+		return 4;
+	}
+	<!-- 4  	1 - 5
+	if(valA == 1 && valB == 6){
+		return 5;
+	}
+	<!-- 5  	1 - 6
+	if(valA == 1 && valB == 7){
+		return 6;
+	}
+	<!-- 6  	1 - 7
+	if(valA == 1 && valB == 8){
+		return 7;
+	}
+	<!-- 7  	1 - 8
+	if(valA == 1 && valB == 9){
+		return 8;
+	}
+	<!-- 8  	1 - 9
+	if(valA == 1 && valB == 10){
+		return 9;
+	}
+	<!-- 9  	1 - 10
+	if(valA == 1 && valB == 11){
+		return 10;
+	}
+	<!-- 10 	1 - 11
+	<!-------------------------
+	<!-------------------------
+	
+	if(valA == 2 && valB == 1){
+		return 11;
+	}
+	<!-- 11 	2 - 1
+	if(valA == 2 && valB == 2){
+		return 12;
+	}
+	<!-- 12 	2 - 2 
+	if(valA == 2 && valB == 3){
+		return 13;
+	}
+	<!-- 13 	2 - 3
+	if(valA == 2 && valB == 4){
+		return 14;
+	}
+	<!-- 14 	2 - 4
+	if(valA == 2 && valB == 5){
+		return 15;
+	}
+	<!-- 15 	2 - 5
+	if(valA == 2 && valB == 6){
+		return 16;
+	}
+	<!-- 16 	2 - 6
+	if(valA == 2 && valB == 7){
+		return 17;
+	}
+	<!-- 17 	2 - 7
+	if(valA == 2 && valB == 8){
+		return 18;
+	}
+	<!-- 18 	2 - 8
+	if(valA == 2 && valB == 9){
+		return 19;
+	}
+	<!-- 19 	2 - 9
+	if(valA == 2 && valB == 10){
+		return 20;
+	}
+	<!-- 20 	2 - 10
+	if(valA == 2 && valB == 11){
+		return 21;
+	}
+	<!-- 21 	2 - 11
+	<!-------------------------
+	<!-------------------------
+	
+	if(valA == 3 && valB == 1){
+		return 22;
+	}
+	<!-- 22 	3 - 1
+	if(valA == 3 && valB == 2){
+		return 23;
+	}
+	<!-- 23 	3 - 2 
+	if(valA == 3 && valB == 3){
+		return 24;
+	}
+	<!-- 24 	3 - 3
+	if(valA == 3 && valB == 4){
+		return 25;
+	}
+	<!-- 25 	3 - 4
+	if(valA == 3 && valB == 5){
+		return 26;
+	}
+	<!-- 26 	3 - 5
+	if(valA == 3 && valB == 6){
+		return 27;
+	}
+	<!-- 27 	3 - 6
+	if(valA == 3 && valB == 7){
+		return 28;
+	}
+	<!-- 28 	3 - 7
+	if(valA == 3 && valB == 8){
+		return 29;
+	}
+	<!-- 29 	3 - 8
+	if(valA == 3 && valB == 9){
+		return 30;
+	}
+	<!-- 30 	3 - 9
+	if(valA == 3 && valB == 10){
+		return 31;
+	}
+	<!-- 31 	3 - 10
+	if(valA == 3 && valB == 11){
+		return 32;
+	}
+	<!-- 32 	3 - 11
+	<!-------------------------
+	<!-------------------------
+	
+	if(valA == 4 && valB == 1){
+		return 33;
+	}
+	<!-- 33 	4 - 1
+	if(valA == 4 && valB == 2){
+		return 34;
+	}
+	<!-- 34 	4 - 2 
+	if(valA == 4 && valB == 3){
+		return 35;
+	}
+	<!-- 35 	4 - 3
+	if(valA == 4 && valB == 4){
+		return 36;
+	}
+	<!-- 36 	4 - 4
+	if(valA == 4 && valB == 5){
+		return 37;
+	}
+	<!-- 37 	4 - 5
+	if(valA == 4 && valB == 6){
+		return 38;
+	}
+	<!-- 38 	4 - 6
+	if(valA == 4 && valB == 7){
+		return 39;
+	}
+	<!-- 39 	4 - 7
+	if(valA == 4 && valB == 8){
+		return 40;
+	}
+	<!-- 40 	4 - 8
+	if(valA == 4 && valB == 9){
+		return 41;
+	}
+	<!-- 41 	4 - 9
+	if(valA == 4 && valB == 10){
+		return 42;
+	}
+	<!-- 42 	4 - 10
+	if(valA == 4 && valB == 11){
+		return 43;
+	}
+	<!-- 43 	4 - 11
+	<!-------------------------
+	<!-------------------------
+	
+	if(valA == 5 && valB == 1){
+		return 44;
+	}
+	<!-- 44 	5 - 1
+	if(valA == 5 && valB == 2){
+		return 45;
+	}
+	<!-- 45 	5 - 2 
+	if(valA == 5 && valB == 3){
+		return 46;
+	}
+	<!-- 46 	5 - 3
+	if(valA == 5 && valB == 4){
+		return 47;
+	}
+	<!-- 47 	5 - 4
+	if(valA == 5 && valB == 5){
+		return 48;
+	}
+	<!-- 48 	5 - 5
+	if(valA == 5 && valB == 6){
+		return 49;
+	}
+	<!-- 49 	5 - 6
+	if(valA == 5 && valB == 7){
+		return 50;
+	}
+	<!-- 50 	5 - 7
+	if(valA == 5 && valB == 8){
+		return 51;
+	}
+	<!-- 51 	5 - 8
+	if(valA == 5 && valB == 9){
+		return 52;
+	}
+	<!-- 52 	5 - 9
+	if(valA == 5 && valB == 10){
+		return 53;
+	}
+	<!-- 53 	5 - 10
+	if(valA == 5 && valB == 11){
+		return 54;
+	}
+	<!-- 54 	5 - 11
+	<!-------------------------
+	<!-------------------------
+}
+function selectItemPurchase(ACTN){
+	if(ACTN == 0){
+		createItemTest();
+	}
+	if(ACTN == 1){
+		type = 1;
+		itemID = getItemLocation(placeRow, placeCol);
+		if((statDeskCoins - 20) >= 0){
+			if(itemActive[itemID] == 0){
+				buildItem(itemID, type);
+				statDeskCoins = statDeskCoins - 20;
+			}
+		} else {
+			errorPopup(1);
+		}
+	}
+	if(ACTN == 2){
+		type = 2;
+		itemID = getItemLocation(placeRow, placeCol);
+		if((statDeskCoins - 20) >= 0){
+			if(itemActive[itemID] == 0){
+				buildItem(itemID, type);
+				statDeskCoins = statDeskCoins - 20;
+			}
+		} else {
+			errorPopup(1);
+		}
+	}
+}
+function buildItem(ITEMID, TYPE){
+	zoneName = itemIDtoLoc(ITEMID);
+	console.log(zoneName);
+	if(TYPE == 1){
+		itemActive[itemID] = 1;
+		itemContent[itemID] = 1;
+		itemContentValueA[itemID] = 25;
+		document.getElementById(zoneName).style.borderColor = 'green';
+	}
+	if(TYPE == 2){
+		itemActive[itemID] = 1;
+		itemContent[itemID] = 2;
+		itemContentValueA[itemID] = 25;
+		document.getElementById(zoneName).style.borderColor = 'blue';
+	}
+	runItem(ITEMID);
+	return;
+}
+
+function itemIDtoLoc(ITID){
+	locName = '';
+	if(ITID == 0){locName = 'ItemZoneA1';}
+	if(ITID == 1){locName = 'ItemZoneB1';}
+	if(ITID == 2){locName = 'ItemZoneC1';}
+	if(ITID == 3){locName = 'ItemZoneD1';}
+	if(ITID == 4){locName = 'ItemZoneE1';}
+	if(ITID == 5){locName = 'ItemZoneF1';}
+	if(ITID == 6){locName = 'ItemZoneG1';}
+	if(ITID == 7){locName = 'ItemZoneH1';}
+	if(ITID == 8){locName = 'ItemZoneI1';}
+	if(ITID == 9){locName = 'ItemZoneJ1';}
+	if(ITID == 10){locName = 'ItemZoneK1';}
+	if(ITID == 11){locName = 'ItemZoneA2';}
+	if(ITID == 12){locName = 'ItemZoneB2';}
+	if(ITID == 13){locName = 'ItemZoneC2';}
+	if(ITID == 14){locName = 'ItemZoneD2';}
+	if(ITID == 15){locName = 'ItemZoneE2';}
+	if(ITID == 16){locName = 'ItemZoneF2';}
+	if(ITID == 17){locName = 'ItemZoneG2';}
+	if(ITID == 18){locName = 'ItemZoneH2';}
+	if(ITID == 19){locName = 'ItemZoneI2';}
+	if(ITID == 20){locName = 'ItemZoneJ2';}
+	if(ITID == 21){locName = 'ItemZoneK2';}
+	if(ITID == 22){locName = 'ItemZoneA3';}
+	if(ITID == 23){locName = 'ItemZoneB3';}
+	if(ITID == 24){locName = 'ItemZoneC3';}
+	if(ITID == 25){locName = 'ItemZoneD3';}
+	if(ITID == 26){locName = 'ItemZoneE3';}
+	if(ITID == 27){locName = 'ItemZoneF3';}
+	if(ITID == 28){locName = 'ItemZoneG3';}
+	if(ITID == 29){locName = 'ItemZoneH3';}
+	if(ITID == 30){locName = 'ItemZoneI3';}
+	if(ITID == 31){locName = 'ItemZoneJ3';}
+	if(ITID == 32){locName = 'ItemZoneK3';}
+	if(ITID == 33){locName = 'ItemZoneA4';}
+	if(ITID == 34){locName = 'ItemZoneB4';}
+	if(ITID == 35){locName = 'ItemZoneC4';}
+	if(ITID == 36){locName = 'ItemZoneD4';}
+	if(ITID == 37){locName = 'ItemZoneE4';}
+	if(ITID == 38){locName = 'ItemZoneF4';}
+	if(ITID == 39){locName = 'ItemZoneG4';}
+	if(ITID == 40){locName = 'ItemZoneH4';}
+	if(ITID == 41){locName = 'ItemZoneI4';}
+	if(ITID == 42){locName = 'ItemZoneJ4';}
+	if(ITID == 43){locName = 'ItemZoneK4';}
+	if(ITID == 44){locName = 'ItemZoneA5';}
+	if(ITID == 45){locName = 'ItemZoneB5';}
+	if(ITID == 46){locName = 'ItemZoneC5';}
+	if(ITID == 47){locName = 'ItemZoneD5';}
+	if(ITID == 48){locName = 'ItemZoneE5';}
+	if(ITID == 49){locName = 'ItemZoneF5';}
+	if(ITID == 50){locName = 'ItemZoneG5';}
+	if(ITID == 51){locName = 'ItemZoneH5';}
+	if(ITID == 52){locName = 'ItemZoneI5';}
+	if(ITID == 53){locName = 'ItemZoneJ5';}
+	if(ITID == 54){locName = 'ItemZoneK5';}
+	
+	return locName;
+}
+
 function createItemTest(){
+	listData = "";
+	itemList = document.getElementById("ItemCreationList");
+	itemButton = document.getElementById("ItemButText");
+	wavesButton = document.getElementById("WaveBut");
 	if(isPlacingItem == 0){
 		isPlacingItem = 1;
+		itemList.style.top = 515;
+		itemList.style.left = 15;
+		itemList.style.width = 540;
+		itemList.style.height = 123;
+		wavesButton.style.visibility = 'hidden';
+		itemButton.innerHTML = 'Close Defences';
+		listData = 'Items You Can Build';
+		listData = listData.concat('<table style="margin:auto;">');
+		listData = listData.concat('<tr class="ActTr">');
+		listData = listData.concat('<td class="ActTd"><p class="PurchButs" onClick="selectItemPurchase(1)">Road Spikes</br>-20 Coins </p></td>');
+		listData = listData.concat('<td class="ActTd"><p class="PurchButs" onClick="selectItemPurchase(2)">Road Block</br>-20 Coins </p></td>');
+		//listData = listData.concat('<td class="ActTd"><p class="PurchButs" onClick="selectItemPurchase(3)">Explosives</br>-XX Coins </p></td></tr>');
+		listData = listData.concat('</tr></table>');
+		itemList.innerHTML = listData;
+		itemList.style.margin = 'auto';
 		document.getElementById("ItemSetZone").style.visibility = 'visible';
 		document.getElementById("ItemZoneA1").style.visibility = 'visible';
 		document.getElementById("ItemZoneA2").style.visibility = 'visible';
@@ -2142,64 +2769,182 @@ function createItemTest(){
 		<!-- console.log("did it");
 } else if(isPlacingItem == 1){
 		isPlacingItem = 0;
+		itemList.style.top = 0;
+		itemList.style.left = 0;
+		itemList.style.width = 0;
+		itemList.style.height = 0;
+		wavesButton.style.visibility = 'visible';
+		itemButton.innerHTML = 'Build Defences';
+		itemList.innerHTML = '';
 		document.getElementById("ItemSetZone").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneA5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneB5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneC5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneD5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneE5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneF5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneG5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneH5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneI5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneJ5").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK1").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK2").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK3").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK4").style.visibility = 'hidden';
-		document.getElementById("ItemZoneK5").style.visibility = 'hidden';
+		if(itemActive[0] == 0){document.getElementById("ItemZoneA1").style.visibility = 'hidden';}
+		if(itemActive[11] == 0){document.getElementById("ItemZoneA2").style.visibility = 'hidden';}
+		if(itemActive[22] == 0){document.getElementById("ItemZoneA3").style.visibility = 'hidden';}
+		if(itemActive[33] == 0){document.getElementById("ItemZoneA4").style.visibility = 'hidden';}
+		if(itemActive[44] == 0){document.getElementById("ItemZoneA5").style.visibility = 'hidden';}
+		if(itemActive[1] == 0){document.getElementById("ItemZoneB1").style.visibility = 'hidden';}
+		if(itemActive[12] == 0){document.getElementById("ItemZoneB2").style.visibility = 'hidden';}
+		if(itemActive[23] == 0){document.getElementById("ItemZoneB3").style.visibility = 'hidden';}
+		if(itemActive[34] == 0){document.getElementById("ItemZoneB4").style.visibility = 'hidden';}
+		if(itemActive[45] == 0){document.getElementById("ItemZoneB5").style.visibility = 'hidden';}
+		if(itemActive[2] == 0){document.getElementById("ItemZoneC1").style.visibility = 'hidden';}
+		if(itemActive[13] == 0){document.getElementById("ItemZoneC2").style.visibility = 'hidden';}
+		if(itemActive[24] == 0){document.getElementById("ItemZoneC3").style.visibility = 'hidden';}
+		if(itemActive[35] == 0){document.getElementById("ItemZoneC4").style.visibility = 'hidden';}
+		if(itemActive[46] == 0){document.getElementById("ItemZoneC5").style.visibility = 'hidden';}
+		if(itemActive[3] == 0){document.getElementById("ItemZoneD1").style.visibility = 'hidden';}
+		if(itemActive[14] == 0){document.getElementById("ItemZoneD2").style.visibility = 'hidden';}
+		if(itemActive[25] == 0){document.getElementById("ItemZoneD3").style.visibility = 'hidden';}
+		if(itemActive[36] == 0){document.getElementById("ItemZoneD4").style.visibility = 'hidden';}
+		if(itemActive[47] == 0){document.getElementById("ItemZoneD5").style.visibility = 'hidden';}
+		if(itemActive[4] == 0){document.getElementById("ItemZoneE1").style.visibility = 'hidden';}
+		if(itemActive[15] == 0){document.getElementById("ItemZoneE2").style.visibility = 'hidden';}
+		if(itemActive[26] == 0){document.getElementById("ItemZoneE3").style.visibility = 'hidden';}
+		if(itemActive[37] == 0){document.getElementById("ItemZoneE4").style.visibility = 'hidden';}
+		if(itemActive[48] == 0){document.getElementById("ItemZoneE5").style.visibility = 'hidden';}
+		if(itemActive[5] == 0){document.getElementById("ItemZoneF1").style.visibility = 'hidden';}
+		if(itemActive[16] == 0){document.getElementById("ItemZoneF2").style.visibility = 'hidden';}
+		if(itemActive[27] == 0){document.getElementById("ItemZoneF3").style.visibility = 'hidden';}
+		if(itemActive[38] == 0){document.getElementById("ItemZoneF4").style.visibility = 'hidden';}
+		if(itemActive[49] == 0){document.getElementById("ItemZoneF5").style.visibility = 'hidden';}
+		if(itemActive[6] == 0){document.getElementById("ItemZoneG1").style.visibility = 'hidden';}
+		if(itemActive[17] == 0){document.getElementById("ItemZoneG2").style.visibility = 'hidden';}
+		if(itemActive[28] == 0){document.getElementById("ItemZoneG3").style.visibility = 'hidden';}
+		if(itemActive[39] == 0){document.getElementById("ItemZoneG4").style.visibility = 'hidden';}
+		if(itemActive[50] == 0){document.getElementById("ItemZoneG5").style.visibility = 'hidden';}
+		if(itemActive[7] == 0){document.getElementById("ItemZoneH1").style.visibility = 'hidden';}
+		if(itemActive[18] == 0){document.getElementById("ItemZoneH2").style.visibility = 'hidden';}
+		if(itemActive[29] == 0){document.getElementById("ItemZoneH3").style.visibility = 'hidden';}
+		if(itemActive[40] == 0){document.getElementById("ItemZoneH4").style.visibility = 'hidden';}
+		if(itemActive[51] == 0){document.getElementById("ItemZoneH5").style.visibility = 'hidden';}
+		if(itemActive[8] == 0){document.getElementById("ItemZoneI1").style.visibility = 'hidden';}
+		if(itemActive[19] == 0){document.getElementById("ItemZoneI2").style.visibility = 'hidden';}
+		if(itemActive[30] == 0){document.getElementById("ItemZoneI3").style.visibility = 'hidden';}
+		if(itemActive[41] == 0){document.getElementById("ItemZoneI4").style.visibility = 'hidden';}
+		if(itemActive[52] == 0){document.getElementById("ItemZoneI5").style.visibility = 'hidden';}
+		if(itemActive[9] == 0){document.getElementById("ItemZoneJ1").style.visibility = 'hidden';}
+		if(itemActive[20] == 0){document.getElementById("ItemZoneJ2").style.visibility = 'hidden';}
+		if(itemActive[31] == 0){document.getElementById("ItemZoneJ3").style.visibility = 'hidden';}
+		if(itemActive[42] == 0){document.getElementById("ItemZoneJ4").style.visibility = 'hidden';}
+		if(itemActive[53] == 0){document.getElementById("ItemZoneJ5").style.visibility = 'hidden';}
+		if(itemActive[10] == 0){document.getElementById("ItemZoneK1").style.visibility = 'hidden';}
+		if(itemActive[21] == 0){document.getElementById("ItemZoneK2").style.visibility = 'hidden';}
+		if(itemActive[32] == 0){document.getElementById("ItemZoneK3").style.visibility = 'hidden';}
+		if(itemActive[43] == 0){document.getElementById("ItemZoneK4").style.visibility = 'hidden';}
+		if(itemActive[54] == 0){document.getElementById("ItemZoneK5").style.visibility = 'hidden';}
 	}
 		return;
+}
+
+
+function runItem(ItemID){
+	uses = itemContentValueA[ItemID];
+	type = itemContent[ItemID];
+	
+	
+	itemElem = document.getElementById(itemIDtoLoc(ItemID));
+	itemElemTop = getPOS(itemElem.style.top);
+	itemElemLeft = getPOS(itemElem.style.left);
+	
+	itemElem.innerHTML = '<p class="ItemValueZone">'.concat(uses, '</p>');
+	console.log(itemElem);
+	cnt = 0;
+	do{
+		cnt = cnt + 1;
+		monElem = document.getElementById('MonsZone'.concat(cnt));
+		monElemBar = document.getElementById('LifeBar'.concat(cnt));
+		monElemBarBack = document.getElementById('LifeBarBack'.concat(cnt));
+		monElemBarFront = document.getElementById('LifeBarFront'.concat(cnt));
+		
+		monElemTop = getPOS(monElem.style.top);
+		monElemLeft = getPOS(monElem.style.left);
+		//console.log(itemElemTop  + 11, " VS ", monElemTop, " -||- ", itemElemLeft, " VS ", monElemLeft, "-", (monElemLeft + 70));
+		
+		if((itemElemTop + 11) == monElemTop){
+			if(itemElemLeft >= monElemLeft && itemElemLeft <= (monElemLeft + 70)){
+				console.log("ITEM HIT MATCH :", ItemID, cnt);
+				uses = uses - 1;			
+				monLife = monsLifeDat[cnt - 1];
+				if(type == 1){ <!-- Road Spikes -->
+					monLife = monLife - statDamage;
+					if(monLife <= 0){
+						monElem.innerHTML = '';
+						monElem.style.left = 0;
+						monElem.style.top = 0;
+						monElem.style.width = 1;
+						monElem.style.height = 1;
+						monElemBar.innerHTML = '';
+						monElemBar.style.left = 0;
+						monElemBar.style.top = 0;
+						monElemBar.style.width = 1;
+						monElemBar.style.height = 1;
+						monElemBarBack.innerHTML = '';
+						monElemBarBack.style.left = 0;
+						monElemBarBack.style.top = 0;
+						monElemBarBack.style.width = 1;
+						monElemBarBack.style.height = 1;
+						monElemBarFront.innerHTML = '';
+						monElemBarFront.style.left = 0;
+						monElemBarFront.style.top = 0;
+						monElemBarFront.style.width = 1;
+						monElemBarFront.style.height = 1;
+						monLife = 0;
+						statDefeated = statDefeated + 1;
+						statSpawned = statSpawned - 1;
+						statDeskCoins = statDeskCoins + 3;
+					}
+					monsLifeDat[cnt - 1] = monLife;
+				}
+				if(type == 2){ <!-- Road Block -->
+					monElemLeft = getPOS(monElem.style.left);
+					monElemBarLeft = getPOS(monElemBar.style.left);
+					monElemBarBackLeft = getPOS(monElemBarBack.style.left);
+					monElemBarFrontLeft = getPOS(monElemBarFront.style.left);
+					monElem.style.left = monElemLeft + 80;
+					monElemBar.style.left = monElemBarLeft + 80;
+					monElemBarBack.style.left = monElemBarBackLeft + 80;
+					monElemBarFront.style.left = monElemBarFrontLeft + 80;
+				}
+			}
+		}
+	}while(cnt <= 49);
+	itemContentValueA[ItemID] = uses;
+	if(uses > 0){
+		runItemDo(ItemID);
+	} else {
+		endItem(ItemID);
+	}
+	delete ItemID;
+	delete uses;
+	delete type;
+	delete itemElem;
+	delete itemElemTop;
+	delete itemElemLeft;
+	delete monElem;
+	delete monElemBar;
+	delete monElemBarBack;
+	delete monElemBarFront;
+	delete monElemTop;
+	delete monElemLeft;
+	delete uses;
+	return;
+}
+function runItemDo(itemID){
+	setTimeout(function(){runItem(itemID);}, 80);
+	delete itemID;
+	return;
+}
+function endItem(Iid){
+	itemElem = document.getElementById(itemIDtoLoc(Iid));
+	itemActive[Iid] = 0;
+	itemContent[Iid] = 0;
+	itemContentValueA[Iid] = 0;
+	itemContentValueB[Iid] = 0;
+	itemContentValueC[Iid] = 0;
+	itemElem.innerHTML = "";
+	itemElem.style.borderStyle = 'none'; 
+	delete itemElem
+	return;
 }
 
 function spawnMonster(type, dist, speed, life, row, swaprate){
@@ -2306,13 +3051,37 @@ function spawnMonster(type, dist, speed, life, row, swaprate){
 }
 function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, SWRATE, MAXLIFE){
 	ELEM = document.getElementById(RID);
+	ELEM.style.backgroundSize = "100% 100%";
 	ELEMB = document.getElementById(BID);
 	ELEMBB = document.getElementById(BBID);
 	ELEMBF = document.getElementById(BFID);
 	curPOS = ELEM.style.left;
 	CURLIFE = monsLifeDat[IDID];
 	MOD = 0;
-	
+	if(FRAME == 0){
+		if(TYPE == 1){
+			ELEM.style.backgroundImage = "url('DQU2/MonA1.png')";
+		}
+	}
+	if(FRAME == 1){
+		if(TYPE == 1){
+			ELEM.style.backgroundImage = "url('DQU2/MonA2.png')";
+		}
+	}
+	if(FRAME == 2){
+		if(TYPE == 1){
+			ELEM.style.backgroundImage = "url('DQU2/MonA3.png')";
+		}
+	}
+	if(FRAME == 3){
+		if(TYPE == 1){
+			ELEM.style.backgroundImage = "url('DQU2/MonA4.png')";
+		}
+	}
+	FRAME = FRAME + 1;
+	if(FRAME >= 4){
+		FRAME = 0;
+	}
 	curPOS = getPOS(curPOS);
 	ELEM.style.left = curPOS - DIST;
 	ELEMB.style.left = curPOS - DIST + 1;
@@ -2356,7 +3125,7 @@ function moveMonster(RID, BID, BBID, BFID, IDID, TYPE, FRAME, DIST, SPEED, SWRAT
 		swapNum = 0;
 		console.log(SWRATE);
 		if(SWRATE == 1){
-			willSwap = getRandomInt(1, 20);
+			willSwap = getRandomInt(1, 30);
 			swapNum = 10;
 		}
 		if(willSwap == swapNum){
@@ -2524,12 +3293,14 @@ function doFireRound(){
 	var currentDiv = document.getElementById("PlayZone");
 	var M = document.createElement('div');
 	var manipID = 'RoundFired'.concat(roundsOut);
-	var manipCS = 'FireZone testBorderB';
+	var manipCS = 'FireZone';
 	M.setAttribute("id", manipID);
 	M.setAttribute("class", manipCS);
 	document.getElementById("ZoneZone").insertBefore(M, currentDiv);
 	M.style.top = document.getElementById("FireZone").style.top;
 	M.style.left = document.getElementById("FireZone").style.left
+	M.style.backgroundImage = "url('DQU2/RND.png')";
+	M.style.backgroundSize = "100% 100%";
 	onKeyChangeDelay(100);
 	moveRoundDo(manipID);
 }
@@ -2577,8 +3348,9 @@ function moveRound(RID){
 			
 			
 			monLife = monsLifeDat[cnt - 1];
+			console.log((rndElemTop - 37), monElemTop);
 			if((rndElemTop - 37) == monElemTop){
-				<!-- console.log("Top match");
+				console.log("Top match");
 				if(rndElemLeft >= monElemLeft && rndElemLeft <= (monElemLeft + 70)){
 					<!-- console.log("HIT");
 					<!-- console.log(rndElemTop, monElemTop, rndElemLeft, monElemLeft);
@@ -2649,46 +3421,8 @@ function removeObject(OID){
 	}
 	return;
 }
-function moveSetItemZone(DIR){
-	var TOP = getPOS(document.getElementById("ItemSetZone").style.top);
-	var LEFT = getPOS(document.getElementById("ItemSetZone").style.left);
-	if(DIR == "U"){
-		if(TOP < 50){
-		
-		} else {
-			TOP = TOP - 98;
-			placeCol = placeCol - 1;
-		}
-	}
-	if(DIR == "D"){
-		if(TOP > 400){
-		
-		} else {
-			TOP = TOP + 98;
-			placeCol = placeCol + 1;
-		}
-	}
-	if(DIR == "L"){
-		if(LEFT < 140){
-		
-		} else {
-			LEFT = LEFT - 74;
-			placeRow = placeRow - 1;
-		}
-	}
-	if(DIR == "R"){
-		if(LEFT > 850){
-		
-		} else {
-			LEFT = LEFT + 74;
-			placeRow = placeRow + 1;
-		}
-	}
-	console.log(placeCol, " ", placeRow);
-	document.getElementById("ItemSetZone").style.left = LEFT;
-	document.getElementById("ItemSetZone").style.top = TOP;
-	document.getElementById("body").onkeypress = saved_keydown;
-}
+
+	
 function onKeyChangeDelay(TIME){
 	setTimeout(function(){document.getElementById("body").onkeypress = saved_keydown;}, TIME);
 }
