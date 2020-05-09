@@ -1780,7 +1780,7 @@ function devActs(ACT){
 	}
 	if(ACT == 4){
 		WTS = document.getElementById("DeveWaveIn").value;
-		if(isNumber(WTS) == true && parseInt(WTS) < 6){
+		if(isNumber(WTS) == true && parseInt(WTS) < 8){
 			startWave(WTS);
 		} else {
 			errorPopup(5);
@@ -2141,6 +2141,20 @@ function startWave(WAVE){
 		var SR = 1;
 		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[5];
 	}
+	if(WAVE == 6){
+		var SS = 600;
+		var MXLEN = 25;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[6];
+	}
+	if(WAVE == 7){
+		var SS = 700;
+		var MXLEN = 30;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[7];
+	}
 	document.getElementById("ItemBut").style.visibility = 'hidden';
 	runWave(WAVE, SS, LEN, MXLEN, SR);
 }
@@ -2155,8 +2169,8 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 	
 	if(Wave == 1){
 		monType = 1;
-		monDist = getRandomInt(12, 20);
-		monSped = getRandomInt(150, 200);
+		monDist = getRandomInt(8, 14);
+		monSped = getRandomInt(65, 120);
 		monHeal = getRandomInt(1, 2);
 		monLine = getRandomInt(1, 5);
 	}
@@ -2186,6 +2200,20 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monDist = getRandomInt(12, 20);
 		monSped = getRandomInt(150, 200);
 		monHeal = getRandomInt(20, 26);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 6){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(200, 250);
+		monHeal = getRandomInt(15, 20);
+		monLine = getRandomInt(1, 5);
+	}
+	if(Wave == 7){
+		monType = 1;
+		monDist = getRandomInt(12, 20);
+		monSped = getRandomInt(150, 250);
+		monHeal = getRandomInt(35, 45);
 		monLine = getRandomInt(1, 5);
 	}
 	
@@ -2220,6 +2248,8 @@ function resetMons(WV){
 		if(WV == 3){document.getElementById("WaveBut").innerHTML = waveButItems[4];}
 		if(WV == 4){document.getElementById("WaveBut").innerHTML = waveButItems[5];}
 		if(WV == 5){document.getElementById("WaveBut").innerHTML = waveButItems[6];}
+		if(WV == 6){document.getElementById("WaveBut").innerHTML = waveButItems[7];}
+		if(WV == 7){document.getElementById("WaveBut").innerHTML = waveButItems[8];}
 	}
 }
 
@@ -3331,15 +3361,15 @@ function doFireRound(){
 	M.style.left = document.getElementById("FireZone").style.left
 	M.style.backgroundImage = "url('DQU2/RND.png')";
 	M.style.backgroundSize = "100% 100%";
-	onKeyChangeDelay(100);
+	onKeyChangeDelay(65);
 	moveRoundDo(manipID);
 }
 function moveRound(RID){
 	var rndElem = document.getElementById(RID);
 	if(typeof(rndElem) != 'undefined' && rndElem != null){
 		var curPOS = getPOS(rndElem.style.left);
-		rndElem.style.left = curPOS + 12;
-		if(curPOS + 12 > 1050){
+		rndElem.style.left = curPOS + 6;
+		if(curPOS + 6 > 1050){
 			rndElem.innerHTML = '';
 			rndElem.style.left = 0;
 			rndElem.style.top = 0;
@@ -3378,9 +3408,9 @@ function moveRound(RID){
 			
 			
 			monLife = monsLifeDat[cnt - 1];
-			console.log((rndElemTop - 37), monElemTop);
+			<!-- console.log((rndElemTop - 37), monElemTop);
 			if((rndElemTop - 37) == monElemTop){
-				console.log("Top match");
+				<!-- console.log("Top match");
 				if(rndElemLeft >= monElemLeft && rndElemLeft <= (monElemLeft + 70)){
 					<!-- console.log("HIT");
 					<!-- console.log(rndElemTop, monElemTop, rndElemLeft, monElemLeft);
@@ -3441,7 +3471,7 @@ function moveRound(RID){
 	return;
 }
 function moveRoundDo(ID){
-	setTimeout(function(){moveRound(ID);}, 50);
+	setTimeout(function(){moveRound(ID);}, 15);
 }
 function removeObject(OID){
 	var rndElem = document.getElementById(OID);
