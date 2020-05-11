@@ -147,9 +147,10 @@ body{
 .VerBox{
 	font-size: 9px;
 	position: absolute;
+	display: inline-block;
 	color: white;
 	top: 715px;
-	left 100px;
+	width: 700px;
 	padding: 1px;
 }
 .testBorderR{
@@ -299,32 +300,28 @@ body{
 .DeveActs{
 	background: linear-gradient(-180deg, #81A29D, #0A9E84);
 	border-radius: 15px;
+	position: realative;
 	color: white;
 	font-size: 19px;
 	text-align: center;
-	position: absolute;
+	float: left;
 	padding: 2px;
 	width: 170px;
-	height: 32px;
-	left: 2px;
-	top: 159px;
+	height: 20px;
 }
 .DeveActs:Hover{
 	background: linear-gradient(-180deg, #0A9E84, #81A29D);
 	color: white;
 	font-size: 19px;
 	text-align: center;
-	position: absolute;
 	padding: 2px;
 	width: 170px;
-	height: 32px;
-	left: 2px;
-	top: 159px;
+	height: 20px;
 }
 .DeveButs{
 	color: white;
 	background-color: black;
-	font-size: 19px;
+	font-size: 9px;
 	text-align: center;
 	position: relative;
 	border-radius: 5px;
@@ -726,10 +723,19 @@ body{
 	width: 200px;
 	height: 50px;
 }
+.VerInf{
+	float: left; 
+	position: relative; 
+	top: 5px;
+}
 		</style>
 	</head>
 	<body id="body" onKeyPress="onKeyChange()">
-		<div id="VerBox" class="VerBox">Ver. 1.20.05.03 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input></div>
+		
+		<div id="VerBox" class="VerBox">
+			<div id="VerInf" class="VerInf"></div>
+			<div id="DeveActs" class="DeveActs testBorderG"></div>
+		</div>
 		<div id="BordL" class="PlayBorder"></div>
 		<div id="BordR" class="PlayBorder"></div>
 		<div id="BordT" class="PlayBorder"></div>
@@ -1094,403 +1100,23 @@ body{
 						</td>
 					</tr>
 				</table>
-				<div id="DeveActs" class="DeveActs testBorderG">
-					<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>
-				</div>
 			</div>
 		</div>
 	</body>
 	<script>
-var itemActive = [ 
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
-var itemContent = [ 
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
-var itemContentValueA = [ 
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
-var itemContentValueB = [ 
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
-var itemContentValueC = [ 
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
+// Ver is     GAMEMODES.YEAR.MONTH.DAY.TIME
+var VerData = 'Ver. 1.20.05.10.2250 - DEV - <input type="password" class="DevKeyIn" id="DevKeyIn"></input>&nbsp;&nbsp;&nbsp;';	
 
-var monsLifeDat = [
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
-var monsActive = [
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0
-]
+var itemActive = new Array(55);
+var itemContent = new Array(55);
+var itemContentValueA = new Array(55);
+var itemContentValueB = new Array(55);
+var itemContentValueC = new Array(55);
+var monsLifeDat = new Array(50);
+var monsActive = new Array(50);
+
+var waveButItems = new Array(24);
+var waveButDisabledItems = new Array(24);
 
 
 var saved_keydown = "";
@@ -1530,8 +1156,30 @@ devOnContent = devOnContent.concat('<p class="DeveButs testBorderG" onClick="dev
 devOnContent = devOnContent.concat('</td></tr></table>');
 var devOffContent = '<p class="DeveButs testBorderD" onClick="devMode()">Open Devlepoment</p>';
 
+var cntDevWaves = 0;
+var lneDevWaves = 0;
+var spdDevWaves = 150;
+var dstDevWaves = 12;
+var lfeDevWaves = 0;
+var typDevWaves = 0;
+var dnpDevWaves = 0;
+
+var statHealth = 10;
+var statKnockback = 0;
+var statDamage = 1;
+var statSpawned = 0;
+var statDefeated = 0; 
+var statShots = 0;
+var statDeskCoins = 0;
+
+var disabledButtons = 0;
+
+buildStats();
 loadGameZone();
 tutorThem(1, 0);
+
+
+
 function loadGameZone(){
 	<!-- Set Character default POS --> R1: 11 || R2: 109  R3: 207 || R4: 305 || R5: 403
 	document.getElementById("ItemSetZone").style.visibility = 'hidden';
@@ -1737,6 +1385,9 @@ function loadGameZone(){
 	document.getElementById("ItemZoneK4").style.left = 861;
 	document.getElementById("ItemZoneK5").style.top = 392;
 	document.getElementById("ItemZoneK5").style.left = 861;
+	document.getElementById("VerInf").innerHTML = VerData;
+	document.getElementById("DeveActs").innerHTML = devOffContent;
+	buildArrays();
 	var cnt = 0;
 	do{
 		cnt = cnt + 1;
@@ -1747,23 +1398,50 @@ function loadGameZone(){
 		document.getElementById("MonsZone".concat(cnt)).style.height = 1;
 	}while(cnt <= 49);
 }
+function buildArrays(){
+	cnt = 0;
+	do{
+		itemActive[cnt] = 0;
+		itemActive[cnt] = 0;
+		itemContent[cnt] = 0;
+		itemContentValueA[cnt] = 0;
+		itemContentValueB[cnt] = 0;
+		itemContentValueC[cnt] = 0;
+		cnt = cnt + 1;
+	}while(cnt <= 54);
+	cnt = 0;
+	do{
+		monsLifeDat[cnt] = 0;
+		monsActive[cnt] = 0;
+		cnt = cnt + 1;
+	}while(cnt <= 49);
+	cnt = 0;
+	waveButItems[cnt] = 'EMPTY-NA';
+	waveButDisabledItems[cnt] = 'EMPTY-NA';
+	cnt = cnt + 1;
+	do{
+		waveButItems[cnt] = ''.concat('<p class="WaveBut" onClick="startWave(',cnt,')">Start Wave</br><span class="waveNum"># ',cnt,'</p>');
+		waveButDisabledItems[cnt] = ''.concat('<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># ',cnt,'</p>');
+		cnt = cnt + 1;
+	}while(cnt <= 23);
+}
 
 function devMode(){
 	if(isDev == 0){
 		var KEY = document.getElementById("DevKeyIn").value;
 		if(KEY == "aspo"){
-			document.getElementById("DeveActs").style.height = 150;
+			document.getElementById("DeveActs").style.height = 100;
 			document.getElementById("DeveActs").style.width	 = 870;
-			document.getElementById("DeveActs").style.top = 41;
+		document.getElementById("DeveActs").style.marginTop = 10;
 			document.getElementById("DeveActs").innerHTML = devOnContent;
 			isDev = 1;
 		} else {
 			errorPopup(4);
 		}
 	} else if(isDev == 1){
-		document.getElementById("DeveActs").style.height = 32;
-		document.getElementById("DeveActs").style.top = 159;
+		document.getElementById("DeveActs").style.height = 20;
 		document.getElementById("DeveActs").style.width	 = 170;
+		document.getElementById("DeveActs").style.marginTop = 0;
 		document.getElementById("DeveActs").innerHTML = devOffContent;
 		isDev = 0;
 	}
@@ -1780,7 +1458,7 @@ function devActs(ACT){
 	}
 	if(ACT == 4){
 		WTS = document.getElementById("DeveWaveIn").value;
-		if(isNumber(WTS) == true && parseInt(WTS) < 8){
+		if(isNumber(WTS) == true && parseInt(WTS) > 0){
 			startWave(WTS);
 		} else {
 			errorPopup(5);
@@ -1866,6 +1544,7 @@ function getRandomInt(min, max) {
 function tutorThem(SLIDE, TID){
 	if(SLIDE == 0){
 		removeObject(TID);
+		disabledButtons = 0;
 		document.getElementById("TutrBut").style.visibility = "visible";
 		document.getElementById("WaveBut").style.visibility = "visible";
 		document.getElementById("HealBut").style.visibility = "visible";
@@ -1883,6 +1562,7 @@ function tutorThem(SLIDE, TID){
 	}
 	if(SLIDE == 1){
 		removeObject(TID);
+		disabledButtons = 1;
 		TIDA = getRandomInt(2345, 436275);
 		TIDB = getRandomInt(23445, 4362775);
 		TIDC = getRandomInt(234, 4362);
@@ -2019,13 +1699,9 @@ function tutorThem(SLIDE, TID){
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "S"</span><span class="TutorText"></br>Move selection Down 1 row</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Press "D"</span><span class="TutorText"></br>Move selection Right 1 row</br></br></span>');
 		M.innerHTML = M.innerHTML.concat('<span class="TutorTextTitle">Build Object</span><span class="TutorText"></br>Using build buttons</br></br></span>');
-		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="selectItemPurchase(0);tutorThem(1, ',TutorID,');"><span style="color:#418A11;">Back</span></button>');
-		
+		M.innerHTML = M.innerHTML.concat('<button class="TutorBut" onClick="tutorExtra(1, 0);tutorThem(1, ',TutorID,');"><span style="color:#418A11;">Back</span></button>');
 		document.getElementById("ItemBut").style.visibility = "visible";
-		
-		selectItemPurchase(0);
-		
-		<!-- console.log(M);
+		tutorExtra(1, 0);
 		M.style.height = 640;
 		M.style.width = 400;
 		M.style.top = 100;
@@ -2033,79 +1709,18 @@ function tutorThem(SLIDE, TID){
 	}
 	return;
 }
+function tutorExtra(RSN, EXA){
+	if(RSN == 1){
+		disabledButtons = 0;
+		selectItemPurchase(0);
+		disabledButtons = 1;
+	}
+	return;
+}
 
-var cntDevWaves = 0;
-var lneDevWaves = 0;
-var spdDevWaves = 150;
-var dstDevWaves = 12;
-var lfeDevWaves = 0;
-var typDevWaves = 0;
-var dnpDevWaves = 0;
-
-var statHealth = 10;
-var statKnockback = 0;
-var statDamage = 1;
-var statSpawned = 0;
-var statDefeated = 0; 
-var statShots = 0;
-var statDeskCoins = 0;
-
-buildStats();
-
-var waveButItems = [ 
-'EMPTY-NA',
-'<p class="WaveBut" onClick="startWave(1)">Start Wave</br><span class="waveNum"># 1</p>',
-'<p class="WaveBut" onClick="startWave(2)">Start Wave</br><span class="waveNum"># 2</p>',
-'<p class="WaveBut" onClick="startWave(3)">Start Wave</br><span class="waveNum"># 3</p>',
-'<p class="WaveBut" onClick="startWave(4)">Start Wave</br><span class="waveNum"># 4</p>',
-'<p class="WaveBut" onClick="startWave(5)">Start Wave</br><span class="waveNum"># 5</p>',
-'<p class="WaveBut" onClick="startWave(6)">Start Wave</br><span class="waveNum"># 6</p>',
-'<p class="WaveBut" onClick="startWave(7)">Start Wave</br><span class="waveNum"># 7</p>',
-'<p class="WaveBut" onClick="startWave(8)">Start Wave</br><span class="waveNum"># 8</p>',
-'<p class="WaveBut" onClick="startWave(9)">Start Wave</br><span class="waveNum"># 9</p>',
-'<p class="WaveBut" onClick="startWave(10)">Start Wave</br><span class="waveNum"># 10</p>',
-'<p class="WaveBut" onClick="startWave(11)">Start Wave</br><span class="waveNum"># 11</p>',
-'<p class="WaveBut" onClick="startWave(12)">Start Wave</br><span class="waveNum"># 12</p>',
-'<p class="WaveBut" onClick="startWave(13)">Start Wave</br><span class="waveNum"># 13</p>',
-'<p class="WaveBut" onClick="startWave(14)">Start Wave</br><span class="waveNum"># 14</p>',
-'<p class="WaveBut" onClick="startWave(15)">Start Wave</br><span class="waveNum"># 15</p>',
-'<p class="WaveBut" onClick="startWave(16)">Start Wave</br><span class="waveNum"># 16</p>',
-'<p class="WaveBut" onClick="startWave(17)">Start Wave</br><span class="waveNum"># 17</p>',
-'<p class="WaveBut" onClick="startWave(18)">Start Wave</br><span class="waveNum"># 18</p>',
-'<p class="WaveBut" onClick="startWave(19)">Start Wave</br><span class="waveNum"># 19</p>',
-'<p class="WaveBut" onClick="startWave(20)">Start Wave</br><span class="waveNum"># 20</p>',
-'<p class="WaveBut" onClick="startWave(21)">Start Wave</br><span class="waveNum"># 21</p>',
-'<p class="WaveBut" onClick="startWave(22)">Start Wave</br><span class="waveNum"># 22</p>',
-'<p class="WaveBut" onClick="startWave(23)">Start Wave</br><span class="waveNum"># 23</p>'
-]
-var waveButDisabledItems = [
-'EMPTY-NA',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 1</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 2</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 3</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 4</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 5</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 6</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 7</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 8</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 9</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 10</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 11</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 12</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 13</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 14</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 15</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 16</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 17</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 18</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 19</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 20</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 21</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 22</p>',
-'<p class="WaveButDisabled" onClick="errorPopup(3)">Start Wave</br><span class="WaveNumDisabled"># 23</p>'
-]
 
 function startWave(WAVE){
+	if(disabledButtons == 1){return;}
 	if(WAVE == 1){
 		var SS = 800;
 		var MXLEN = 19;
@@ -2155,6 +1770,17 @@ function startWave(WAVE){
 		var SR = 1;
 		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[7];
 	}
+	if(WAVE == 8){
+		var SS = 700;
+		var MXLEN = 12;
+		var LEN = 0;
+		var SR = 1;
+		document.getElementById("WaveBut").innerHTML = waveButDisabledItems[7];
+	}
+	if(WAVE >= 9){
+		errorPopup(8);
+		return;
+	}
 	document.getElementById("ItemBut").style.visibility = 'hidden';
 	runWave(WAVE, SS, LEN, MXLEN, SR);
 }
@@ -2173,6 +1799,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(65, 120);
 		monHeal = getRandomInt(1, 2);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 2){
 		monType = 1;
@@ -2180,6 +1812,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(150, 200);
 		monHeal = getRandomInt(4, 7);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 3){
 		monType = 1;
@@ -2187,6 +1825,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(150, 200);
 		monHeal = getRandomInt(7, 14);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 4){
 		monType = 1;
@@ -2194,6 +1838,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(150, 200);
 		monHeal = getRandomInt(14, 20);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 5){
 		monType = 1;
@@ -2201,6 +1851,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(150, 200);
 		monHeal = getRandomInt(20, 26);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 6){
 		monType = 1;
@@ -2208,6 +1864,12 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(200, 250);
 		monHeal = getRandomInt(15, 20);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	if(Wave == 7){
 		monType = 1;
@@ -2215,14 +1877,33 @@ function runWave(Wave, Ss, Len, MxLen, Sr){
 		monSped = getRandomInt(150, 250);
 		monHeal = getRandomInt(35, 45);
 		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
+	}
+	if(Wave == 8){
+		monType = 1;
+		monDist = getRandomInt(8, 12);
+		monSped = getRandomInt(80, 130);
+		monHeal = getRandomInt(45, 56);
+		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		monDist = getRandomInt(2, 5);
+		monSped = getRandomInt(100, 170);
+		monHeal = getRandomInt(75, 86);
+		monLine = getRandomInt(1, 5);
+		spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
+		if(Len <= MxLen){
+			setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
+		} else {
+			setTimeout(function(){resetMons(Wave);}, 1000);
+		}
 	}
 	
-	spawnMonster(monType, monDist, monSped, monHeal, monLine, monSwap);
-	if(Len <= MxLen){
-		setTimeout(function(){runWave(Wave, Ss, Len, MxLen, Sr)}, Ss);
-	} else {
-		setTimeout(function(){resetMons(Wave);}, 1000);
-	}
+	
 	return;
 }
 function resetMons(WV){
@@ -2250,6 +1931,20 @@ function resetMons(WV){
 		if(WV == 5){document.getElementById("WaveBut").innerHTML = waveButItems[6];}
 		if(WV == 6){document.getElementById("WaveBut").innerHTML = waveButItems[7];}
 		if(WV == 7){document.getElementById("WaveBut").innerHTML = waveButItems[8];}
+		if(WV == 8){document.getElementById("WaveBut").innerHTML = waveButItems[9];}
+		if(WV == 9){document.getElementById("WaveBut").innerHTML = waveButItems[10];}
+		if(WV == 10){document.getElementById("WaveBut").innerHTML = waveButItems[11];}
+		if(WV == 11){document.getElementById("WaveBut").innerHTML = waveButItems[12];}
+		if(WV == 12){document.getElementById("WaveBut").innerHTML = waveButItems[13];}
+		if(WV == 13){document.getElementById("WaveBut").innerHTML = waveButItems[14];}
+		if(WV == 14){document.getElementById("WaveBut").innerHTML = waveButItems[15];}
+		if(WV == 15){document.getElementById("WaveBut").innerHTML = waveButItems[16];}
+		if(WV == 16){document.getElementById("WaveBut").innerHTML = waveButItems[17];}
+		if(WV == 17){document.getElementById("WaveBut").innerHTML = waveButItems[18];}
+		if(WV == 18){document.getElementById("WaveBut").innerHTML = waveButItems[19];}
+		if(WV == 19){document.getElementById("WaveBut").innerHTML = waveButItems[20];}
+		if(WV == 20){document.getElementById("WaveBut").innerHTML = waveButItems[21];}
+		if(WV == 21){document.getElementById("WaveBut").innerHTML = waveButItems[22];}
 	}
 }
 
@@ -2333,9 +2028,28 @@ function errorPopup(ERR){
 		M.style.top = 180;
 		M.style.left = 350;
 	}
+	if(ERR == 7){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> Position Already Active</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
+	if(ERR == 8){
+		M = document.createElement('div');
+		M.setAttribute("id", ERRID);
+		M.setAttribute("class", "ErrorPop");
+		document.body.insertBefore(M, document.getElementById("ZoneZone"));
+		M.innerHTML = 'Issue:<p class="ErrorText"> No More Waves Yet </br> Sorry </br> :C</p>'
+		M.style.top = 180;
+		M.style.left = 350;
+	}
 	setTimeout(function(){removeObject(ERRID)}, 1000);
 }
 function purchaseUpgrade(toUP){
+	if(disabledButtons == 1){return;}
 	if(toUP == 1){
 		if((statDeskCoins - 10) >= 0){
 			statDamage = statDamage + 1;
@@ -2640,6 +2354,7 @@ function getItemLocation(valB, valA){
 	<!-------------------------
 }
 function selectItemPurchase(ACTN){
+	if(disabledButtons == 1){return;}
 	if(ACTN == 0){
 		createItemTest();
 	}
@@ -2650,6 +2365,8 @@ function selectItemPurchase(ACTN){
 			if(itemActive[itemID] == 0){
 				buildItem(itemID, type);
 				statDeskCoins = statDeskCoins - 20;
+			} else {
+				errorPopup(7);
 			}
 		} else {
 			errorPopup(1);
@@ -2662,6 +2379,8 @@ function selectItemPurchase(ACTN){
 			if(itemActive[itemID] == 0){
 				buildItem(itemID, type);
 				statDeskCoins = statDeskCoins - 20;
+			} else {
+				errorPopup(7);
 			}
 		} else {
 			errorPopup(1);
@@ -2680,7 +2399,7 @@ function buildItem(ITEMID, TYPE){
 	if(TYPE == 2){
 		itemActive[itemID] = 1;
 		itemContent[itemID] = 2;
-		itemContentValueA[itemID] = 25;
+		itemContentValueA[itemID] = 250;
 		document.getElementById(zoneName).style.borderColor = 'blue';
 	}
 	runItem(ITEMID);
